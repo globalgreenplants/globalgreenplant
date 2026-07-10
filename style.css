@@ -120,3 +120,17 @@ z-index:999;
 transform:scale(1.1);
 transition:0.3s;
 }
+.reviews{
+padding:60px 20px;
+background:#f4fff4;
+text-align:center;
+}
+
+.review-card{
+background:#fff;
+padding:20px;
+margin:20px auto;
+max-width:500px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
