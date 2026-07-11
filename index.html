@@ -19,62 +19,6 @@
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3A2B] overflow-x-hidden antialiased">
 
-  <!-- 🟢 রিয়েল-টাইম কাস্টমার অ্যাসিস্ট্যান্ট মোডাল -->
-  <div id="assistant-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border-t-4 border-[#D4AF37] relative">
-      <div class="text-center">
-        <div class="w-16 h-16 bg-[#1A3A2B] rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-[#D4AF37]">
-          <span class="text-2xl">💁‍♂️</span>
-        </div>
-        <span class="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-bold block mb-2">Global Green Assistant</span>
-        
-        <!--  ধাপ ১ -->
-        <div id="step-1" class="mt-4">
-          <h3 class="serif-font text-2xl font-bold text-[#1A3A2B] mb-3 italic">হ্যালো স্যার / ম্যাডাম, <br>আপনি কেমন আছেন?</h3>
-          <p class="text-gray-500 text-sm mb-6 font-medium">আমরা আপনাকে কীভাবে সাহায্য করতে পারি?</p>
-          <button onclick="goToStep(2)" class="gold-gradient text-[#1A3A2B] px-8 py-3.5 rounded-xl font-bold text-sm transition duration-300 w-full sm:w-auto shadow-lg shadow-yellow-600/10">
-            ভালো আছি, সাহায্য চাই 👍
-          </button>
-        </div>
-
-        <!--  ধাপ ২ -->
-        <div id="step-2" class="mt-4 hidden">
-          <h3 class="serif-font text-xl font-bold text-[#1A3A2B] mb-2">ধন্যবাদ।</h3>
-          <p class="text-gray-500 text-sm mb-6">আজ আপনি কোন প্রজাতির গাছ খুঁজছেন? নিচে থেকে বেছে নিন:</p>
-          <div class="grid grid-cols-2 gap-3 max-w-md mx-auto">
-            <button onclick="selectCategory('fruits')" class="p-3 border border-gray-100 hover:border-[#D4AF37] rounded-xl text-xs font-bold bg-[#FDFBF7] hover:bg-[#1A3A2B]/5 transition">🍎 ফল গাছ</button>
-            <button onclick="selectCategory('flowers')" class="p-3 border border-gray-100 hover:border-[#D4AF37] rounded-xl text-xs font-bold bg-[#FDFBF7] hover:bg-[#1A3A2B]/5 transition">🌹 ফুল গাছ</button>
-            <button onclick="selectCategory('indoor')" class="p-3 border border-gray-100 hover:border-[#D4AF37] rounded-xl text-xs font-bold bg-[#FDFBF7] hover:bg-[#1A3A2B]/5 transition">🪴 ইনডোর প্লান্টস</button>
-            <button onclick="selectCategory('outdoor')" class="p-3 border border-gray-100 hover:border-[#D4AF37] rounded-xl text-xs font-bold bg-[#FDFBF7] hover:bg-[#1A3A2B]/5 transition">🌳 আউটডোর প্লান্টস</button>
-          </div>
-        </div>
-
-        <!--  ধাপ ৩ -->
-        <div id="step-3" class="mt-4 hidden text-left">
-          <div class="text-center mb-4">
-            <h3 class="serif-font text-lg font-bold text-[#1A3A2B]">ম্যাম / স্যার, আপনার জন্য আরও একটি বেস্ট চয়েস এটি হতে পারে:</h3>
-          </div>
-          <div class="border border-[#D4AF37]/30 rounded-2xl overflow-hidden bg-[#FDFBF7] p-4 flex gap-4 items-center mb-6 shadow-inner">
-            <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=150" class="w-20 h-20 object-cover rounded-xl border border-gray-100">
-            <div class="flex-1">
-              <h4 class="serif-font font-bold text-[#1A3A2B] text-sm">ইনডোর এয়ার-পিউরিফায়ার প্লান্ট</h4>
-              <div class="text-yellow-500 text-xs my-0.5">★★★★★ <span class="text-gray-400 text-[10px] font-medium">(4.9/5)</span></div>
-              <span class="font-bold text-[#1A3A2B] text-sm block">৳ ১,贰百</span>
-            </div>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button onclick="addSuggestedToCart()" class="flex-1 gold-gradient text-[#1A3A2B] py-3.5 rounded-xl text-xs font-bold transition uppercase tracking-wider text-center shadow-md">
-              এটিও অর্ডার করতে চাই
-            </button>
-            <button onclick="closeAssistant()" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-600 py-3.5 rounded-xl text-xs font-bold transition text-center">
-              সরাসরি কার্টে যান
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- 💳 পেমেন্ট এবং ডেলিভারি ফর্ম মোডাল (চেকআউট প্যানেল) -->
   <div id="checkout-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden">
     <div class="bg-white rounded-3xl max-w-xl w-full p-6 md:p-8 shadow-2xl border-t-4 border-[#1A3A2B] relative max-h-[90vh] overflow-y-auto">
@@ -200,7 +144,6 @@
         <span class="text-sm font-semibold text-gray-500">সর্বমোট প্রদেয় দাম:</span>
         <span id="cart-total" class="text-2xl font-bold text-[#1A3A2B]">৳ ০</span>
       </div>
-      <!--  কার্ট থেকে অর্ডার করার বাটনকে অ্যাক্টিভেট করা হয়েছে -->
       <button onclick="openCheckout()" class="w-full gold-gradient text-[#1A3A2B] py-4 rounded-xl font-bold text-sm tracking-wide uppercase transition shadow-md">অর্ডার সম্পন্ন করুন (Checkout)</button>
     </div>
   </div>
@@ -211,7 +154,7 @@
     <p class="text-gray-300 text-xs font-light max-w-md mx-auto">বাছাইকৃত শতভাগ খাঁটি ও সতেজ প্রিমিয়াম কোয়ালিটির গাছপালা</p>
   </section>
 
-  <!-- ডাইনামিক প্রোডাক্ট ডিসপ্লে সেকশনগুলো -->
+  <!-- প্রোডাক্ট সেকশনসমূহ -->
   <section id="fruits" class="py-12 px-6 max-w-7xl mx-auto product-section">
     <h2 class="serif-font text-2xl font-bold mb-8 text-[#1A3A2B] border-b-2 border-[#1A3A2B]/10 pb-2">🍎 ফল গাছের অভিজাত কালেকশন</h2>
     <div id="fruits-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
@@ -236,20 +179,20 @@
   <section class="bg-white border-2 border-[#D4AF37]/30 p-8 max-w-2xl mx-auto my-14 rounded-3xl shadow-xl">
     <div class="text-center mb-6">
       <span class="text-2xl">⚙️</span>
-      <h2 class="serif-font text-xl font-bold text-[#1A3A2B]">ม্যানেজার ড্যাশবোর্ড</h2>
+      <h2 class="serif-font text-xl font-bold text-[#1A3A2B]">ম্যানেজার ড্যাশবোর্ড</h2>
       <p class="text-gray-400 text-xs mt-1">নতুন গাছ আপলোড এবং ভুল প্রোডাক্ট ডিলিট করার অফিশিয়াল কন্ট্রোল</p>
     </div>
 
     <div class="flex justify-center mb-6">
       <button id="delete-mode-btn" onclick="toggleDeleteMode()" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-sm">
-        🗑️ ডিলিট মোড অন করুন (লুকানো বাটন দেখাবে)
+        🗑️ ডিলিট মোড অন করুন
       </button>
     </div>
     
     <form id="product-form" class="space-y-4 pt-4 border-t border-dashed border-gray-200">
       <div>
         <label class="block text-xs font-bold uppercase text-gray-500 mb-1">গাছের নাম</label>
-        <input type="text" id="prod-name" placeholder="উদা: সূর্যডিম আম বা মনস্টেরা" class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required>
+        <input type="text" id="prod-name" placeholder="উদা: সূর্যডিম আম" class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required>
       </div>
       
       <div class="grid grid-cols-2 gap-4">
@@ -303,11 +246,8 @@
       
       productCards.forEach(card => {
         const plantName = card.querySelector('.plant-title').innerText.toLowerCase();
-        if (plantName.includes(query)) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
+        if (plantName.includes(query)) card.classList.remove('hidden');
+        else card.classList.add('hidden');
       });
     }
 
@@ -319,7 +259,7 @@
         btn.innerText = "🛑 ডিলিট মোড বন্ধ করুন";
         btn.className = "bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-sm";
       } else {
-        btn.innerText = "🗑️ ডিলিট মোড অন করুন (লুকানো বাটন দেখাবে)";
+        btn.innerText = "🗑️ ডিলিট মোড অন করুন";
         btn.className = "bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-sm";
       }
       
@@ -335,10 +275,6 @@
         products = products.filter(p => p.id !== id);
         localStorage.setItem('nursery_products', JSON.stringify(products));
         renderProducts();
-        if (isDeleteModeActive) {
-          const deleteButtons = document.querySelectorAll('.delete-product-btn');
-          deleteButtons.forEach(button => button.classList.remove('hidden'));
-        }
       }
     }
 
@@ -356,12 +292,10 @@
           <button onclick="deleteProduct('${p.id}')" class="delete-product-btn hidden absolute top-2 right-2 bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-red-800 transition shadow z-10">✕</button>
           <img src="${p.img}" class="w-full h-48 object-cover rounded-xl mb-3 bg-gray-50 border border-gray-50">
           <h3 class="plant-title serif-font font-bold text-sm text-[#1A3A2B] h-10 flex items-center justify-center">${p.name}</h3>
-          
           <div class="text-yellow-500 text-xs mb-3 font-sans">★★★★★ <span class="text-gray-400 text-[10px] font-medium">(4.9)</span></div>
-          
           <div class="flex items-center justify-between pt-3 border-t border-gray-100">
             <span class="font-bold text-sm text-[#1A3A2B]">৳ ${p.price}</span>
-            <button onclick="handlePurchase('${p.id}', '${p.name}', ${p.price}, '${p.img}')" class="gold-gradient text-[#1A3A2B] font-bold px-4 py-2 rounded-xl text-xs transition shadow-sm shadow-yellow-600/5">Buy Now</button>
+            <button onclick="handleDirectPurchase('${p.id}', '${p.name}', ${p.price}, '${p.img}')" class="gold-gradient text-[#1A3A2B] font-bold px-4 py-2 rounded-xl text-xs transition shadow-sm">Buy Now</button>
           </div>
         `;
         
@@ -387,19 +321,33 @@
           localStorage.setItem('nursery_products', JSON.stringify(products));
           renderProducts();
           document.getElementById('product-form').reset();
-          alert('🎉 সফলভাবে আপনার গাছটি সঠিক রেটিং ও গোল্ডেন বাটনসহ আপলোড হয়েছে!');
+          alert('🎉 সফলভাবে আপনার গাছটি আপলোড হয়েছে!');
         };
         reader.readAsDataURL(file);
       }
     });
 
-    // পেমেন্ট ও চেকআউট ম্যানেজমেন্ট লজিক
+    // 🚀 সরাসরি পারচেজ (Buy Now বাটনের মূল লজিক ফিক্স)
+    function handleDirectPurchase(id, name, price, img) {
+      // প্রথমে কার্টে আইটেম যুক্ত করি বা আপডেট করি
+      addToCartItems(id, name, price, img);
+      
+      // কার্ট ড্রয়ার যদি খোলা থাকে তা বন্ধ করি যেন জ্যাম না লাগে
+      const drawer = document.getElementById('cart-drawer');
+      if (!drawer.classList.contains('translate-x-full')) {
+        toggleCart();
+      }
+      
+      // সরাসরি চেকআউট পপ-আপ ফর্ম ওপেন হবে
+      document.getElementById('checkout-total').innerText = `৳ ${currentCartTotal}`;
+      document.getElementById('checkout-modal').classList.remove('hidden');
+    }
+
     function openCheckout() {
       if (cart.length === 0) {
         alert("আপনার কার্ট খালি! অনুগ্রহ করে প্রথমে গাছ যুক্ত করুন।");
         return;
       }
-      // কার্ট ড্রয়ার বন্ধ করে চেকআউট মোডাল অন করা হচ্ছে
       toggleCart();
       document.getElementById('checkout-total').innerText = `৳ ${currentCartTotal}`;
       document.getElementById('checkout-modal').classList.remove('hidden');
@@ -409,7 +357,6 @@
       document.getElementById('checkout-modal').classList.add('hidden');
     }
 
-    // অর্ডার প্লেস প্রসেস
     function placeOrder(e) {
       e.preventDefault();
       
@@ -419,26 +366,21 @@
       const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
       const memoId = "GG-" + Math.floor(100000 + Math.random() * 900000);
 
-      // যদি অনলাইন পেমেন্ট সিলেক্ট করে
       if (paymentMethod === "Online") {
-        const confirmOnline = confirm("অনলাইন পেমেন্ট মারফত অর্ডার প্রসেস করতে চান? (অর্ডার নিশ্চিতের পর আমাদের এজেন্ট আপনাকে পার্সোনাল বিকাশ/নগদ নম্বর পাঠাবেন।)");
+        const confirmOnline = confirm("অনলাইন পেমেন্ট মারফত অর্ডার প্রসেস করতে চান? (আমাদের এজেন্ট আপনাকে পার্সোনাল বিকাশ/নগদ নম্বর পাঠাবেন।)");
         if (!confirmOnline) return;
       }
 
-      // সাকসেস মেমো বা রশিদে ডেটা ইনপুট
       document.getElementById('summary-id').innerText = memoId;
       document.getElementById('summary-name').innerText = name;
       document.getElementById('summary-method').innerText = paymentMethod === "COD" ? "ক্যাশ অন ডেলিভারি (COD)" : "বিকাশ/নগদ (অনলাইন পেমেন্ট)";
       document.getElementById('summary-total').innerText = `৳ ${currentCartTotal}`;
 
-      // ফর্ম রিসেট ও মোডাল পরিবর্তন
       document.getElementById('checkout-form').reset();
       closeCheckout();
       
-      // সাকসেস পপআপ শো
       document.getElementById('success-modal').classList.remove('hidden');
 
-      // কার্ট খালি করে দেওয়া হচ্ছে নতুন অর্ডারের জন্য
       cart = [];
       updateCartUI();
     }
@@ -447,39 +389,9 @@
       document.getElementById('success-modal').classList.add('hidden');
     }
 
-    // অ্যাসিস্ট্যান্ট কন্ট্রোল
-    function goToStep(stepNumber) {
-      document.getElementById('step-1').classList.add('hidden');
-      document.getElementById('step-2').classList.add('hidden');
-      document.getElementById('step-3').classList.add('hidden');
-      document.getElementById(`step-${stepNumber}`).classList.remove('hidden');
-    }
-
-    function selectCategory(category) {
-      closeAssistant();
-      const targetSection = document.getElementById(category);
-      if (targetSection) {
-        setTimeout(() => { targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
-      }
-    }
-
-    function closeAssistant() { document.getElementById('assistant-modal').style.display = 'none'; }
-
-    function handlePurchase(id, name, price, img) {
-      addToCartItems(id, name, price, img);
-      document.getElementById('assistant-modal').style.display = 'flex';
-      goToStep(3);
-    }
-
-    function addSuggestedToCart() {
-      addToCartItems('p_suggested', 'ইনডোর এয়ার-পিউরিফায়ার প্লান্ট', 1200, 'https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=150');
-      closeAssistant();
-      openCheckout(); // কাস্টমার পজিটিভ রেসপন্স করলে ডিরেক্ট চেকআউটে নিয়ে যাওয়া হবে
-    }
-
     function addToCartItems(id, name, price, img) {
       const existingItem = cart.find(item => item.id === id);
-      if (existingItem) { existingItem.quantity += 1; } 
+      if (existingItem) { item.quantity += 1; } 
       else { cart.push({ id, name, price, img, quantity: 1 }); }
       updateCartUI();
     }
@@ -545,7 +457,7 @@
         cartItemsContainer.appendChild(itemRow);
       });
       cartTotal.innerText = `৳ ${totalCost}`;
-      currentCartTotal = totalCost; // গ্লোবাল ভেরিয়েবলে টোটাল সেভ করে রাখা হচ্ছে
+      currentCartTotal = totalCost;
     }
   </script>
 </body>
