@@ -1,81 +1,111 @@
+// Premium Plant Data Array
+const plants = [
+    {
+        id: 1,
+        name: "Monstera Deliciosa",
+        price: "₹350.00",
+        description: "The iconic Swiss Cheese plant. Perfect statement piece with dramatic, perforated leaves.",
+        image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=600"
+    },
+    {
+        id: 2,
+        name: "Fiddle Leaf Fig",
+        price: "₹450.00",
+        description: "Elegant, violin-shaped leaves that love bright, indirect light and bring instant luxury.",
+        image: "https://images.unsplash.com/photo-1597055181300-e3633a207518?q=80&w=600"
+    },
+    {
+        id: 3,
+        name: "Snake Plant Laurentii",
+        price: "₹220.00",
+        description: "Hardy, air-purifying, and virtually indestructible. Perfect for beginner plant parents.",
+        image: "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=600"
+    },
+    {
+        id: 4,
+        name: "Calathea Orbifolia",
+        price: "₹280.00",
+        description: "Features striking, oversized designer striped leaves that close gracefully at night.",
+        image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=600"
+    },
+    {
+        id: 5,
+        name: "Golden Pothos",
+        price: "₹150.00",
+        description: "Fast-growing cascading vine with heart-shaped leaves marbled in dynamic gold.",
+        image: "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=600"
+    },
+    {
+        id: 6,
+        name: "Olive Tree",
+        price: "₹650.00",
+        description: "A touch of Mediterranean luxury. Features delicate, silvery-green leaves.",
+        image: "https://images.unsplash.com/photo-1597055181300-e3633a207518?q=80&w=600"
+    }
+];
 
-function setLanguage(lang) {
+// WhatsApp Integration Config (Using your primary number with country code 91)
+const WHATSAPP_NUMBER = "916295301573"; 
 
-    if (lang === "bn") {
+const plantGrid = document.getElementById('plant-grid');
+const searchInput = document.getElementById('search-input');
+const mobileMenuBtn = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
 
-        document.querySelector(".hero h2").innerHTML = "আপনার ঘরকে সবুজে ভরিয়ে তুলুন";
-
-        document.querySelector(".hero p").innerHTML =
-        "স্বাস্থ্যকর ইনডোর ও আউটডোর গাছ সাশ্রয়ী মূল্যে। আপনার বাড়িকে আরও সুন্দর ও সবুজ করে তুলুন।";
-
-        document.querySelector(".btn").innerHTML = "গাছ দেখুন";
-
-        document.querySelector(".about h2").innerHTML = "আমাদের সম্পর্কে";
-
-        document.querySelector(".about p").innerHTML =
-        "গ্লোবাল গ্রিন প্ল্যান্ট ঘর, অফিস ও বাগানের জন্য উন্নত মানের গাছ সরবরাহ করে।";
-
-        document.querySelector(".contact h2").innerHTML = "যোগাযোগ করুন";
-
-    } else {
-
-        document.querySelector(".hero h2").innerHTML = "Bring Nature Into Your Home";
-
-        document.querySelector(".hero p").innerHTML =
-        "Healthy indoor and outdoor plants at affordable prices. Make your home greener and healthier.";
-
-        document.querySelector(".btn").innerHTML = "Explore Plants";
-
-        document.querySelector(".about h2").innerHTML = "About Us";
-
-        document.querySelector(".about p").innerHTML =
-        "Global Green Plant provides healthy and affordable plants for homes, offices and gardens.";
-
-        document.querySelector(".contact h2").innerHTML = "Contact Us";
-
+// Function to Render Plant Cards
+function displayPlants(products) {
+    plantGrid.innerHTML = '';
+    
+    if(products.length === 0) {
+        plantGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #666;">No premium plants found matching your search.</p>`;
+        return;
     }
 
-}
-// ===== Auto Slider =====
+    products.forEach(plant => {
+        // WhatsApp message for ordering
+        const whatsappMessage = encodeURIComponent(`Hello Global Green Plant! I would like to order the "${plant.name}" for ${plant.price}. Please let me know the delivery process.`);
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
 
-let slides = document.querySelectorAll(".slide");
-let dots = document.querySelectorAll(".dot");
-
-let current = 0;
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        dots[i].classList.remove("active");
+        const card = document.createElement('div');
+        card.classList.add('plant-card');
+        card.innerHTML = `
+            <img src="${plant.image}" alt="${plant.name}" class="plant-image">
+            <div class="plant-info">
+                <h3 class="plant-title">${plant.name}</h3>
+                <p class="plant-price">${plant.price}</p>
+                <p class="plant-desc">${plant.description}</p>
+                <a href="${whatsappUrl}" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Buy Now / Order via WhatsApp
+                </a>
+            </div>
+        `;
+        plantGrid.appendChild(card);
     });
-
-    slides[index].classList.add("active");
-    dots[index].classList.add("active");
 }
 
-setInterval(() => {
-    current++;
-    if (current >= slides.length) {
-        current = 0;
-    }
-    showSlide(current);
-}, 5000);
-function searchPlants(){
+// Live Search Filter Functionality
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredPlants = plants.filter(plant => 
+        plant.name.toLowerCase().includes(searchTerm) || 
+        plant.description.toLowerCase().includes(searchTerm)
+    );
+    displayPlants(filteredPlants);
+});
 
-    let input=document.getElementById("plantSearch").value.toLowerCase();
+// Mobile Responsive Navigation Toggle
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
 
-    let cards=document.querySelectorAll(".card");
-
-    cards.forEach(function(card){
-
-        let title=card.querySelector("h3").innerText.toLowerCase();
-
-        if(title.includes(input)){
-            card.style.display="block";
-        }else{
-            card.style.display="none";
-        }
-
+// Close Mobile Nav when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
     });
+});
 
-}
+// Initial Load execution
+window.addEventListener('DOMContentLoaded', () => {
+    displayPlants(plants);
+});
