@@ -3,142 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>গ্লোবাল গ্রীন প্লান্ট | আল্ট্রা লাক্সারি কালেকশন</title>
-    <!-- লাক্সারি গুগল ফন্টস -->
+    <title>গ্লোবাল গ্রীন প্লান্ট | দ্য আলটিমেট লাক্সারি কালেকশন</title>
+    <!-- ইন্টারন্যাশনাল লাক্সারি গুগল ফন্টস -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS এবং FontAwesome আইকন -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         body {
-            font-family: 'Hind Siliguri', 'Playfair Display', serif;
+            font-family: 'Hind Siliguri', 'Cormorant Garamond', serif;
         }
-        .luxury-text {
-            font-family: 'Cinzel', 'Hind Siliguri', serif;
+        .brand-title {
+            font-family: 'Cinzel Decorative', 'Hind Siliguri', serif;
+            text-shadow: 0 0 20px rgba(223, 197, 138, 0.4);
+        }
+        .luxury-gradient {
+            background: linear-gradient(135deg, #06130a 0%, #0f2b18 100%);
+        }
+        .gold-border {
+            border: 1px solid rgba(223, 197, 138, 0.3);
+        }
+        .gold-border:hover {
+            border: 1px solid rgba(223, 197, 138, 1);
+            box-shadow: 0 0 25px rgba(223, 197, 138, 0.15);
         }
     </style>
 </head>
-<body class="bg-[#faf9f5] text-[#1c2e21] antialiased">
+<body class="bg-[#fcfbfa] text-[#0f2516] antialiased">
 
-    <!-- ১. লাক্সারি হেডার -->
-    <header class="bg-[#0f2516] text-[#dfc58a] py-4 border-b border-[#dfc58a]/20 sticky top-0 z-50 shadow-2xl">
-        <div class="container mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <!-- ১. প্রিমিয়াম গ্লাস-মরফিক হেডার -->
+    <header class="bg-[#050f09]/95 text-[#dfc58a] py-5 border-b border-[#dfc58a]/10 sticky top-0 z-50 backdrop-blur-md shadow-2xl">
+        <div class="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <!-- লোগো ও ব্র্যান্ড নাম -->
-            <a href="#" class="text-center sm:text-left">
-                <h1 class="luxury-text text-2xl font-black tracking-widest text-[#dfc58a]">GLOBAL GREEN PLANT</h1>
-                <span class="text-xs uppercase tracking-[0.3em] text-white/60 block text-center sm:text-left">গ্লোবাল গ্রীন প্লান্ট</span>
+            <a href="#" class="text-center md:text-left group">
+                <h1 class="brand-title text-3xl md:text-4xl font-black tracking-widest text-[#dfc58a] transition duration-300 group-hover:text-white">GLOBAL GREEN PLANT</h1>
+                <span class="text-xs uppercase tracking-[0.4em] text-white/50 block mt-1">গ্লোবাল গ্রীন প্লান্ট</span>
             </a>
             
             <!-- মিনিমালিস্ট লাক্সারি সার্চ বার -->
-            <div class="w-full sm:w-80 relative">
-                <input type="text" placeholder="সন্ধান করুন..." class="w-full bg-white/5 border border-[#dfc58a]/30 rounded-full px-5 py-2 text-sm text-white focus:outline-none focus:border-[#dfc58a] transition placeholder-white/40">
-                <i class="fas fa-search absolute right-4 top-2.5 text-[#dfc58a]"></i>
+            <div class="w-full md:w-96 relative">
+                <input type="text" placeholder="আপনার রাজকীয় উদ্ভিদটি অনুসন্ধান করুন..." class="w-full bg-white/5 border border-[#dfc58a]/30 rounded-xl px-5 py-3 pr-12 text-sm text-white focus:outline-none focus:border-[#dfc58a] focus:ring-1 focus:ring-[#dfc58a] transition placeholder-white/30">
+                <button class="absolute right-4 top-3.5 text-[#dfc58a] hover:text-white transition">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- ২. আল্ট্রা-লাক্সারি হিরো সেকশন (ব্র্যান্ড নাম হাইলাইট) -->
-    <section class="relative h-[600px] flex items-center justify-center text-center bg-cover bg-fixed bg-center" 
-             style="background-image: linear-gradient(rgba(10, 26, 15, 0.75), rgba(10, 26, 15, 0.75)), url('https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=1600&q=80');">
-        <div class="max-w-4xl px-6 border-double border-4 border-[#dfc58a]/30 p-12 bg-[#0a1a0f]/40 backdrop-blur-xs rounded-3xl">
-            <!-- সুদৃশ্য পাতার আইকন -->
-            <div class="text-[#dfc58a] text-4xl mb-4 animate-pulse">
-                <i class="fas fa-crown"></i>
-            </div>
-            <!-- ওয়েবসাইটের নাম (সবচেয়ে সুন্দর ও রাজকীয় স্টাইলে) -->
-            <h1 class="luxury-text text-5xl md:text-7xl font-extrabold text-[#dfc58a] tracking-wider mb-4 leading-tight drop-shadow-lg">
+    <!-- ২. সিনেমাটিক হিরো সেকশন (চোখ ধাঁধানো প্রথম দর্শন) -->
+    <section class="relative h-[650px] flex items-center justify-center text-center bg-cover bg-fixed bg-center" 
+             style="background-image: linear-gradient(rgba(4, 14, 8, 0.8), rgba(4, 14, 8, 0.7)), url('https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=1800&q=80');">
+        <div class="max-w-4xl px-8 py-16 rounded-3xl relative overflow-hidden">
+            <!-- ডেকোরেটিভ কর্নার বর্ডার -->
+            <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#dfc58a]"></div>
+            <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#dfc58a]"></div>
+            <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#dfc58a]"></div>
+            <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#dfc58a]"></div>
+
+            <span class="text-[#dfc58a] text-xs uppercase tracking-[0.5em] font-semibold bg-white/5 px-4 py-2 rounded-full inline-block mb-6 border border-[#dfc58a]/20">The Elite Botanical Club</span>
+            
+            <!-- মূল হাইলাইটেড নাম -->
+            <h1 class="brand-title text-5xl md:text-7xl font-black text-[#dfc58a] tracking-normal mb-6 leading-tight">
                 গ্লোবাল গ্রীন প্লান্ট
             </h1>
-            <p class="text-white/80 text-lg md:text-xl font-light tracking-[0.15em] italic mb-8">
-                “অভিজাত ঘরের জন্য প্রকৃতির সর্বোত্তম উপহার”
+            <p class="text-white/90 text-lg md:text-2xl font-light italic max-w-2xl mx-auto mb-10 leading-relaxed">
+                “আমরা কেবল গাছ বিক্রি করি না, আপনার আবাসে আভিজাত্যের সতেজতা পৌঁছে দিই।”
             </p>
-            <a href="#collection" class="inline-block bg-[#dfc58a] hover:bg-[#cfb376] text-[#0a1a0f] font-bold text-sm tracking-widest uppercase py-4 px-10 rounded-full shadow-xl transition duration-300 transform hover:-translate-y-1">
-                এক্সক্লুসিভ কালেকশন (Buy Now)
-            </a>
+            
+            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+                <a href="#catalogue" class="bg-[#dfc58a] hover:bg-white text-[#050f09] font-bold text-sm tracking-widest uppercase py-4.5 px-12 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto">
+                    কালেকশন এক্সপ্লোর করুন
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- ৩. রাজকীয় প্রোডাক্ট সেকশন (নাম, দাম এবং অর্ডার অপশন) -->
-    <section id="collection" class="container mx-auto px-6 py-24">
-        <div class="text-center max-w-xl mx-auto mb-20">
-            <span class="text-[#amber-600] text-xs uppercase tracking-[0.4em] font-bold block mb-2">The Premium Selection</span>
-            <h2 class="luxury-text text-3xl md:text-4xl font-extrabold text-[#0f2516] mb-4">আমাদের প্রিমিয়াম ক্যাটালগ</h2>
-            <div class="flex items-center justify-center gap-2">
-                <div class="w-12 h-[1px] bg-[#dfc58a]"></div>
-                <i class="fas fa-seedling text-[#dfc58a] text-xs"></i>
-                <div class="w-12 h-[1px] bg-[#dfc58a]"></div>
+    <!-- ৩. ট্রাস্ট ব্যাজ সেকশন (কাস্টমারের বিশ্বাস অর্জনের জন্য) -->
+    <section class="bg-[#050f09] text-[#dfc58a] py-10 border-b border-[#dfc58a]/10">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-sm tracking-widest uppercase">
+            <div class="flex items-center justify-center gap-3 py-4">
+                <i class="fas fa-shipping-fast text-xl"></i>
+                <span>নিরাপদ ও প্রিমিয়াম স্পেশাল ডেলিভারি</span>
+            </div>
+            <div class="flex items-center justify-center gap-3 py-4 border-y md:border-y-0 md:border-x border-[#dfc58a]/20">
+                <i class="fas fa-ribbon text-xl"></i>
+                <span>১০০% গ্যারান্টিড সতেজ উদ্ভিদ</span>
+            </div>
+            <div class="flex items-center justify-center gap-3 py-4">
+                <i class="fas fa-crown text-xl"></i>
+                <span>অভিজাত কাস্টমার প্রিভিলেজ</span>
             </div>
         </div>
+    </section>
 
-        <!-- প্রোডাক্ট গ্রিড -->
+    <!-- ৪. রাজকীয় ক্যাটালগ (নাম, দাম, অর্ডার বাটন সহ) -->
+    <section id="catalogue" class="container mx-auto px-6 py-28">
+        <div class="text-center max-w-xl mx-auto mb-24">
+            <h2 class="brand-title text-3xl md:text-5xl font-extrabold text-[#050f09] mb-4">সিগনেচার কালেকশন</h2>
+            <p class="text-gray-400 italic text-sm">হাতে কলমে বাছাইকৃত আমাদের সবচেয়ে দামী ও বিলাসবহুল গাছপালা</p>
+            <div class="w-24 h-[1px] bg-[#dfc58a] mx-auto mt-6"></div>
+        </div>
+
+        <!-- ৩টি প্রিমিয়াম কার্ড -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- গাছ ১ -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-xl border border-[#dfc58a]/10 hover:border-[#dfc58a]/40 transition-all duration-300 group">
-                <div class="h-80 overflow-hidden bg-stone-100 relative">
-                    <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80" alt="Plant 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition duration-300"></div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl gold-border transition-all duration-500 group flex flex-col justify-between">
+                <div class="h-96 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=600&q=80" alt="Plant 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050f09] via-transparent to-transparent opacity-80"></div>
+                    <span class="absolute bottom-6 left-6 text-xs uppercase tracking-widest text-[#dfc58a] font-bold bg-[#050f09]/80 px-3 py-1 rounded-md border border-[#dfc58a]/30">Elite Pick</span>
                 </div>
-                <div class="p-8 text-center bg-[#0f2516] text-white">
-                    <h3 class="luxury-text text-2xl font-bold text-[#dfc58a] mb-2">রয়্যাল মনস্টেরা</h3>
-                    <p class="text-xl font-medium text-white/90 mb-6">৳ ১,২৫০</p>
-                    <a href="tel:+880123456789" class="block w-full border border-[#dfc58a] text-[#dfc58a] hover:bg-[#dfc58a] hover:text-[#0f2516] font-bold text-xs tracking-widest uppercase py-3.5 rounded-xl transition duration-300">
-                        <i class="fas fa-shopping-bag mr-2"></i> এখনই অর্ডার করুন
+                <div class="p-8 luxury-gradient text-center">
+                    <h3 class="brand-title text-2xl font-bold text-[#dfc58a] mb-2">মনস্টেরা এক্সক্লুসিভা</h3>
+                    <p class="text-xl text-white/90 font-light tracking-wider mb-6">৳ ১,৪৫০</p>
+                    <a href="tel:+880123456789" class="block w-full bg-transparent border-2 border-[#dfc58a] text-[#dfc58a] hover:bg-[#dfc58a] hover:text-[#050f09] font-bold text-xs tracking-widest uppercase py-4 rounded-xl transition-all duration-300 shadow-lg">
+                        <i class="fas fa-shopping-cart mr-2"></i> এখনই অর্ডার করুন
                     </a>
                 </div>
             </div>
 
             <!-- গাছ ২ -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-xl border border-[#dfc58a]/10 hover:border-[#dfc58a]/40 transition-all duration-300 group">
-                <div class="h-80 overflow-hidden bg-stone-100 relative">
-                    <img src="https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?auto=format&fit=crop&w=600&q=80" alt="Plant 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl gold-border transition-all duration-500 group flex flex-col justify-between">
+                <div class="h-96 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80" alt="Plant 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050f09] via-transparent to-transparent opacity-80"></div>
                 </div>
-                <div class="p-8 text-center bg-[#0f2516] text-white">
-                    <h3 class="luxury-text text-2xl font-bold text-[#dfc58a] mb-2">লাক্সারি স্নেক প্ল্যান্ট</h3>
-                    <p class="text-xl font-medium text-white/90 mb-6">৳ ৮৫০</p>
-                    <a href="tel:+880123456789" class="block w-full border border-[#dfc58a] text-[#dfc58a] hover:bg-[#dfc58a] hover:text-[#0f2516] font-bold text-xs tracking-widest uppercase py-3.5 rounded-xl transition duration-300">
-                        <i class="fas fa-shopping-bag mr-2"></i> এখনই অর্ডার করুন
+                <div class="p-8 luxury-gradient text-center">
+                    <h3 class="brand-title text-2xl font-bold text-[#dfc58a] mb-2">ভেরিগেটেড স্নেক মেজেস্টি</h3>
+                    <p class="text-xl text-white/90 font-light tracking-wider mb-6">৳ ৯৯০</p>
+                    <a href="tel:+880123456789" class="block w-full bg-transparent border-2 border-[#dfc58a] text-[#dfc58a] hover:bg-[#dfc58a] hover:text-[#050f09] font-bold text-xs tracking-widest uppercase py-4 rounded-xl transition-all duration-300 shadow-lg">
+                        <i class="fas fa-shopping-cart mr-2"></i> এখনই অর্ডার করুন
                     </a>
                 </div>
             </div>
 
             <!-- গাছ ৩ -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-xl border border-[#dfc58a]/10 hover:border-[#dfc58a]/40 transition-all duration-300 group">
-                <div class="h-80 overflow-hidden bg-stone-100 relative">
-                    <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80" alt="Plant 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl gold-border transition-all duration-500 group flex flex-col justify-between">
+                <div class="h-96 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80" alt="Plant 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050f09] via-transparent to-transparent opacity-80"></div>
                 </div>
-                <div class="p-8 text-center bg-[#0f2516] text-white">
-                    <h3 class="luxury-text text-2xl font-bold text-[#dfc58a] mb-2">গোল্ডেন ক্যাকটাস সেট</h3>
-                    <p class="text-xl font-medium text-white/90 mb-6">৳ ৬০০</p>
-                    <a href="tel:+880123456789" class="block w-full border border-[#dfc58a] text-[#dfc58a] hover:bg-[#dfc58a] hover:text-[#0f2516] font-bold text-xs tracking-widest uppercase py-3.5 rounded-xl transition duration-300">
-                        <i class="fas fa-shopping-bag mr-2"></i> এখনই অর্ডার করুন
+                <div class="p-8 luxury-gradient text-center">
+                    <h3 class="brand-title text-2xl font-bold text-[#dfc58a] mb-2">লাক্স ক্যাকটাস গোল্ড সেট</h3>
+                    <p class="text-xl text-white/90 font-light tracking-wider mb-6">৳ ৭৫০</p>
+                    <a href="tel:+880123456789" class="block w-full bg-transparent border-2 border-[#dfc58a] text-[#dfc58a] hover:bg-[#dfc58a] hover:text-[#050f09] font-bold text-xs tracking-widest uppercase py-4 rounded-xl transition-all duration-300 shadow-lg">
+                        <i class="fas fa-shopping-cart mr-2"></i> এখনই অর্ডার করুন
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ৪. এক্সক্লুসিভ কাস্টমার রিভিউ -->
-    <section class="bg-[#0a1a0f] text-white py-24 border-t border-[#dfc58a]/20">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h3 class="luxury-text text-3xl font-bold text-center text-[#dfc58a] mb-12">গ্রাহকদের অভিজ্ঞতা</h3>
-            <div class="bg-white/5 border border-[#dfc58a]/20 p-10 rounded-3xl text-center backdrop-blur-xs">
-                <div class="text-[#dfc58a] mb-4 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-white/80 italic text-lg leading-relaxed">"অসাধারণ সার্ভিস! গাছটির কোয়ালিটি যেমন প্রিমিয়াম, তেমনি তাদের কাস্টম গোল্ডেন প্যাকেজিং ঘরের সৌন্দর্য বাড়িয়ে দিয়েছে বহুগুণ।"</p>
-                <span class="block text-[#dfc58a] font-bold text-xs uppercase tracking-widest mt-6">— আহমেদ আসিফ, গুলশান</span>
+    <!-- ৫. হাই-এন্ড কাস্টমার রিভিউ -->
+    <section class="bg-[#050f09] text-white py-24 border-t border-[#dfc58a]/20">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h3 class="brand-title text-3xl font-bold text-[#dfc58a] mb-12">গ্রাহকদের রাজকীয় অভিজ্ঞতা</h3>
+            <div class="p-12 rounded-3xl bg-white/5 border border-[#dfc58a]/20 backdrop-blur-md relative">
+                <span class="text-6xl text-[#dfc58a]/20 absolute top-4 left-6 font-serif">“</span>
+                <p class="text-white/90 text-lg md:text-xl italic leading-relaxed">
+                    "গাছগুলো হাতে পাওয়ার পর মনে হলো সত্যিই কোনো লাক্সারি রিসোর্টে আছি। লিভিং রুমের চেহারাটাই পাল্টে গেছে। ওনাদের গোল্ডেন থিম প্যাকেজিং এবং কাস্টমার কেয়ার গাইডলাইন এক কথায় অনন্য!"
+                </p>
+                <span class="block text-[#dfc58a] font-bold text-xs uppercase tracking-[0.3em] mt-8">— সায়েম চৌধুরী, বনানী</span>
             </div>
         </div>
     </section>
 
-    <!-- ৫. মিনিমালিস্ট ফুটার -->
-    <footer class="bg-[#050d08] text-white/50 py-12 text-center text-xs tracking-widest border-t border-white/5">
-        <p class="text-[#dfc58a] font-bold mb-2 uppercase">GLOBAL GREEN PLANT</p>
+    <!-- ৬. ফুটার -->
+    <footer class="bg-[#030a06] text-white/40 py-16 text-center text-xs tracking-[0.2em] border-t border-white/5">
+        <p class="text-[#dfc58a] font-bold mb-3 uppercase tracking-[0.4em] text-sm">GLOBAL GREEN PLANT</p>
+        <p class="mb-6 text-white/60">The Epitome of Premium Botanical Lifestyle.</p>
         <p>&copy; ২০২৬ গ্লোবাল গ্রীন প্লান্ট। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-    <!-- লাক্সারি ফ্লোটিং কল বাটন (গোল্ডেন থিম) -->
-    <a href="tel:+880123456789" class="fixed bottom-6 right-6 bg-[#dfc58a] hover:bg-[#cfb376] text-[#0a1a0f] w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl z-50 border border-white/20 transition duration-300">
+    <!-- ফ্লোটিং লাক্সারি কল বাটন -->
+    <a href="tel:+880123456789" class="fixed bottom-8 right-8 bg-[#dfc58a] hover:bg-white text-[#050f09] w-16 h-16 rounded-xl flex items-center justify-center text-2xl shadow-2xl z-50 transition-all duration-300 border border-white/10 hover:rotate-12">
         <i class="fas fa-phone-alt"></i>
     </a>
 
