@@ -17,6 +17,45 @@
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3A2B] overflow-x-hidden">
 
+  <!-- নতুন যোগ করা হয়েছে: স্বাগতম পপ-আপ (Welcome Preference Popup) -->
+  <div id="welcome-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 transition-opacity duration-500">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl text-center border-2 border-[#D4AF37]/50 relative overflow-hidden">
+      <!-- ব্যাকগ্রাউন্ডে হালকা রাজকীয় ছোঁয়া -->
+      <div class="absolute -top-10 -right-10 w-32 h-32 bg-[#1A3A2B]/5 rounded-full"></div>
+      
+      <span class="text-[#D4AF37] text-2xl mb-2 block">🌿</span>
+      <h2 class="serif-font text-2xl md:text-3xl font-bold text-[#1A3A2B] mb-2">গ্লোবাল গ্রিন প্লান্টস-এ আপনাকে স্বাগতম!</h2>
+      <p class="text-gray-600 text-sm max-w-sm mx-auto mb-6">অভিজাত প্রকৃতির মাঝে আপনাকে স্বাগত জানাতে পেরে আমরা আনন্দিত। আজ আপনি কোন ধরণের গাছ খুঁজছেন?</p>
+      
+      <!-- অপশন বাটন সমূহ -->
+      <div class="grid grid-cols-2 gap-3 max-w-md mx-auto mb-4">
+        <button onclick="selectPreference('fruits')" class="p-3 border border-gray-200 hover:border-[#D4AF37] hover:bg-[#1A3A2B] hover:text-white rounded-xl text-sm font-medium transition duration-300 flex flex-col items-center gap-1 bg-[#FDFBF7]">
+          <span class="text-lg">🍎</span> ফল গাছ
+        </button>
+        <button onclick="selectPreference('flowers')" class="p-3 border border-gray-200 hover:border-[#D4AF37] hover:bg-[#1A3A2B] hover:text-white rounded-xl text-sm font-medium transition duration-300 flex flex-col items-center gap-1 bg-[#FDFBF7]">
+          <span class="text-lg">🌹</span> ফুল গাছ
+        </button>
+        <button onclick="selectPreference('indoor')" class="p-3 border border-gray-200 hover:border-[#D4AF37] hover:bg-[#1A3A2B] hover:text-white rounded-xl text-sm font-medium transition duration-300 flex flex-col items-center gap-1 bg-[#FDFBF7]">
+          <span class="text-lg">🪴</span> ইনডোর প্লান্টস
+        </button>
+        <button onclick="selectPreference('outdoor')" class="p-3 border border-gray-200 hover:border-[#D4AF37] hover:bg-[#1A3A2B] hover:text-white rounded-xl text-sm font-medium transition duration-300 flex flex-col items-center gap-1 bg-[#FDFBF7]">
+          <span class="text-lg">🌳</span> আউটডোর প্লান্টস
+        </button>
+      </div>
+      
+      <!-- ফুল উইডথ বাটন শেষ অপশনের জন্য -->
+      <div class="max-w-md mx-auto">
+        <button onclick="selectPreference('herbal')" class="w-full p-3 border border-gray-200 hover:border-[#D4AF37] hover:bg-[#1A3A2B] hover:text-white rounded-xl text-sm font-medium transition duration-300 flex items-center justify-center gap-2 bg-[#FDFBF7]">
+          <span class="text-lg">🍃</span> ভেষজ ও ঔষধি উদ্ভিদ
+        </button>
+      </div>
+
+      <button onclick="closeWelcomeModal()" class="mt-6 text-xs text-gray-400 underline hover:text-[#1A3A2B] transition block mx-auto">
+        সরাসরি ওয়েবসাইট দেখতে চাই
+      </button>
+    </div>
+  </div>
+
   <!-- ১. নেভিগেশন বার -->
   <header class="sticky top-0 z-40 bg-[#1A3A2B] text-white border-b border-[#D4AF37]/30 shadow-md">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -24,11 +63,12 @@
         <span class="serif-font text-xl md:text-2xl font-bold tracking-widest text-[#D4AF37]">GLOBAL GREEN</span>
         <span class="text-[10px] tracking-[0.3em] text-gray-300 uppercase -mt-1">Premium Plants Collection</span>
       </div>
-      <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wider">
+      <nav class="hidden md:flex space-x-6 text-sm font-medium tracking-wider">
         <a href="#fruits" class="hover:text-[#D4AF37] transition">ফল গাছ</a>
         <a href="#flowers" class="hover:text-[#D4AF37] transition">ফুল গাছ</a>
-        <a href="#indoor" class="hover:text-[#D4AF37] transition">ইনডোর প্লান্টস</a>
-        <a href="#reviews" class="hover:text-[#D4AF37] transition">রিভিউ</a>
+        <a href="#indoor" class="hover:text-[#D4AF37] transition">ইনডোর</a>
+        <a href="#outdoor" class="hover:text-[#D4AF37] transition">আউটডোর</a>
+        <a href="#herbal" class="hover:text-[#D4AF37] transition">ভেষজ</a>
       </nav>
       
       <div class="flex items-center space-x-4">
@@ -71,7 +111,7 @@
     </div>
   </div>
 
-  <!-- কেয়ার গাইড পপ-আপ মোডাল (Care Guide Popup) -->
+  <!-- কেয়ার গাইড পপ-আপ মোডাল -->
   <div id="care-modal" class="fixed inset-0 bg-black/60 z-50 invisible flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative border border-[#D4AF37]/30">
       <button onclick="closeCareModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
@@ -111,7 +151,7 @@
     </div>
   </section>
 
-  <!-- নতুন যোগ করা হয়েছে: লাক্সারি ট্রাস্ট ব্যাজ (Trust Badges) -->
+  <!-- লাক্সারি ট্রাস্ট ব্যাজ -->
   <section class="bg-white py-12 px-6 border-b border-gray-100">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
       <div class="p-4">
@@ -142,11 +182,9 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        <!-- ফল গাছ ১ -->
         <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
           <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=600" alt="মিয়াজাকি আম" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-4 left-4 bg-[#1A3A2B] text-white text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">Miyazaki Premium</span>
           </div>
           <div class="p-6 text-center">
             <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">মিয়াজাকি আম (সূর্যডিম)</h3>
@@ -155,38 +193,6 @@
             <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
               <span class="text-xl font-bold text-[#1A3A2B]">৳ ২,৫০০</span>
               <button onclick="addToCart('p1', 'মিয়াজাকি আম (সূর্যডিম)', 2500, 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=150')" class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ফল গাছ ২ -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
-          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?q=80&w=600" alt="থাই সিডলেস লেবু" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">থাই সিডলেস লেবু</h3>
-            <p class="text-gray-500 text-sm mt-2">বারোমাসি ফলনশীল এবং প্রচুর রসযুক্ত চারা গাছ।</p>
-            <button onclick="openCareModal('থাই সিডলেস লেবু', 'রোদ উজ্জ্বল আলো পছন্দ করে, দিনে ৪-৫ ঘণ্টা রোদ দরকার।', 'নিয়মিত পানি দিতে হবে তবে টবের নিচে পানি যেন জমে না থাকে।', 'অম্লীয় দোআঁশ মাটি এবং নাইট্রোজেন সমৃদ্ধ সার লেবু গাছের জন্য দারুণ কাজ করে।')" class="text-xs text-[#D4AF37] underline mt-2 block mx-auto hover:text-[#1A3A2B] transition">Care Guide 📋</button>
-            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-              <span class="text-xl font-bold text-[#1A3A2B]">৳ ৪০০</span>
-              <button onclick="addToCart('p2', 'থাই সিডলেস লেবু', 400, 'https://images.unsplash.com/photo-1528825871115-3581a5387919?q=80&w=150')" class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ফল গাছ ৩ -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
-          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?q=80&w=600" alt="সুপার ভাগুয়া বেদানা" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">সুপার ভাগুয়া বেদানা</h3>
-            <p class="text-gray-500 text-sm mt-2">গাঢ় লাল রঙের অত্যন্ত মিষ্টি ডালিমের উন্নত চারা।</p>
-            <button onclick="openCareModal('সুপার ভাগুয়া বেদানা', 'প্রচুর কড়া রোদ প্রয়োজন, ছায়ায় ফলন ভালো হয় না।', 'মাটি শুকিয়ে গেলে গভীরভাবে পানি দিন। ফল ধরার সময় পানির নিয়ম ঠিক রাখুন।', 'নরম বেলে-দোআঁশ মাটি এবং নিয়মিত পটাশ ও ফসফরাস যুক্ত জৈব সার দিন।')" class="text-xs text-[#D4AF37] underline mt-2 block mx-auto hover:text-[#1A3A2B] transition">Care Guide 📋</button>
-            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-              <span class="text-xl font-bold text-[#1A3A2B]">৳ ৮封৫০</span>
-              <button onclick="addToCart('p3', 'সুপার ভাগুয়া বেদানা', 850, 'https://images.unsplash.com/photo-1595855759920-86582396756a?q=80&w=150')" class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
             </div>
           </div>
         </div>
@@ -204,51 +210,17 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        <!-- ফুল গাছ ১ -->
         <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
           <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600" alt="ব্ল্যাক ব্যাকারাত গোলাপ" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-4 left-4 bg-[#D4AF37] text-[#1A3A2B] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Rare Variety</span>
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600" alt="গোলাপ" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           </div>
           <div class="p-6 text-center">
             <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">ব্ল্যাক ব্যাকারাত গোলাপ</h3>
-            <p class="text-gray-500 text-sm mt-2">ফরাসি মখমলের মতো কালচে লাল রঙের রাজকীয় গোলাপ গাছ।</p>
+            <p class="text-gray-500 text-sm mt-2">ফরাসি মখমেলের মতো কালচে লাল রঙের রাজকীয় গোলাপ গাছ।</p>
             <button onclick="openCareModal('ব্ল্যাক ব্যাকারাত গোলাপ', 'সকালের নরম রোদ খুব পছন্দ করে। দুপুরের কড়া রোদ থেকে দূরে রাখুন।', 'গাছের গোড়ায় স্প্রে করে পানি দিন, পাতা যেন সবসময় ভেজা না থাকে।', 'হাড়ের গুঁড়ো ও কম্পোস্ট সার মাটির সাথে মিশিয়ে ব্যবহার করুন।')" class="text-xs text-[#D4AF37] underline mt-2 block mx-auto hover:text-[#1A3A2B] transition">Care Guide 📋</button>
             <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
               <span class="text-xl font-bold text-[#1A3A2B]">৳ ৫০০</span>
               <button onclick="addToCart('p4', 'ব্ল্যাক ব্যাকারাত গোলাপ', 500, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=150')" class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ফুল গাছ ২ -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
-          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=600" alt="অ্যাডেনিয়াম" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">অ্যাডেনিয়াম (মরু গোলাপ)</h3>
-            <p class="text-gray-500 text-sm mt-2">চমৎকার গ্রাফটেড ডাবল পেটাল ফুল সহ রাজকীয় বোনসাই লুক।</p>
-            <button onclick="openCareModal('অ্যাডেনিয়াম (মরু গোলাপ)', 'সম্পূর্ণ রোদে রাখুন। যত রোদ পাবে তত বেশি ফুল ফুটবে।', 'খুবই কম পানি দিন। গোড়ায় পানি জমলে কডেক্স পচে গাছ মারা যাবে।', 'বেলে মাটি ও ইটের কুচি মিশ্রিত ওয়েল-ড্রেইন্ড মাটি ব্যবহার করতে হবে।')" class="text-xs text-[#D4AF37] underline mt-2 block mx-auto hover:text-[#1A3A2B] transition">Care Guide 📋</button>
-            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-              <span class="text-xl font-bold text-[#1A3A2B]">৳ ১,২০০</span>
-              <button onclick="addToCart('p5', 'অ্যাডেনিয়াম (মরু গোলাপ)', 1200, 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=150')" class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ফুল গাছ ৩ -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
-          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1550950158-d0d960dff51b?q=80&w=600" alt="থাই অর্কিড" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">প্রিমিয়াম থাই অর্কিড</h3>
-            <p class="text-gray-500 text-sm mt-2">ইনডোর এবং বারান্দার সৌন্দর্য বাড়াতে দীর্ঘস্থায়ী ডেনড্রোবিয়াম অর্কিড।</p>
-            <button onclick="openCareModal('থাই অর্কিড', 'পরোক্ষ উজ্জ্বল আলো (Indirect Sunlight) বা সেমি-শেড এরিয়া বেস্ট।', 'সাধারণ মাটির মতো পানি দেওয়া যাবে না, শিকড়ে স্প্রে করে আর্দ্রতা রাখুন।', 'মাটির বদলে কয়লা, নারিকেলের ছোবড়া ও ফার্ন রুট মিডিয়া হিসেবে ব্যবহার করুন।')" class="text-xs text-[#D4AF37] underline mt-2 block mx-auto hover:text-[#1A3A2B] transition">Care Guide 📋</button>
-            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-              <span class="text-xl font-bold text-[#1A3A2B]">৳ ১,৪৫০</span>
-              <button onclick="addToCart('p6', 'প্রিমিয়াম থাই অর্কিড', 1450, 'https://images.unsplash.com/photo-1550950158-d0d960dff51b?q=80&w=150')" class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
             </div>
           </div>
         </div>
@@ -266,11 +238,9 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        <!-- ইনডোর ১ -->
         <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
           <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=600" alt="মনস্টেরা" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-4 left-4 bg-[#1A3A2B] text-white text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">Top Choice</span>
           </div>
           <div class="p-6 text-center">
             <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">মনস্টেরা ডেলিসিওসা</h3>
@@ -282,43 +252,31 @@
             </div>
           </div>
         </div>
-
-        <!-- ইনডোর ২ -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
-          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=600" alt="স্নেক প্লান্ট" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">ভ্যারিয়েগেটেড স্নেক প্লান্ট</h3>
-            <p class="text-gray-500 text-sm mt-2">বেডরুমের বাতাস বিশুদ্ধ করার পাশাপাশি এটি লাক্সারি মডার্ন লুক দেয়।</p>
-            <button onclick="openCareModal('স্নেক প্লান্ট', 'কম আলোতেও বেঁচে থাকে, ঘরের যেকোনো কোণায় রাখা যায়।', 'খুবই কম পানির প্রয়োজন। ১০-১২ দিনে ১ বার পানি দিলেও চলে।', 'অতিরিক্ত পানি দিলে গোড়া পচে যেতে পারে, তাই মাটি খটখটে শুকানো পর্যন্ত অপেক্ষা করুন।')" class="text-xs text-[#D4AF37] underline mt-2 block mx-auto hover:text-[#1A3A2B] transition">Care Guide 📋</button>
-            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
-              <span class="text-xl font-bold text-[#1A3A2B]">৳ ৬৫০</span>
-              <button onclick="addToCart('p8', 'ভ্যারিয়েগেটেড স্নেক প্লান্ট', 650, 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=150')" class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ইনডোর ৩ -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
-          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1597055181300-e3633a207518?q=80&w=600" alt="ফিডল লিফ ফিগ" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">ফিডল লিফ ফিগ</h3>
-            <p class="text-gray-500 text-sm mt-2">অফিস বা স্টাডি রুমের কর্নারের শোভা বাড়ানোর চমৎকার আকর্ষনীয় গাছ।</p>
-            <button onclick="openCareModal('ফিডল লিফ ফিগ', 'উজ্জ্বল পরোক্ষ রোদ (Indirect sunlight) পছন্দ করে। জানালা বা বারান্দার পাশে ভালো হয়।', 'মাটির ওপরের ২ ইঞ্চি শুকিয়ে গেলে পরিমিত পানি দিন।', 'গাছটির দিক পরিবর্তন করে রাখুন যাতে সবদিকের পাতা সমান আলো পায়।')" class="text-xs text-[#D4AF37] underline mt-2 block mx-auto hover:text-[#1A3A2B] transition">Care Guide 📋</button>
-            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
-              <span class="text-xl font-bold text-[#1A3A2B]">৳ ১,৮০০</span>
-              <button onclick="addToCart('p9', 'ফিডল লিফ ফিগ', 1800, 'https://images.unsplash.com/photo-1597055181300-e3633a207518?q=80&w=150')" class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- নতুন যোগ করা হয়েছে: প্রিমিয়াম কাস্টমার রিভিউ সেকশন (Reviews Section) -->
+  <!-- নতুন সেকশন হোল্ডার: আউটডোর প্লান্টস -->
+  <section id="outdoor" class="py-20 px-6 bg-[#F5F2EB]/50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto text-center">
+      <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-bold block">Grand Exterior</span>
+      <h2 class="serif-font text-3xl md:text-4xl font-bold mt-2 text-[#1A3A2B]">প্রিমিয়াম আউটডোর প্লান্টস</h2>
+      <div class="w-20 h-[2px] bg-[#D4AF37] mx-auto mt-4 mb-10"></div>
+      <p class="text-gray-400 text-sm italic">আউটডোর কালেকশনটি দ্রুতই আমাদের স্টোরে আপলোড করা হচ্ছে...</p>
+    </div>
+  </section>
+
+  <!-- নতুন সেকশন হোল্ডার: ভেষজ ও ঔষধি উদ্ভিদ -->
+  <section id="herbal" class="py-20 px-6 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto text-center">
+      <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-bold block">Natural Wellness</span>
+      <h2 class="serif-font text-3xl md:text-4xl font-bold mt-2 text-[#1A3A2B]">ভেষজ ও ঔষধি উদ্ভিদ</h2>
+      <div class="w-20 h-[2px] bg-[#D4AF37] mx-auto mt-4 mb-10"></div>
+      <p class="text-gray-400 text-sm italic">সেরা সব ঔষধি গাছের কালেকশনটি দ্রুতই আমাদের স্টোরে আপলোড করা হচ্ছে...</p>
+    </div>
+  </section>
+
+  <!-- প্রিমিয়াম কাস্টমার রিভিউ সেকশন -->
   <section id="reviews" class="py-20 px-6 bg-[#1A3A2B] text-white">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
@@ -326,12 +284,10 @@
         <h2 class="serif-font text-3xl md:text-4xl font-bold mt-2">আমাদের সম্মানিত ক্রেতাদের মতামত</h2>
         <div class="w-20 h-[2px] bg-[#D4AF37] mx-auto mt-4"></div>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- রিভিউ ১ -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
           <div class="text-[#D4AF37] text-xl mb-4">★★★★★</div>
-          <p class="text-gray-300 text-sm italic font-light">"আমি এখান থেকে মিয়াজাকি আম আর মনস্টেরা কিনেছি। গাছের প্যাকেজিং এবং কোয়ালিটি সত্যি রাজকীয় ছিল। ড্রয়িং রুমের সৌন্দর্য পুরো বদলে গেছে।"</p>
+          <p class="text-gray-300 text-sm italic font-light">"আমি এখান থেকে মিয়াজাকি আম আর মনস্টেরা কিনেছি। গাছের প্যাকেজিং এবং কোয়ালিটি সত্যি রাজকীয় ছিল।"</p>
           <div class="mt-6 flex items-center space-x-3">
             <div class="h-10 w-10 rounded-full bg-[#D4AF37]/30 flex items-center justify-center font-bold text-[#D4AF37]">ন</div>
             <div>
@@ -340,37 +296,11 @@
             </div>
           </div>
         </div>
-
-        <!-- রিভিউ ২ -->
-        <div class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
-          <div class="text-[#D4AF37] text-xl mb-4">★★★★★</div>
-          <p class="text-gray-300 text-sm italic font-light">"অনলাইন থেকে এত সতেজ আর প্রিমিয়াম কডেক্সের অ্যাডেনিয়াম পাওয়া যায়, তা আমার জানা ছিল না। কেয়ার গাইড অপশনটা খুব হেল্পফুল।"</p>
-          <div class="mt-6 flex items-center space-x-3">
-            <div class="h-10 w-10 rounded-full bg-[#D4AF37]/30 flex items-center justify-center font-bold text-[#D4AF37]">আ</div>
-            <div>
-              <h4 class="font-semibold text-sm">আসিফ চৌধুরী</h4>
-              <p class="text-gray-400 text-xs">চট্টগ্রাম</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- রিভিউ ৩ -->
-        <div class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
-          <div class="text-[#D4AF37] text-xl mb-4">★★★★★</div>
-          <p class="text-gray-300 text-sm italic font-light">"ওয়েবসাইটের লুক এবং শপিং কার্ট সিস্টেমটা খুব চমৎকার। অর্ডার করার ৩ দিনের মধ্যে সুরক্ষিত কাঠের বাক্সে গাছ পেয়েছি।"</p>
-          <div class="mt-6 flex items-center space-x-3">
-            <div class="h-10 w-10 rounded-full bg-[#D4AF37]/30 flex items-center justify-center font-bold text-[#D4AF37]">ম</div>
-            <div>
-              <h4 class="font-semibold text-sm">মাহমুদ হাসান</h4>
-              <p class="text-gray-400 text-xs">সিলেট</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ৬. ফুটার -->
+  <!-- ফুটার -->
   <footer class="bg-[#1A3A2B] text-gray-400 py-12 px-6 border-t border-[#D4AF37]/30">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="text-center md:text-left">
@@ -384,6 +314,21 @@
   <!-- জাভাস্ক্রিপ্ট লজিক -->
   <script>
     let cart = [];
+
+    // স্বাগতম পপ-আপ বন্ধ এবং স্ক্রোল লজিক
+    function closeWelcomeModal() {
+      document.getElementById('welcome-modal').style.display = 'none';
+    }
+
+    function selectPreference(sectionId) {
+      closeWelcomeModal();
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        setTimeout(() => {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
 
     function toggleCart() {
       const drawer = document.getElementById('cart-drawer');
@@ -467,7 +412,6 @@
       cartTotal.innerText = `৳ ${totalCost.toLocaleString('bn-BD')}`;
     }
 
-    // কেয়ার গাইড পপ-আপ লজিক
     function openCareModal(name, light, water, care) {
       document.getElementById('modal-plant-name').innerText = name;
       document.getElementById('modal-plant-light').innerText = light;
