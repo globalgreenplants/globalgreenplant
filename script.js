@@ -60,3 +60,22 @@ setInterval(() => {
     }
     showSlide(current);
 }, 5000);
+function searchPlants(){
+
+    let input=document.getElementById("plantSearch").value.toLowerCase();
+
+    let cards=document.querySelectorAll(".card");
+
+    cards.forEach(function(card){
+
+        let title=card.querySelector("h3").innerText.toLowerCase();
+
+        if(title.includes(input)){
+            card.style.display="block";
+        }else{
+            card.style.display="none";
+        }
+
+    });
+
+}
