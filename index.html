@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Global Green Plants | Dynamic Nursery</title>
+  <title>Global Green Plants | Premium Nursery</title>
   
   <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +17,7 @@
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3A2B] overflow-x-hidden">
 
-  <!-- 🟢 রিয়েল-টাইม কাস্টমার অ্যাসিস্ট্যান্ট মোডাল -->
+  <!-- 🟢 রিয়েল-টাইম কাস্টমার অ্যাসিস্ট্যান্ট মোডাল -->
   <div id="assistant-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl border-2 border-[#D4AF37] relative">
       <div class="text-center">
@@ -26,7 +26,7 @@
         </div>
         <span class="text-xs uppercase tracking-widest text-[#D4AF37] font-bold">Customer Care Assistant</span>
         
-        <!-- ধাপ ১ -->
+        <!--  ধাপ ১ -->
         <div id="step-1" class="mt-4">
           <h3 class="serif-font text-2xl font-bold text-[#1A3A2B] mb-4">হ্যালো স্যার / ম্যাডাম, <br>আপনি কেমন আছেন?</h3>
           <p class="text-gray-600 text-sm mb-6">গ্লোবাল গ্রিন প্লান্টস-এ আপনাকে স্বাগত। আজ আমরা আপনাকে কীভাবে সাহায্য করতে পারি?</p>
@@ -35,19 +35,19 @@
           </button>
         </div>
 
-        <!-- ধাপ ২ -->
+        <!--  ধাপ ২ -->
         <div id="step-2" class="mt-4 hidden">
           <h3 class="serif-font text-xl font-bold text-[#1A3A2B] mb-2">ধন্যবাদ।</h3>
           <p class="text-gray-600 text-sm mb-6">অনুগ্রহ করে নিচের অপশন থেকে বেছে নিন, আপনি আজ কোন প্রজাতির গাছ খুঁজতে চান?</p>
           <div class="grid grid-cols-2 gap-3 max-w-md mx-auto">
-            <button onclick="selectCategory('fruits')" class="p-3 border border-gray-200 hover:border-[#D4AF37] rounded-xl text-xs font-semibold bg-[#FDFBF7] hover:bg-[#1A3A2B]/5 transition">🍎 फल গাছ</button>
+            <button onclick="selectCategory('fruits')" class="p-3 border border-gray-200 hover:border-[#D4AF37] rounded-xl text-xs font-semibold bg-[#FDFBF7] hover:bg-[#1A3A2B]/5 transition">🍎 ফল গাছ</button>
             <button onclick="selectCategory('flowers')" class="p-3 border border-gray-200 hover:border-[#D4AF37] rounded-xl text-xs font-semibold bg-[#FDFBF7] hover:bg-[#1A3A2B]/5 transition">🌹 ফুল গাছ</button>
             <button onclick="selectCategory('indoor')" class="p-3 border border-gray-200 hover:border-[#D4AF37] rounded-xl text-xs font-semibold bg-[#FDFBF7] hover:bg-[#1A3A2B]/5 transition">🪴 ইনডোর প্লান্টস</button>
             <button onclick="selectCategory('outdoor')" class="p-3 border border-gray-200 hover:border-[#D4AF37] rounded-xl text-xs font-semibold bg-[#FDFBF7] hover:bg-[#1A3A2B]/5 transition">🌳 আউটডোর প্লান্টস</button>
           </div>
         </div>
 
-        <!-- ধাপ ৩: আপসেল বাটন -->
+        <!--  ধাপ ৩ -->
         <div id="step-3" class="mt-4 hidden text-left">
           <div class="text-center mb-4">
             <h3 class="serif-font text-lg font-bold text-[#1A3A2B]">ম্যাম / স্যার, আপনার জন্য আরও একটি বেস্ট চয়েস এটি হতে পারে:</h3>
@@ -55,7 +55,7 @@
           <div class="border border-[#D4AF37]/50 rounded-xl overflow-hidden bg-[#FDFBF7] p-4 flex gap-4 items-center mb-6">
             <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=150" class="w-20 h-20 object-cover rounded-lg border">
             <div class="flex-1">
-              <h4 class="serif-font font-bold text-[#1A3A2B] text-sm">ইনডোর এয়ার-পিуриফায়ার প্লান্ট</h4>
+              <h4 class="serif-font font-bold text-[#1A3A2B] text-sm">ইনডোর এয়ার-পিউরিফায়ার প্লান্ট</h4>
               <span class="font-bold text-[#1A3A2B] text-sm block mt-1">৳ ১,২০০</span>
             </div>
           </div>
@@ -137,18 +137,25 @@
   </section>
 
 
-  <!-- 🌟 নতুন প্রোডাক্ট আপলোড করার অ্যাডমিন প্যানেল (সরাসরি পেজে যুক্ত) -->
+  <!-- 🌟 আপডেট করা ম্যানেজার প্যানেল (ফাইল আপলোড সুবিধা সহ) -->
   <section class="bg-white border-t-2 border-[#D4AF37] p-8 max-w-2xl mx-auto my-12 rounded-2xl shadow-xl">
     <div class="text-center mb-6">
       <span class="text-2xl">⚙️</span>
-      <h2 class="serif-font text-xl font-bold text-[#1A3A2B]">ম্যানেজার প্যানেল (নতুন গাছ যুক্ত করুন)</h2>
-      <p class="text-gray-500 text-xs mt-1">এখানে গাছ অ্যাড করলে তা সরাসরি উপরে ক্যাটাগরি অনুযায়ী সেভ হয়ে যাবে।</p>
+      <h2 class="serif-font text-xl font-bold text-[#1A3A2B]">ম্যানেজার প্যানেল (গাছ পরিচালনা করুন)</h2>
+      <p class="text-gray-500 text-xs mt-1">এখানে গাছ অ্যাড করতে পারবেন এবং ভুল হলে ডিলিট মোড অন করে মুছে দিতে পারবেন।</p>
+    </div>
+
+    <!-- ডিলিট মোড অন/অফ বাটন -->
+    <div class="flex justify-center mb-6">
+      <button id="delete-mode-btn" onclick="toggleDeleteMode()" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-xl text-xs font-bold transition shadow-sm">
+        🗑️ ডিলিট মোড অন করুন (লুকানো বাটন দেখাবে)
+      </button>
     </div>
     
-    <form id="product-form" class="space-y-4">
+    <form id="product-form" class="space-y-4 pt-4 border-t border-dashed">
       <div>
         <label class="block text-xs font-bold uppercase text-gray-600 mb-1">গাছের নাম (বাংলা বা ইংরেজি)</label>
-        <input type="text" id="prod-name" placeholder="উদা: মিয়াজاکی আম বা Mango Tree" class="w-full p-3 border rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required>
+        <input type="text" id="prod-name" placeholder="উদা: মিয়াজاکی আম বা মনস্টেরা" class="w-full p-3 border rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required>
       </div>
       
       <div class="grid grid-cols-2 gap-4">
@@ -167,6 +174,13 @@
         </div>
       </div>
 
+      <!-- 📸 নতুন যুক্ত করা ছবি আপলোড সেকশন -->
+      <div>
+        <label class="block text-xs font-bold uppercase text-gray-600 mb-1">গাছের আসল ছবি সিলেক্ট করুন</label>
+        <input type="file" id="prod-image-file" accept="image/*" class="w-full p-2.5 border rounded-xl text-sm bg-[#FDFBF7]" required>
+        <p class="text-[11px] text-gray-400 mt-1">আপনার গ্যালারি বা কম্পিউটার থেকে সরাসরি পরিষ্কার ছবি আপলোড করুন।</p>
+      </div>
+
       <button type="submit" class="w-full bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] py-3.5 rounded-xl font-bold text-sm transition shadow-md">
         ✨ ওয়েবসাইটে আপলোড করুন
       </button>
@@ -177,24 +191,54 @@
   <!-- লজিক ও ফাংশনালিটি স্ক্রিপ্ট -->
   <script>
     let cart = [];
+    let isDeleteModeActive = false;
     
-    // ডেমো বা প্রাথমিক কিছু ডেটা (যদি আগে থেকে কিছু না থাকে)
+    // ডিফল্ট বা প্রারম্ভিক কিছু ইমেজ যা সচল আছে
     const defaultProducts = [
       { id: 'd1', name: 'মিয়াজاکی আম (সূর্যডিম)', price: 2500, category: 'fruits', img: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=300' },
       { id: 'd2', name: 'ব্ল্যাক ব্যাকারাত গোলাপ', price: 500, category: 'flowers', img: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=300' },
       { id: 'd3', name: 'মনস্টেরা ডেলিসিওসা', price: 1500, category: 'indoor', img: 'https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=300' }
     ];
 
-    // লোকাল স্টোরেজ থেকে প্রোডাক্ট লোড করা
     let products = JSON.parse(localStorage.getItem('nursery_products')) || defaultProducts;
 
-    // পেজ লোড হলে প্রোডাক্টগুলো ডিসপ্লে করা
     window.onload = function() {
       renderProducts();
     };
 
+    function toggleDeleteMode() {
+      isDeleteModeActive = !isDeleteModeActive;
+      const btn = document.getElementById('delete-mode-btn');
+      
+      if (isDeleteModeActive) {
+        btn.innerText = "🛑 ডিলিট মোড বন্ধ করুন";
+        btn.className = "bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-xl text-xs font-bold transition shadow-sm";
+      } else {
+        btn.innerText = "🗑️ ডিলিট মোড অন করুন (লুকানো বাটন দেখাবে)";
+        btn.className = "bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-xl text-xs font-bold transition shadow-sm";
+      }
+      
+      const deleteButtons = document.querySelectorAll('.delete-product-btn');
+      deleteButtons.forEach(button => {
+        if (isDeleteModeActive) button.classList.remove('hidden');
+        else button.classList.add('hidden');
+      });
+    }
+
+    function deleteProduct(id) {
+      if (confirm('আপনি কি নিশ্চিত যে এই গাছটি ওয়েবসাইট থেকে ডিলিট করতে চান?')) {
+        products = products.filter(p => p.id !== id);
+        localStorage.setItem('nursery_products', JSON.stringify(products));
+        renderProducts();
+        
+        if (isDeleteModeActive) {
+          const deleteButtons = document.querySelectorAll('.delete-product-btn');
+          deleteButtons.forEach(button => button.classList.remove('hidden'));
+        }
+      }
+    }
+
     function renderProducts() {
-      // কন্টেইনার খালি করা
       document.getElementById('fruits-container').innerHTML = '';
       document.getElementById('flowers-container').innerHTML = '';
       document.getElementById('indoor-container').innerHTML = '';
@@ -202,8 +246,12 @@
 
       products.forEach(p => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-xl overflow-hidden border p-4 text-center shadow-sm hover:shadow-md transition';
+        card.className = 'bg-white rounded-xl overflow-hidden border p-4 text-center shadow-sm hover:shadow-md transition relative';
+        
         card.innerHTML = `
+          <button onclick="deleteProduct('${p.id}')" class="delete-product-btn hidden absolute top-2 right-2 bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-red-800 transition shadow z-10">
+            ✕
+          </button>
           <img src="${p.img}" class="w-full h-48 object-cover rounded-lg mb-3 bg-gray-100">
           <h3 class="serif-font font-bold text-sm text-[#1A3A2B] h-10 flex items-center justify-center">${p.name}</h3>
           <div class="flex items-center justify-between mt-3 pt-2 border-t border-gray-50">
@@ -217,33 +265,42 @@
       });
     }
 
-    // 🌟 ফরম সাবমিট হ্যান্ডলার (নতুন প্রোডাক্ট আপলোড লজিক)
+    // 🌟 নতুন ইমেজ প্রসেসিং ও ফরম সাবমিশন ইঞ্জিন
     document.getElementById('product-form').addEventListener('submit', function(e) {
       e.preventDefault();
       
       const name = document.getElementById('prod-name').value;
       const price = parseInt(document.getElementById('prod-price').value);
       const category = document.getElementById('prod-cat').value;
+      const fileInput = document.getElementById('prod-image-file');
       
-      // অটোমেটিক ছবি খোঁজার কি-ওয়ার্ড (নামের ওপর ভিত্তি করে)
-      const searchQuery = encodeURIComponent(name);
-      // Unsplash Source এর মাধ্যমে সরাসরি রিলিজিয়াস বা রিয়েল ছবি জেনারেট করা
-      const autoImgUrl = `https://source.unsplash.com/featured/400x300/?plant,${searchQuery}`;
-
-      const newProduct = {
-        id: 'p_' + Date.now(),
-        name: name,
-        price: price,
-        category: category,
-        img: autoImgUrl
-      };
-
-      products.push(newProduct);
-      localStorage.setItem('nursery_products', JSON.stringify(products)); // ব্রাউজারে পাকাপাকি সেভ
+      const file = fileInput.files[0];
       
-      renderProducts(); // নতুন প্রোডাক্টসহ রি-রেন্ডার
-      document.getElementById('product-form').reset(); // ফরম খালি করা
-      alert('🎉 সফলভাবে আপনার গাছটি সঠিক ছবিসহ লাইভ আপলোড হয়েছে!');
+      if (file) {
+        const reader = new FileReader();
+        
+        // ফাইলটিকে সরাসরি ডেটা ইমেজে রূপান্তর করা হচ্ছে
+        reader.onload = function(event) {
+          const finalImgUrl = event.target.result;
+          
+          const newProduct = {
+            id: 'p_' + Date.now(),
+            name: name,
+            price: price,
+            category: category,
+            img: finalImgUrl
+          };
+
+          products.push(newProduct);
+          localStorage.setItem('nursery_products', JSON.stringify(products));
+          
+          renderProducts();
+          document.getElementById('product-form').reset();
+          alert('🎉 সফলভাবে আপনার গাছটি আসল ছবিসহ লাইভ আপলোড হয়েছে!');
+        };
+        
+        reader.readAsDataURL(file);
+      }
     });
 
     // কাস্টমার অ্যাসিস্ট্যান্ট কন্ট্রোল
@@ -278,7 +335,7 @@
       toggleCart();
     }
 
-    // কার্ট ইঞ্জিন লজিক
+    // কার্ট ইঞ্জিন
     function addToCartItems(id, name, price, img) {
       const existingItem = cart.find(item => item.id === id);
       if (existingItem) { existingItem.quantity += 1; } 
