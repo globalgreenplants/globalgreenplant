@@ -19,6 +19,22 @@
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3A2B] overflow-x-hidden antialiased">
 
+  <!-- 🌟 নতুন যুক্ত হওয়া কাস্টমার ওয়েলকাম পপ-আপ মোডাল -->
+  <div id="welcome-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-md">
+    <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl text-center border-t-4 border-[#D4AF37] relative transform scale-100 transition-all duration-300">
+      <div class="text-5xl mb-4 animate-bounce">🌿</div>
+      <h2 class="serif-font text-3xl font-bold text-[#1A3A2B] mb-2">স্বাগতম!</h2>
+      <p class="text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4">Global Green Plants</p>
+      <div class="w-12 h-[2px] bg-gray-200 mx-auto mb-4"></div>
+      <p class="text-gray-600 text-sm leading-relaxed mb-6">
+        আমাদের প্রিমিয়াম লাক্সারি নার্সারিতে আপনাকে আন্তরিক শুভেচ্ছা। আপনার বাগানকে সতেজ ও নান্দনিক করে তুলতে আমরা নিয়ে এসেছি দেশী-বিদেশী সেরা প্রজাতির গাছের ক্যাটালগ।
+      </p>
+      <button onclick="closeWelcomeModal()" class="w-full gold-gradient text-[#1A3A2B] py-3.5 rounded-xl font-bold text-sm tracking-wide transition shadow-md">
+        💚 ধন্যবাদ, কেনাকাটা শুরু করুন
+      </button>
+    </div>
+  </div>
+
   <!-- 💳 পেমেন্ট এবং ডেলিভারি ফর্ম মোডাল -->
   <div id="checkout-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden">
     <div class="bg-white rounded-3xl max-w-xl w-full p-6 md:p-8 shadow-2xl border-t-4 border-[#1A3A2B] relative max-h-[90vh] overflow-y-auto">
@@ -298,6 +314,11 @@
       updateSuccessModalFields();
     };
 
+    // 🌟 ওয়েলকাম মোডাল বন্ধ করার ফাংশন
+    function closeWelcomeModal() {
+      document.getElementById('welcome-modal').classList.add('hidden');
+    }
+
     function loadSettingsIntoDashboard() {
       document.getElementById('setup-whatsapp').value = myWhatsAppNumber;
       document.getElementById('setup-bkash').value = myBkashNo;
@@ -340,7 +361,6 @@
     function filterCatalog(category) {
       currentSelectedCategory = category;
       
-      // বাটন স্টাইল পরিবর্তন
       const categories = ['all', 'fruits', 'flowers', 'indoor', 'outdoor'];
       categories.forEach(cat => {
         const btn = document.getElementById(`cat-btn-${cat}`);
@@ -369,7 +389,6 @@
       
       updateCategoryCounters();
 
-      // বর্তমান ক্যাটালগ অনুযায়ী ফিল্টার করা
       const filteredProducts = currentSelectedCategory === 'all' 
         ? products 
         : products.filter(p => p.category === currentSelectedCategory);
