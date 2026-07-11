@@ -87,17 +87,16 @@
       <h3 class="serif-font text-2xl font-bold text-green-700 mb-1">আপনার অর্ডারটি সাবমিট হয়েছে!</h3>
       <p class="text-gray-500 text-xs mb-4">নিচের পেমেন্ট তথ্যটি দেখে নিন এবং অর্ডারটি চূড়ান্ত করতে হোয়াটসঅ্যাপে জানান।</p>
       
-      <!-- 💳 অনলাইন পেমেন্ট ইনস্ট্রাকশন ও QR কোড বক্স (অনলাইন সিলেক্ট করলে সচল হবে) -->
+      <!-- 💳 অনলাইন পেমেন্ট ইনস্ট্রাকশন ও QR কোড বক্স -->
       <div id="online-payment-instruction" class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-left text-xs mb-4 hidden">
         <p class="font-bold text-amber-800 mb-2 text-center text-sm">💰 স্ক্যান করে টাকা পাঠান</p>
-        <p class="mb-1"><strong>বিকাশ/নগদ (Personal):</strong> 017XXXXXXXX <span class="text-[10px] text-gray-400">(আপনার নম্বর লিখুন)</span></p>
-        <p class="mb-2"><strong>ব্যাংক অ্যাকাউন্ট:</strong> ডাচ-বাংলা ব্যাংক, অ্যাকাউন্ট নং: XXXXXX</p>
+        <p class="mb-1"><strong>বিকাশ/নগদ (Personal):</strong> <span id="display-bkash-no" class="font-bold text-gray-800">017XXXXXXXX</span></p>
+        <p class="mb-2"><strong>ব্যাংক অ্যাকাউন্ট:</strong> <span id="display-bank-details" class="font-bold text-gray-800">ডাচ-বাংলা ব্যাংক, অ্যাকাউন্ট নং: XXXXXX</span></p>
         
         <!-- কিউআর কোডের ছবি -->
         <div class="text-center my-2">
           <p class="text-[10px] text-gray-500 mb-1">বিকাশ/নগদ অ্যাপ থেকে স্ক্যান করুন:</p>
-          <!-- আপনার কিউআর কোড ছবির লিংক নিচের src তে বসাবেন -->
-          <img src="https://placehold.co/150x150/png?text=Bikash+QR" alt="Payment QR Code" class="w-32 h-32 mx-auto border rounded-lg bg-white p-1 shadow-sm">
+          <img id="display-qr-img" src="https://placehold.co/150x150/png?text=No+QR+Code" alt="Payment QR Code" class="w-32 h-32 mx-auto border rounded-lg bg-white p-1 shadow-sm">
         </div>
       </div>
 
@@ -134,12 +133,6 @@
       </div>
 
       <div class="flex items-center space-x-6">
-        <nav class="hidden lg:flex space-x-6 text-xs font-bold tracking-wider uppercase text-gray-200">
-          <a href="#fruits" class="hover:text-[#D4AF37] transition">ফল গাছ</a>
-          <a href="#flowers" class="hover:text-[#D4AF37] transition">ফুল গাছ</a>
-          <a href="#indoor" class="hover:text-[#D4AF37] transition">ইনডোর</a>
-          <a href="#outdoor" class="hover:text-[#D4AF37] transition">আউটডোর</a>
-        </nav>
         <button onclick="toggleCart()" class="relative p-2 text-[#D4AF37] hover:text-white transition flex items-center gap-1 font-bold text-xs">
           <span>🛒 কার্ট</span>
           <span id="cart-count" class="bg-[#D4AF37] text-[#1A3A2B] text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center font-sans">0</span>
@@ -163,52 +156,90 @@
         <span class="text-sm font-semibold text-gray-500">সর্বমোট প্রদেয় দাম:</span>
         <span id="cart-total" class="text-2xl font-bold text-[#1A3A2B]">৳ ০</span>
       </div>
-      <button onclick="openCheckout()" class="w-full gold-gradient text-[#1A3A2B] py-4 rounded-xl font-bold text-sm tracking-wide uppercase transition shadow-md">অर्डर সম্পন্ন করুন (Checkout)</button>
+      <button onclick="openCheckout()" class="w-full gold-gradient text-[#1A3A2B] py-4 rounded-xl font-bold text-sm tracking-wide uppercase transition shadow-md">অর্ডার সম্পন্ন করুন (Checkout)</button>
     </div>
   </div>
 
   <!-- হিরো ব্যানার -->
-  <section class="bg-[#1A3A2B] text-white py-14 text-center border-b border-[#D4AF37]/10">
+  <section class="bg-[#1A3A2B] text-white py-12 text-center border-b border-[#D4AF37]/10">
     <h1 class="serif-font text-3xl md:text-4xl font-bold mb-2 tracking-wide text-gray-100">অভিজাত প্রকৃতির অনন্য কালেকশন</h1>
     <p class="text-gray-300 text-xs font-light max-w-md mx-auto">বাছাইকৃত শতভাগ খাঁটি ও সতেজ প্রিমিয়াম কোয়ালিটির গাছপালা</p>
   </section>
 
-  <!-- প্রোডাক্ট সেকশনসমূহ -->
-  <section id="fruits" class="py-12 px-6 max-w-7xl mx-auto product-section">
-    <h2 class="serif-font text-2xl font-bold mb-8 text-[#1A3A2B] border-b-2 border-[#1A3A2B]/10 pb-2">🍎 ফল গাছের অভিজাত কালেকশন</h2>
-    <div id="fruits-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  <!-- 📑 নতুন ক্যাটালগ মেনু ফিল্টার ফিল্ড -->
+  <div class="max-w-7xl mx-auto px-6 pt-10">
+    <div class="flex flex-wrap justify-center gap-2 md:gap-4 bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
+      <button onclick="filterCatalog('all')" id="cat-btn-all" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-[#1A3A2B] text-white shadow-sm">
+        🌿 সব গাছ (<span id="count-all">0</span>)
+      </button>
+      <button onclick="filterCatalog('fruits')" id="cat-btn-fruits" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100">
+        🍎 ফল গাছ (<span id="count-fruits">0</span>)
+      </button>
+      <button onclick="filterCatalog('flowers')" id="cat-btn-flowers" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100">
+        🌹 ফুল গাছ (<span id="count-flowers">0</span>)
+      </button>
+      <button onclick="filterCatalog('indoor')" id="cat-btn-indoor" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100">
+        🪴 ইনডোর (<span id="count-indoor">0</span>)
+      </button>
+      <button onclick="filterCatalog('outdoor')" id="cat-btn-outdoor" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100">
+        🌳 আউটডোর (<span id="count-outdoor">0</span>)
+      </button>
+    </div>
+  </div>
+
+  <!-- প্রধান ক্যাটালগ প্রোডাক্ট ডিসপ্লে গ্রিড -->
+  <section class="py-10 px-6 max-w-7xl mx-auto">
+    <div id="catalog-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- গাছগুলো ডাইনামিকালি এখানে ক্যাটাগরি অনুযায়ী পরপর বসবে -->
+    </div>
+    <div id="no-products-msg" class="text-center py-20 text-gray-400 text-sm hidden">এই ক্যাটালগে বর্তমানে কোনো গাছ আপলোড করা নেই।</div>
   </section>
 
-  <section id="flowers" class="py-12 px-6 max-w-7xl mx-auto bg-gray-50/70 rounded-3xl product-section">
-    <h2 class="serif-font text-2xl font-bold mb-8 text-[#1A3A2B] border-b-2 border-[#1A3A2B]/10 pb-2">🌹 প্রিমিয়াম ফুল গাছের কালেকশন</h2>
-    <div id="flowers-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-  </section>
-
-  <section id="indoor" class="py-12 px-6 max-w-7xl mx-auto product-section">
-    <h2 class="serif-font text-2xl font-bold mb-8 text-[#1A3A2B] border-b-2 border-[#1A3A2B]/10 pb-2">🪴 লাক্সারি ইনডোর প্লান্টস</h2>
-    <div id="indoor-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-  </section>
-
-  <section id="outdoor" class="py-12 px-6 max-w-7xl mx-auto product-section">
-    <h2 class="serif-font text-2xl font-bold mb-8 text-[#1A3A2B] border-b-2 border-[#1A3A2B]/10 pb-2">🌳 এক্সক্লুসিভ আউটডোর প্লান্টস</h2>
-    <div id="outdoor-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-  </section>
-
-  <!-- ⚙️ ম্যানেজার প্যানেল -->
-  <section class="bg-white border-2 border-[#D4AF37]/30 p-8 max-w-2xl mx-auto my-14 rounded-3xl shadow-xl">
-    <div class="text-center mb-6">
-      <span class="text-2xl">⚙️</span>
-      <h2 class="serif-font text-xl font-bold text-[#1A3A2B]">ম্যানেজার ড্যাশবোর্ড</h2>
-      <p class="text-gray-400 text-xs mt-1">নতুন গাছ আপলোড এবং ভুল প্রোডাক্ট ডিলিট করার অফিশিয়াল কন্ট্রোল</p>
+  <!-- ⚙️ ম্যানেজার ড্যাশবোর্ড -->
+  <section class="bg-white border-2 border-[#D4AF37]/30 p-8 max-w-2xl mx-auto my-14 rounded-3xl shadow-xl space-y-8">
+    
+    <div class="text-center border-b pb-4 border-gray-150">
+      <span class="text-3xl">⚙️</span>
+      <h2 class="serif-font text-xl font-bold text-[#1A3A2B]">ম্যানেজার কন্ট্রোল ড্যাশবোর্ড</h2>
+      <p class="text-gray-400 text-xs mt-1">প্রোডাক্ট আপলোড, পেমেন্ট অ্যাকাউন্ট এবং কিউআর কোড সেটিংস আপডেট করুন</p>
     </div>
 
-    <div class="flex justify-center mb-6">
+    <!-- ব্যাংক অ্যাকাউন্ট ও কিউআর কোড আপডেট ফরম -->
+    <div class="bg-amber-50/50 p-5 rounded-2xl border border-amber-200">
+      <h4 class="font-bold text-sm text-amber-900 mb-3 flex items-center gap-1">💳 আপনার ব্যাংক ও কিউআর কোড সেটিংস</h4>
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-gray-650 mb-1">হোয়াটসঅ্যাপ নম্বর (ডেলিভারি নোটিফিকেশনের জন্য)</label>
+          <input type="text" id="setup-whatsapp" placeholder="উদা: 88017XXXXXXXX" class="w-full p-2.5 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
+        </div>
+        <div>
+          <label class="block font-semibold text-gray-650 mb-1">বিকাশ/নগদ নম্বর</label>
+          <input type="text" id="setup-bkash" placeholder="উদা: বিকাশ (Personal): 017XXXXXXXX" class="w-full p-2.5 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
+        </div>
+        <div>
+          <label class="block font-semibold text-gray-650 mb-1">ব্যাংক অ্যাকাউন্ট ডিটেইলস</label>
+          <input type="text" id="setup-bank" placeholder="উদা: ডাচ-বাংলা ব্যাংক, অ্যাকাউন্ট নং: ১২৩.৪৫৬.৭৮৯" class="w-full p-2.5 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
+        </div>
+        <div>
+          <label class="block font-semibold text-gray-650 mb-1">আপনার পেমেন্ট কিউআর (QR) কোডের ছবি আপলোড করুন</label>
+          <input type="file" id="setup-qr-file" accept="image/*" class="w-full p-2 border rounded-xl bg-white">
+        </div>
+        <button onclick="savePaymentSettings()" class="w-full bg-[#1A3A2B] text-white py-2.5 rounded-xl font-bold hover:bg-[#112a1f] transition mt-2 shadow-sm text-xs">
+          💾 সেটিংস সংরক্ষণ করুন (Save Settings)
+        </button>
+      </div>
+    </div>
+
+    <!-- প্রোডাক্ট ডিলিট বাটন -->
+    <div class="flex justify-center border-t border-dashed pt-4 border-gray-200">
       <button id="delete-mode-btn" onclick="toggleDeleteMode()" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-sm">
         🗑️ ডিলিট মোড অন করুন
       </button>
     </div>
     
-    <form id="product-form" class="space-y-4 pt-4 border-t border-dashed border-gray-200">
+    <!-- প্রোডাক্ট আপলোড ফরম -->
+    <form id="product-form" class="space-y-4 pt-2">
+      <h4 class="font-bold text-sm text-[#1A3A2B] mb-2">✨ নতুন গাছ যুক্ত করুন</h4>
       <div>
         <label class="block text-xs font-bold uppercase text-gray-500 mb-1">গাছের নাম</label>
         <input type="text" id="prod-name" placeholder="উদা: সূর্যডিম আম" class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required>
@@ -236,7 +267,7 @@
       </div>
 
       <button type="submit" class="w-full bg-[#1A3A2B] text-white hover:bg-[#112a1f] py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-md">
-        ✨ ওয়েবসাইটে আপলোড করুন
+        ➕ ওয়েবসাইটে গাছ আপলোড করুন
       </button>
     </form>
   </section>
@@ -246,9 +277,12 @@
     let cart = [];
     let isDeleteModeActive = false;
     let currentCartTotal = 0;
+    let currentSelectedCategory = 'all';
     
-    // ⚠️ আপনার হোয়াটসঅ্যাপ নম্বরটি এখানে দিন (Country code সহ, যেমন বাংলাদেশের জন্য 88017XXXXXXXX)
-    const MY_WHATSAPP_NUMBER = "88017XXXXXXXX"; 
+    let myWhatsAppNumber = localStorage.getItem('nursery_whatsapp') || "88017XXXXXXXX";
+    let myBkashNo = localStorage.getItem('nursery_bkash') || "বিকাশ/নগদ (Personal): 017XXXXXXXX";
+    let myBankDetails = localStorage.getItem('nursery_bank') || "ডাচ-বাংলা ব্যাংক, অ্যাকাউন্ট নং: XXXXXX";
+    let myQrCodeImg = localStorage.getItem('nursery_qr') || "https://placehold.co/150x150/png?text=Bikash+QR";
 
     const defaultProducts = [
       { id: 'd1', name: 'মিয়াজاکی আম (সূর্যডিম)', price: 2500, category: 'fruits', img: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=300' },
@@ -260,7 +294,109 @@
 
     window.onload = function() {
       renderProducts();
+      loadSettingsIntoDashboard();
+      updateSuccessModalFields();
     };
+
+    function loadSettingsIntoDashboard() {
+      document.getElementById('setup-whatsapp').value = myWhatsAppNumber;
+      document.getElementById('setup-bkash').value = myBkashNo;
+      document.getElementById('setup-bank').value = myBankDetails;
+    }
+
+    function updateSuccessModalFields() {
+      document.getElementById('display-bkash-no').innerText = myBkashNo;
+      document.getElementById('display-bank-details').innerText = myBankDetails;
+      document.getElementById('display-qr-img').src = myQrCodeImg;
+    }
+
+    function savePaymentSettings() {
+      const whatsappInput = document.getElementById('setup-whatsapp').value.trim();
+      const bkashInput = document.getElementById('setup-bkash').value.trim();
+      const bankInput = document.getElementById('setup-bank').value.trim();
+      const qrFileInput = document.getElementById('setup-qr-file');
+      
+      if(whatsappInput) { myWhatsAppNumber = whatsappInput; localStorage.setItem('nursery_whatsapp', myWhatsAppNumber); }
+      if(bkashInput) { myBkashNo = bkashInput; localStorage.setItem('nursery_bkash', myBkashNo); }
+      if(bankInput) { myBankDetails = bankInput; localStorage.setItem('nursery_bank', myBankDetails); }
+
+      const file = qrFileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          myQrCodeImg = event.target.result;
+          localStorage.setItem('nursery_qr', myQrCodeImg);
+          updateSuccessModalFields();
+          alert('🎉 অভিনন্দন! ব্যাংক অ্যাকাউন্ট এবং কিউআর কোড সফলভাবে আপডেট হয়েছে!');
+        };
+        reader.readAsDataURL(file);
+      } else {
+        updateSuccessModalFields();
+        alert('🎉 আপনার তথ্যগুলো সফলভাবে আপডেট হয়েছে!');
+      }
+    }
+
+    // 📑 ক্যাটালগ ফিল্টারিং লজিক
+    function filterCatalog(category) {
+      currentSelectedCategory = category;
+      
+      // বাটন স্টাইল পরিবর্তন
+      const categories = ['all', 'fruits', 'flowers', 'indoor', 'outdoor'];
+      categories.forEach(cat => {
+        const btn = document.getElementById(`cat-btn-${cat}`);
+        if(cat === category) {
+          btn.className = "px-5 py-2 rounded-xl text-xs font-bold transition bg-[#1A3A2B] text-white shadow-sm";
+        } else {
+          btn.className = "px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100";
+        }
+      });
+
+      renderProducts();
+    }
+
+    function updateCategoryCounters() {
+      document.getElementById('count-all').innerText = products.length;
+      document.getElementById('count-fruits').innerText = products.filter(p => p.category === 'fruits').length;
+      document.getElementById('count-flowers').innerText = products.filter(p => p.category === 'flowers').length;
+      document.getElementById('count-indoor').innerText = products.filter(p => p.category === 'indoor').length;
+      document.getElementById('count-outdoor').innerText = products.filter(p => p.category === 'outdoor').length;
+    }
+
+    function renderProducts() {
+      const container = document.getElementById('catalog-container');
+      const noProductsMsg = document.getElementById('no-products-msg');
+      container.innerHTML = '';
+      
+      updateCategoryCounters();
+
+      // বর্তমান ক্যাটালগ অনুযায়ী ফিল্টার করা
+      const filteredProducts = currentSelectedCategory === 'all' 
+        ? products 
+        : products.filter(p => p.category === currentSelectedCategory);
+
+      if(filteredProducts.length === 0) {
+        noProductsMsg.classList.remove('hidden');
+      } else {
+        noProductsMsg.classList.add('hidden');
+      }
+
+      filteredProducts.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'plant-card bg-white rounded-2xl overflow-hidden border border-gray-100 p-4 text-center shadow-sm hover:shadow-md transition relative';
+        
+        card.innerHTML = `
+          <button onclick="deleteProduct('${p.id}')" class="delete-product-btn ${isDeleteModeActive ? '' : 'hidden'} absolute top-2 right-2 bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-red-800 transition shadow z-10">✕</button>
+          <img src="${p.img}" class="w-full h-48 object-cover rounded-xl mb-3 bg-gray-50 border border-gray-50">
+          <h3 class="plant-title serif-font font-bold text-sm text-[#1A3A2B] h-10 flex items-center justify-center">${p.name}</h3>
+          <div class="text-yellow-500 text-xs mb-3 font-sans">★★★★★ <span class="text-gray-400 text-[10px] font-medium">(4.9)</span></div>
+          <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+            <span class="font-bold text-sm text-[#1A3A2B]">৳ ${p.price}</span>
+            <button onclick="handleDirectPurchase('${p.id}', '${p.name}', ${p.price}, '${p.img}')" class="gold-gradient text-[#1A3A2B] font-bold px-4 py-2 rounded-xl text-xs transition shadow-sm">Buy Now</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
 
     function searchPlants() {
       const query = document.getElementById('search-input').value.toLowerCase();
@@ -284,12 +420,7 @@
         btn.innerText = "🗑️ ডিলিট মোড অন করুন";
         btn.className = "bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-sm";
       }
-      
-      const deleteButtons = document.querySelectorAll('.delete-product-btn');
-      deleteButtons.forEach(button => {
-        if (isDeleteModeActive) button.classList.remove('hidden');
-        else button.classList.add('hidden');
-      });
+      renderProducts();
     }
 
     function deleteProduct(id) {
@@ -298,32 +429,6 @@
         localStorage.setItem('nursery_products', JSON.stringify(products));
         renderProducts();
       }
-    }
-
-    function renderProducts() {
-      document.getElementById('fruits-container').innerHTML = '';
-      document.getElementById('flowers-container').innerHTML = '';
-      document.getElementById('indoor-container').innerHTML = '';
-      document.getElementById('outdoor-container').innerHTML = '';
-
-      products.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'plant-card bg-white rounded-2xl overflow-hidden border border-gray-100 p-4 text-center shadow-sm hover:shadow-md transition relative';
-        
-        card.innerHTML = `
-          <button onclick="deleteProduct('${p.id}')" class="delete-product-btn hidden absolute top-2 right-2 bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-red-800 transition shadow z-10">✕</button>
-          <img src="${p.img}" class="w-full h-48 object-cover rounded-xl mb-3 bg-gray-50 border border-gray-50">
-          <h3 class="plant-title serif-font font-bold text-sm text-[#1A3A2B] h-10 flex items-center justify-center">${p.name}</h3>
-          <div class="text-yellow-500 text-xs mb-3 font-sans">★★★★★ <span class="text-gray-400 text-[10px] font-medium">(4.9)</span></div>
-          <div class="flex items-center justify-between pt-3 border-t border-gray-100">
-            <span class="font-bold text-sm text-[#1A3A2B]">৳ ${p.price}</span>
-            <button onclick="handleDirectPurchase('${p.id}', '${p.name}', ${p.price}, '${p.img}')" class="gold-gradient text-[#1A3A2B] font-bold px-4 py-2 rounded-xl text-xs transition shadow-sm">Buy Now</button>
-          </div>
-        `;
-        
-        const container = document.getElementById(`${p.category}-container`);
-        if(container) container.appendChild(card);
-      });
     }
 
     document.getElementById('product-form').addEventListener('submit', function(e) {
@@ -343,7 +448,7 @@
           localStorage.setItem('nursery_products', JSON.stringify(products));
           renderProducts();
           document.getElementById('product-form').reset();
-          alert('🎉 সফলভাবে আপনার গাছটি আপলোড হয়েছে!');
+          alert('🎉 সফলভাবে আপনার গাছটি সঠিক ক্যাটালগে আপলোড হয়েছে!');
         };
         reader.readAsDataURL(file);
       }
@@ -358,20 +463,14 @@
     }
 
     function openCheckout() {
-      if (cart.length === 0) {
-        alert("আপনার কার্ট খালি! অনুগ্রহ করে প্রথমে গাছ যুক্ত করুন।");
-        return;
-      }
+      if (cart.length === 0) { alert("আপনার কার্ট খালি! অনুগ্রহ করে প্রথমে গাছ যুক্ত করুন।"); return; }
       toggleCart();
       document.getElementById('checkout-total').innerText = `৳ ${currentCartTotal}`;
       document.getElementById('checkout-modal').classList.remove('hidden');
     }
 
-    function closeCheckout() {
-      document.getElementById('checkout-modal').classList.add('hidden');
-    }
+    function closeCheckout() { document.getElementById('checkout-modal').classList.add('hidden'); }
 
-    // 🚀 অর্ডার প্লেস এবং হোয়াটসঅ্যাপে ডেটা পাঠানোর লজিক
     function placeOrder(e) {
       e.preventDefault();
       
@@ -381,26 +480,22 @@
       const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
       const memoId = "GG-" + Math.floor(100000 + Math.random() * 900000);
 
-      // মোডালে ডেটা আপডেট
       document.getElementById('summary-id').innerText = memoId;
       document.getElementById('summary-name').innerText = name;
       document.getElementById('summary-method').innerText = paymentMethod === "COD" ? "ক্যাশ অন ডেলিভারি (COD)" : "অনলাইন পেমেন্ট (বিকাশ/নগদ)";
       document.getElementById('summary-total').innerText = `৳ ${currentCartTotal}`;
 
-      // অনলাইন পেমেন্ট সিলেক্ট করলে QR কোড ইনস্ট্রাকশন দেখাবে
       if (paymentMethod === "Online") {
         document.getElementById('online-payment-instruction').classList.remove('hidden');
       } else {
         document.getElementById('online-payment-instruction').classList.add('hidden');
       }
 
-      // 🛒 কার্টের সব প্রোডাক্টের লিস্ট তৈরি করা হোয়াটসঅ্যাপের জন্য
       let itemsListText = "";
       cart.forEach((item, index) => {
         itemsListText += `${index + 1}. ${item.name} x ${item.quantity} (${item.price * item.quantity} ৳)\n`;
       });
 
-      // 💬 হোয়াটসঅ্যাপ মেসেজের ফরম্যাট রেডি করা
       const whatsappMessage = `*নতুন অর্ডার এসেছে (Global Green)*\n\n` +
                                `📝 *মেমো নং:* ${memoId}\n` +
                                `👤 *কাস্টমার নাম:* ${name}\n` +
@@ -408,29 +503,23 @@
                                `📍 *ঠিকানা:* ${address}\n\n` +
                                `🪴 *অর্ডার করা গাছের তালিকা:*\n${itemsListText}\n` +
                                `💰 *সর্বমোট বিল:* ৳ ${currentCartTotal}\n` +
-                               `💳 *পেমেন্ট পদ্ধতি:* ${paymentMethod === "COD" ? "Cash on Delivery" : "Online Payment (QR/Mobile)"}\n\n` +
+                               `💳 *পেমেন্ট পদ্ধতি:* ${paymentMethod === "COD" ? "Cash on Delivery" : "Online Payment"}\n\n` +
                                `_(গ্রাহক অনলাইন পেমেন্ট করে থাকলে স্ক্রিনশট বা লাস্ট ডিজিট ভেরিফাই করে নিন)_`;
 
-      // হোয়াটসঅ্যাপ এপিআই লিংক তৈরি
       const encodedMessage = encodeURIComponent(whatsappMessage);
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=${MY_WHATSAPP_NUMBER}&text=${encodedMessage}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${encodedMessage}`;
       
-      // মোডালের সবুজ বাটনটির লিংক চেঞ্জ করে দেওয়া
       document.getElementById('whatsapp-btn').href = whatsappUrl;
 
-      // ফর্ম রিসেট ও পপআপ হ্যান্ডলিং
       document.getElementById('checkout-form').reset();
       closeCheckout();
       document.getElementById('success-modal').classList.remove('hidden');
 
-      // কার্ট ক্লিয়ার করা
       cart = [];
       updateCartUI();
     }
 
-    function closeSuccessModal() {
-      document.getElementById('success-modal').classList.add('hidden');
-    }
+    function closeSuccessModal() { document.getElementById('success-modal').classList.add('hidden'); }
 
     function addToCartItems(id, name, price, img) {
       const existingItem = cart.find(item => item.id === id);
