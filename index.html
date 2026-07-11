@@ -19,7 +19,7 @@
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3A2B] overflow-x-hidden antialiased">
 
-  <!-- 💳 পেমেন্ট এবং ডেলিভারি ফর্ম মোডাল (চেকআউট প্যানেল) -->
+  <!-- 💳 পেমেন্ট এবং ডেলিভারি ফর্ম মোডাল -->
   <div id="checkout-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden">
     <div class="bg-white rounded-3xl max-w-xl w-full p-6 md:p-8 shadow-2xl border-t-4 border-[#1A3A2B] relative max-h-[90vh] overflow-y-auto">
       <button onclick="closeCheckout()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-xl font-bold">✕</button>
@@ -59,7 +59,7 @@
               <input type="radio" name="payment-method" value="Online" class="accent-[#1A3A2B]">
               <div class="text-left">
                 <span class="block text-xs font-bold text-[#1A3A2B]">অনলাইন পেমেন্ট</span>
-                <span class="text-[10px] text-gray-400">বিকাশ / নগদ / রকেট</span>
+                <span class="text-[10px] text-gray-400">বিকাশ / নগদ / QR কোড</span>
               </div>
             </label>
           </div>
@@ -82,20 +82,39 @@
 
   <!-- 🎉 অর্ডার সাকসেস বা সফল মোডাল -->
   <div id="success-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden">
-    <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl text-center border-t-4 border-green-600">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 md:p-8 shadow-2xl text-center border-t-4 border-green-600 max-h-[90vh] overflow-y-auto">
       <div class="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">✓</div>
-      <h3 class="serif-font text-2xl font-bold text-green-700 mb-2">আপনার অর্ডারটি সফল হয়েছে!</h3>
-      <p class="text-gray-500 text-xs mb-6">আমাদের প্রতিনিধি খুব শীঘ্রই আপনার মোবাইলে কল করে অর্ডারটি নিশ্চিত করবেন। ধন্যবাদ আমাদের সাথে থাকার জন্য।</p>
+      <h3 class="serif-font text-2xl font-bold text-green-700 mb-1">আপনার অর্ডারটি সাবমিট হয়েছে!</h3>
+      <p class="text-gray-500 text-xs mb-4">নিচের পেমেন্ট তথ্যটি দেখে নিন এবং অর্ডারটি চূড়ান্ত করতে হোয়াটসঅ্যাপে জানান।</p>
       
-      <div class="bg-[#FDFBF7] p-4 rounded-xl border border-dashed text-left space-y-1 text-xs mb-6">
+      <!-- 💳 অনলাইন পেমেন্ট ইনস্ট্রাকশন ও QR কোড বক্স (অনলাইন সিলেক্ট করলে সচল হবে) -->
+      <div id="online-payment-instruction" class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-left text-xs mb-4 hidden">
+        <p class="font-bold text-amber-800 mb-2 text-center text-sm">💰 স্ক্যান করে টাকা পাঠান</p>
+        <p class="mb-1"><strong>বিকাশ/নগদ (Personal):</strong> 017XXXXXXXX <span class="text-[10px] text-gray-400">(আপনার নম্বর লিখুন)</span></p>
+        <p class="mb-2"><strong>ব্যাংক অ্যাকাউন্ট:</strong> ডাচ-বাংলা ব্যাংক, অ্যাকাউন্ট নং: XXXXXX</p>
+        
+        <!-- কিউআর কোডের ছবি -->
+        <div class="text-center my-2">
+          <p class="text-[10px] text-gray-500 mb-1">বিকাশ/নগদ অ্যাপ থেকে স্ক্যান করুন:</p>
+          <!-- আপনার কিউআর কোড ছবির লিংক নিচের src তে বসাবেন -->
+          <img src="https://placehold.co/150x150/png?text=Bikash+QR" alt="Payment QR Code" class="w-32 h-32 mx-auto border rounded-lg bg-white p-1 shadow-sm">
+        </div>
+      </div>
+
+      <div class="bg-[#FDFBF7] p-4 rounded-xl border border-dashed text-left space-y-1 text-xs mb-4">
         <p><strong>মেমো নং:</strong> <span id="summary-id" class="font-mono"></span></p>
         <p><strong>গ্রাহক:</strong> <span id="summary-name"></span></p>
         <p><strong>পেমেন্ট পদ্ধতি:</strong> <span id="summary-method" class="text-blue-700 font-bold"></span></p>
         <p class="border-t pt-1 mt-1 text-sm font-bold"><strong>মোট বিল:</strong> <span id="summary-total"></span></p>
       </div>
 
-      <button onclick="closeSuccessModal()" class="w-full bg-[#1A3A2B] text-white py-3 rounded-xl text-xs font-bold hover:bg-opacity-90 transition">
-        কেনাকাটা চালিয়ে যান 🛍️
+      <!-- 🟢 হোয়াটসঅ্যাপ কনফার্মেশন বাটন -->
+      <a id="whatsapp-btn" href="#" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white py-3.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-md mb-3">
+        💬 হোয়াটসঅ্যাপে পেমেন্ট নিশ্চিত করুন
+      </a>
+
+      <button onclick="closeSuccessModal()" class="w-full bg-gray-100 text-gray-600 py-2.5 rounded-xl text-xs font-medium hover:bg-gray-200 transition">
+        উইন্ডোটি বন্ধ করুন
       </button>
     </div>
   </div>
@@ -144,7 +163,7 @@
         <span class="text-sm font-semibold text-gray-500">সর্বমোট প্রদেয় দাম:</span>
         <span id="cart-total" class="text-2xl font-bold text-[#1A3A2B]">৳ ০</span>
       </div>
-      <button onclick="openCheckout()" class="w-full gold-gradient text-[#1A3A2B] py-4 rounded-xl font-bold text-sm tracking-wide uppercase transition shadow-md">অর্ডার সম্পন্ন করুন (Checkout)</button>
+      <button onclick="openCheckout()" class="w-full gold-gradient text-[#1A3A2B] py-4 rounded-xl font-bold text-sm tracking-wide uppercase transition shadow-md">অर्डर সম্পন্ন করুন (Checkout)</button>
     </div>
   </div>
 
@@ -228,6 +247,9 @@
     let isDeleteModeActive = false;
     let currentCartTotal = 0;
     
+    // ⚠️ আপনার হোয়াটসঅ্যাপ নম্বরটি এখানে দিন (Country code সহ, যেমন বাংলাদেশের জন্য 88017XXXXXXXX)
+    const MY_WHATSAPP_NUMBER = "88017XXXXXXXX"; 
+
     const defaultProducts = [
       { id: 'd1', name: 'মিয়াজاکی আম (সূর্যডিম)', price: 2500, category: 'fruits', img: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=300' },
       { id: 'd2', name: 'ব্ল্যাক ব্যাকারাত গোলাপ', price: 500, category: 'flowers', img: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=300' },
@@ -327,18 +349,10 @@
       }
     });
 
-    // 🚀 সরাসরি পারচেজ (Buy Now বাটনের মূল লজিক ফিক্স)
     function handleDirectPurchase(id, name, price, img) {
-      // প্রথমে কার্টে আইটেম যুক্ত করি বা আপডেট করি
       addToCartItems(id, name, price, img);
-      
-      // কার্ট ড্রয়ার যদি খোলা থাকে তা বন্ধ করি যেন জ্যাম না লাগে
       const drawer = document.getElementById('cart-drawer');
-      if (!drawer.classList.contains('translate-x-full')) {
-        toggleCart();
-      }
-      
-      // সরাসরি চেকআউট পপ-আপ ফর্ম ওপেন হবে
+      if (!drawer.classList.contains('translate-x-full')) { toggleCart(); }
       document.getElementById('checkout-total').innerText = `৳ ${currentCartTotal}`;
       document.getElementById('checkout-modal').classList.remove('hidden');
     }
@@ -357,6 +371,7 @@
       document.getElementById('checkout-modal').classList.add('hidden');
     }
 
+    // 🚀 অর্ডার প্লেস এবং হোয়াটসঅ্যাপে ডেটা পাঠানোর লজিক
     function placeOrder(e) {
       e.preventDefault();
       
@@ -366,21 +381,49 @@
       const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
       const memoId = "GG-" + Math.floor(100000 + Math.random() * 900000);
 
-      if (paymentMethod === "Online") {
-        const confirmOnline = confirm("অনলাইন পেমেন্ট মারফত অর্ডার প্রসেস করতে চান? (আমাদের এজেন্ট আপনাকে পার্সোনাল বিকাশ/নগদ নম্বর পাঠাবেন।)");
-        if (!confirmOnline) return;
-      }
-
+      // মোডালে ডেটা আপডেট
       document.getElementById('summary-id').innerText = memoId;
       document.getElementById('summary-name').innerText = name;
-      document.getElementById('summary-method').innerText = paymentMethod === "COD" ? "ক্যাশ অন ডেলিভারি (COD)" : "বিকাশ/নগদ (অনলাইন পেমেন্ট)";
+      document.getElementById('summary-method').innerText = paymentMethod === "COD" ? "ক্যাশ অন ডেলিভারি (COD)" : "অনলাইন পেমেন্ট (বিকাশ/নগদ)";
       document.getElementById('summary-total').innerText = `৳ ${currentCartTotal}`;
 
+      // অনলাইন পেমেন্ট সিলেক্ট করলে QR কোড ইনস্ট্রাকশন দেখাবে
+      if (paymentMethod === "Online") {
+        document.getElementById('online-payment-instruction').classList.remove('hidden');
+      } else {
+        document.getElementById('online-payment-instruction').classList.add('hidden');
+      }
+
+      // 🛒 কার্টের সব প্রোডাক্টের লিস্ট তৈরি করা হোয়াটসঅ্যাপের জন্য
+      let itemsListText = "";
+      cart.forEach((item, index) => {
+        itemsListText += `${index + 1}. ${item.name} x ${item.quantity} (${item.price * item.quantity} ৳)\n`;
+      });
+
+      // 💬 হোয়াটসঅ্যাপ মেসেজের ফরম্যাট রেডি করা
+      const whatsappMessage = `*নতুন অর্ডার এসেছে (Global Green)*\n\n` +
+                               `📝 *মেমো নং:* ${memoId}\n` +
+                               `👤 *কাস্টমার নাম:* ${name}\n` +
+                               `📞 *মোবাইল:* ${phone}\n` +
+                               `📍 *ঠিকানা:* ${address}\n\n` +
+                               `🪴 *অর্ডার করা গাছের তালিকা:*\n${itemsListText}\n` +
+                               `💰 *সর্বমোট বিল:* ৳ ${currentCartTotal}\n` +
+                               `💳 *পেমেন্ট পদ্ধতি:* ${paymentMethod === "COD" ? "Cash on Delivery" : "Online Payment (QR/Mobile)"}\n\n` +
+                               `_(গ্রাহক অনলাইন পেমেন্ট করে থাকলে স্ক্রিনশট বা লাস্ট ডিজিট ভেরিফাই করে নিন)_`;
+
+      // হোয়াটসঅ্যাপ এপিআই লিংক তৈরি
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${MY_WHATSAPP_NUMBER}&text=${encodedMessage}`;
+      
+      // মোডালের সবুজ বাটনটির লিংক চেঞ্জ করে দেওয়া
+      document.getElementById('whatsapp-btn').href = whatsappUrl;
+
+      // ফর্ম রিসেট ও পপআপ হ্যান্ডলিং
       document.getElementById('checkout-form').reset();
       closeCheckout();
-      
       document.getElementById('success-modal').classList.remove('hidden');
 
+      // কার্ট ক্লিয়ার করা
       cart = [];
       updateCartUI();
     }
