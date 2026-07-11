@@ -1,187 +1,237 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>গ্লোবাল গ্রীন প্লান্ট | দ্য আলটিমেট লাক্সারি কালেকশন</title>
-    <!-- ইন্টারন্যাশনাল লাক্সারি গুগল ফন্টস -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS এবং FontAwesome আইকন -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        body {
-            font-family: 'Hind Siliguri', 'Cormorant Garamond', serif;
-        }
-        .brand-title {
-            font-family: 'Cinzel Decorative', 'Hind Siliguri', serif;
-            text-shadow: 0 0 20px rgba(223, 197, 138, 0.4);
-        }
-        .luxury-gradient {
-            background: linear-gradient(135deg, #06130a 0%, #0f2b18 100%);
-        }
-        .gold-border {
-            border: 1px solid rgba(223, 197, 138, 0.3);
-        }
-        .gold-border:hover {
-            border: 1px solid rgba(223, 197, 138, 1);
-            box-shadow: 0 0 25px rgba(223, 197, 138, 0.15);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Green Plants | Premium & Luxury Nursery</title>
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .serif-font { font-family: 'Playfair Display', serif; }
+  </style>
 </head>
-<body class="bg-[#fcfbfa] text-[#0f2516] antialiased">
+<body class="bg-[#FDFBF7] text-[#1A3A2B]">
 
-    <!-- ১. প্রিমিয়াম গ্লাস-মরফিক হেডার -->
-    <header class="bg-[#050f09]/95 text-[#dfc58a] py-5 border-b border-[#dfc58a]/10 sticky top-0 z-50 backdrop-blur-md shadow-2xl">
-        <div class="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <!-- লোগো ও ব্র্যান্ড নাম -->
-            <a href="#" class="text-center md:text-left group">
-                <h1 class="brand-title text-3xl md:text-4xl font-black tracking-widest text-[#dfc58a] transition duration-300 group-hover:text-white">GLOBAL GREEN PLANT</h1>
-                <span class="text-xs uppercase tracking-[0.4em] text-white/50 block mt-1">গ্লোবাল গ্রীন প্লান্ট</span>
-            </a>
-            
-            <!-- মিনিমালিস্ট লাক্সারি সার্চ বার -->
-            <div class="w-full md:w-96 relative">
-                <input type="text" placeholder="আপনার রাজকীয় উদ্ভিদটি অনুসন্ধান করুন..." class="w-full bg-white/5 border border-[#dfc58a]/30 rounded-xl px-5 py-3 pr-12 text-sm text-white focus:outline-none focus:border-[#dfc58a] focus:ring-1 focus:ring-[#dfc58a] transition placeholder-white/30">
-                <button class="absolute right-4 top-3.5 text-[#dfc58a] hover:text-white transition">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </header>
+  <!-- ১. নেভিগেশন বার (Luxury Header) -->
+  <header class="sticky top-0 z-50 bg-[#1A3A2B] text-white border-b border-[#D4AF37]/30 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex flex-col">
+        <span class="serif-font text-xl md:text-2xl font-bold tracking-widest text-[#D4AF37]">GLOBAL GREEN</span>
+        <span class="text-[10px] tracking-[0.3em] text-gray-300 uppercase -mt-1">Premium Plants Collection</span>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wider">
+        <a href="#fruits" class="hover:text-[#D4AF37] transition">ফল গাছ</a>
+        <a href="#flowers" class="hover:text-[#D4AF37] transition">...ফুল গাছ</a>
+        <a href="#indoor" class="hover:text-[#D4AF37] transition">ইনডোর প্লান্টস</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <span class="text-sm border border-[#D4AF37] px-3 py-1 text-[#D4AF37] rounded-full hidden sm:inline">Luxury Standard</span>
+      </div>
+    </div>
+  </header>
 
-    <!-- ২. সিনেমাটিক হিরো সেকশন (চোখ ধাঁধানো প্রথম দর্শন) -->
-    <section class="relative h-[650px] flex items-center justify-center text-center bg-cover bg-fixed bg-center" 
-             style="background-image: linear-gradient(rgba(4, 14, 8, 0.8), rgba(4, 14, 8, 0.7)), url('https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=1800&q=80');">
-        <div class="max-w-4xl px-8 py-16 rounded-3xl relative overflow-hidden">
-            <!-- ডেকোরেティブ কর্নার বর্ডার -->
-            <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#dfc58a]"></div>
-            <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#dfc58a]"></div>
-            <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#dfc58a]"></div>
-            <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#dfc58a]"></div>
+  <!-- ২. হিরো ব্যানার (Premium First Impression) -->
+  <section class="relative bg-[#1A3A2B] text-white py-20 md:py-32 px-6 overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1200');"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <span class="text-[#D4AF37] uppercase tracking-[0.3em] text-xs font-semibold block mb-3">Welcome to Elite Greenery</span>
+      <h1 class="serif-font text-4xl md:text-6xl font-bold leading-tight mb-6">আপনার বাসস্থানে নিয়ে আসুন <br><span class="text-[#D4AF37]">অভিজাত প্রকৃতির</span> ছোঁয়া</h1>
+      <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-8 font-light">আমরা সরবরাহ করি দেশী-বিদেশী সেরা প্রজাতির বাছাইকৃত প্রিমিয়াম মানের গাছপালা। প্রতিটি গাছ আপনার রুচিবোধের পরিচয় দেবে।</p>
+      <a href="#indoor" class="bg-[#D4AF37] text-[#1A3A2B] px-8 py-3.5 rounded-lg font-semibold tracking-wider hover:bg-white hover:shadow-xl transition duration-300">কালেকশন দেখুন</a>
+    </div>
+  </section>
 
-            <span class="text-[#dfc58a] text-xs uppercase tracking-[0.5em] font-semibold bg-white/5 px-4 py-2 rounded-full inline-block mb-6 border border-[#dfc58a]/20">The Elite Botanical Club</span>
-            
-            <!-- মূল হাইলাইটেড নাম -->
-            <h1 class="brand-title text-5xl md:text-7xl font-black text-[#dfc58a] tracking-normal mb-6 leading-tight">
-                গ্লোবাল গ্রীন প্লান্ট
-            </h1>
-            <p class="text-white/90 text-lg md:text-2xl font-light italic max-w-2xl mx-auto mb-10 leading-relaxed">
-                “আমরা কেবল গাছ বিক্রি করি না, আপনার আবাসে আভিজাত্যের সতেজতা পৌঁছে দিই।”
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                <a href="#catalogue" class="bg-[#dfc58a] hover:bg-white text-[#050f09] font-bold text-sm tracking-widest uppercase py-4.5 px-12 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto">
-                    কালেকশন এক্সপ্লোর করুন
-                </a>
-            </div>
-        </div>
-    </section>
+  <!-- ৩. ফল গাছের সেকশন (Fruit Plants Collection) -->
+  <section id="fruits" class="py-20 px-6 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-bold block">Organic & Hybrid</span>
+        <h2 class="serif-font text-3xl md:text-4xl font-bold mt-2 text-[#1A3A2B]">সেরা প্রজাতির ফল গাছ</h2>
+        <div class="w-20 h-[2px] bg-[#D4AF37] mx-auto mt-4"></div>
+      </div>
 
-    <!-- ৩. ট্রাস্ট ব্যাজ সেকশন (কাস্টমারের বিশ্বাস অর্জনের জন্য) -->
-    <section class="bg-[#050f09] text-[#dfc58a] py-10 border-b border-[#dfc58a]/10">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-sm tracking-widest uppercase">
-            <div class="flex items-center justify-center gap-3 py-4">
-                <i class="fas fa-shipping-fast text-xl"></i>
-                <span>নিরাপদ ও প্রিমিয়াম স্পেশাল ডেলিভারি</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- ফল গাছ ১ -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=600" alt="Mango" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-[#1A3A2B] text-white text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">Miyazaki Premium</span>
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">মিয়াজাকি আম (সূর্যডিম)</h3>
+            <p class="text-gray-500 text-sm mt-2">বিশ্বের অন্যতম মূল্যবান এবং মিষ্টি আমের কলপ চারা।</p>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-50">
+              <span class="text-xl font-bold text-[#1A3A2B]">৳ ২,৫০০</span>
+              <button class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
             </div>
-            <div class="flex items-center justify-center gap-3 py-4 border-y md:border-y-0 md:border-x border-[#dfc58a]/20">
-                <i class="fas fa-ribbon text-xl"></i>
-                <span>১০০% গ্যারান্টিড সতেজ উদ্ভিদ</span>
-            </div>
-            <div class="flex items-center justify-center gap-3 py-4">
-                <i class="fas fa-crown text-xl"></i>
-                <span>অভিজাত কাস্টমার প্রিভিলেজ</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ۴. রাজকীয় ক্যাটালগ (নাম, দাম, অর্ডার বাটন সহ) -->
-    <section id="catalogue" class="container mx-auto px-6 py-28">
-        <div class="text-center max-w-xl mx-auto mb-24">
-            <h2 class="brand-title text-3xl md:text-5xl font-extrabold text-[#050f09] mb-4">সিগনেচার কালেকশন</h2>
-            <p class="text-gray-400 italic text-sm">হাতে কলমে বাছাইকৃত আমাদের সবচেয়ে দামী ও বিলাসবহুল গাছপালা</p>
-            <div class="w-24 h-[1px] bg-[#dfc58a] mx-auto mt-6"></div>
+          </div>
         </div>
 
-        <!-- ৩টি প্রিমিয়াম কার্ড -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <!-- গাছ ১ -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl gold-border transition-all duration-500 group flex flex-col justify-between">
-                <div class="h-96 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=600&q=80" alt="Plant 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#050f09] via-transparent to-transparent opacity-80"></div>
-                    <span class="absolute bottom-6 left-6 text-xs uppercase tracking-widest text-[#dfc58a] font-bold bg-[#050f09]/80 px-3 py-1 rounded-md border border-[#dfc58a]/30">Elite Pick</span>
-                </div>
-                <div class="p-8 luxury-gradient text-center">
-                    <h3 class="brand-title text-2xl font-bold text-[#dfc58a] mb-2">মনস্টেরা এক্সক্লুসিভা</h3>
-                    <p class="text-xl text-white/90 font-light tracking-wider mb-6">৳ ১,৪৫০</p>
-                    <a href="tel:+880123456789" class="block w-full bg-transparent border-2 border-[#dfc58a] text-[#dfc58a] hover:bg-[#dfc58a] hover:text-[#050f09] font-bold text-xs tracking-widest uppercase py-4 rounded-xl transition-all duration-300 shadow-lg">
-                        <i class="fas fa-shopping-cart mr-2"></i> এখনই অর্ডার করুন
-                    </a>
-                </div>
+        <!-- ... ফল গাছ ২ ... -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?q=80&w=600" alt="Lemon" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">থাই সিডলেস লেবু</h3>
+            <p class="text-gray-500 text-sm mt-2">বারোমাসি ফলনশীল এবং প্রচুর রসযুক্ত চারা গাছ।</p>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-50">
+              <span class="text-xl font-bold text-[#1A3A2B]">৳ ৪০০</span>
+              <button class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
             </div>
-
-            <!-- গাছ ২ -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl gold-border transition-all duration-500 group flex flex-col justify-between">
-                <div class="h-96 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80" alt="Plant 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#050f09] via-transparent to-transparent opacity-80"></div>
-                </div>
-                <div class="p-8 luxury-gradient text-center">
-                    <h3 class="brand-title text-2xl font-bold text-[#dfc58a] mb-2">ভেরিগেটেড স্নেক মেজেস্টি</h3>
-                    <p class="text-xl text-white/90 font-light tracking-wider mb-6">৳ ৯৯০</p>
-                    <a href="tel:+880123456789" class="block w-full bg-transparent border-2 border-[#dfc58a] text-[#dfc58a] hover:bg-[#dfc58a] hover:text-[#050f09] font-bold text-xs tracking-widest uppercase py-4 rounded-xl transition-all duration-300 shadow-lg">
-                        <i class="fas fa-shopping-cart mr-2"></i> এখনই অর্ডার করুন
-                    </a>
-                </div>
-            </div>
-
-            <!-- গাছ ৩ -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl gold-border transition-all duration-500 group flex flex-col justify-between">
-                <div class="h-96 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80" alt="Plant 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#050f09] via-transparent to-transparent opacity-80"></div>
-                </div>
-                <div class="p-8 luxury-gradient text-center">
-                    <h3 class="brand-title text-2xl font-bold text-[#dfc58a] mb-2">লাক্স ক্যাকটাস গোল্ড সেট</h3>
-                    <p class="text-xl text-white/90 font-light tracking-wider mb-6">৳ ৭৫০</p>
-                    <a href="tel:+880123456789" class="block w-full bg-transparent border-2 border-[#dfc58a] text-[#dfc58a] hover:bg-[#dfc58a] hover:text-[#050f09] font-bold text-xs tracking-widest uppercase py-4 rounded-xl transition-all duration-300 shadow-lg">
-                        <i class="fas fa-shopping-cart mr-2"></i> এখনই অর্ডার করুন
-                    </a>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- ৫. হাই-এন্ড কাস্টমার রিভিউ -->
-    <section class="bg-[#050f09] text-white py-24 border-t border-[#dfc58a]/20">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h3 class="brand-title text-3xl font-bold text-[#dfc58a] mb-12">গ্রাহকদের রাজকীয় অভিজ্ঞতা</h3>
-            <div class="p-12 rounded-3xl bg-white/5 border border-[#dfc58a]/20 backdrop-blur-md relative">
-                <span class="text-6xl text-[#dfc58a]/20 absolute top-4 left-6 font-serif">“</span>
-                <p class="text-white/90 text-lg md:text-xl italic leading-relaxed">
-                    "গাছগুলো হাতে পাওয়ার পর মনে হলো সত্যিই কোনো লাক্সারি রিসোর্টে আছি। লিভিং রুমের চেহারাটাই পাল্টে গেছে। ওনাদের গোল্ডেন থিম প্যাকেজিং এবং কাস্টমার কেয়ার গাইডলাইন এক কথায় অনন্য!"
-                </p>
-                <span class="block text-[#dfc58a] font-bold text-xs uppercase tracking-[0.3em] mt-8">— সায়েম চৌধুরী, বনানী</span>
+        <!-- ... ফল গাছ ৩ ... -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?q=80&w=600" alt="Pomegranate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">সুপার ভাগুয়া বেদানা</h3>
+            <p class="text-gray-500 text-sm mt-2">গাঢ় লাল রঙের অত্যন্ত মিষ্টি ডালিমের উন্নত চারা।</p>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-50">
+              <span class="text-xl font-bold text-[#1A3A2B]">৳ ৮৫০</span>
+              <button class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ৬. ফুটার -->
-    <footer class="bg-[#030a06] text-white/40 py-16 text-center text-xs tracking-[0.2em] border-t border-white/5">
-        <p class="text-[#dfc58a] font-bold mb-3 uppercase tracking-[0.4em] text-sm">GLOBAL GREEN PLANT</p>
-        <p class="mb-6 text-white/60">The Epitome of Premium Botanical Lifestyle.</p>
-        <p>&copy; ২০২৬ গ্লোবাল গ্রীন প্লান্ট। সর্বস্বত্ব সংরক্ষিত।</p>
-    </footer>
+  <!-- ৪. ফুল গাছের সেকশন (Flower Plants Collection) -->
+  <section id="flowers" class="py-20 px-6 bg-[#F5F2EB]/50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-bold block">Exotic Blooms</span>
+        <h2 class="serif-font text-3xl md:text-4xl font-bold mt-2 text-[#1A3A2B]">অভিজাত ফুল গাছ</h2>
+        <div class="w-20 h-[2px] bg-[#D4AF37] mx-auto mt-4"></div>
+      </div>
 
-    <!-- ফ্লোটিং লাক্সারি কল বাটন -->
-    <a href="tel:+880123456789" class="fixed bottom-8 right-8 bg-[#dfc58a] hover:bg-white text-[#050f09] w-16 h-16 rounded-xl flex items-center justify-center text-2xl shadow-2xl z-50 transition-all duration-300 border border-white/10 hover:rotate-12">
-        <i class="fas fa-phone-alt"></i>
-    </a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- ফুল গাছ ১ -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600" alt="Rose" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-[#D4AF37] text-[#1A3A2B] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Rare Variety</span>
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">ব্ল্যাক ব্যাকারাত গোলাপ</h3>
+            <p class="text-gray-500 text-sm mt-2">ফরাসি মখমলের মতো কালচে লাল রঙের রাজকীয় গোলাপ গাছ।</p>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-50">
+              <span class="text-xl font-bold text-[#1A3A2B]">৳ ৫০০</span>
+              <button class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ফুল গাছ ২ -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=600" alt="Adenium" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">অ্যাডেনিয়াম (মরু গোলাপ)</h3>
+            <p class="text-gray-500 text-sm mt-2">চমৎকার গ্রাফটেড ডাবল পেটাল ফুল সহ রাজকীয় বোনসাই লুক।</p>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-50">
+              <span class="text-xl font-bold text-[#1A3A2B]">৳ ১,২০০</span>
+              <button class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ফুল গাছ ৩ -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1550950158-d0d960dff51b?q=80&w=600" alt="Orchid" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">প্রিমিয়াম থাই অর্কিড</h3>
+            <p class="text-gray-500 text-sm mt-2">ইনডোর এবং বারান্দার সৌন্দর্য বাড়াতে দীর্ঘস্থায়ী ডেনড্রোবিয়াম অর্কিড।</p>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-50">
+              <span class="text-xl font-bold text-[#1A3A2B]">৳ ১,৪৫০</span>
+              <button class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ৫. ইনডোর প্লান্টস সেকশন (Indoor Plants Collection) -->
+  <section id="indoor" class="py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-bold block">Aesthetic Interior</span>
+        <h2 class="serif-font text-3xl md:text-4xl font-bold mt-2 text-[#1A3A2B]">লাক্সারি ইনডোর প্লান্টস</h2>
+        <div class="w-20 h-[2px] bg-[#D4AF37] mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- ইনডোর ১ -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=600" alt="Monstera" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-[#1A3A2B] text-white text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">Top Choice</span>
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">মনস্টেরা ডেলিসিওসা</h3>
+            <p class="text-gray-500 text-sm mt-2">আপনার ড্রয়িং রুম বা লিভিং স্পেসের জন্য একটি নিখুঁত অভিজাত গাছ।</p>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+              <span class="text-xl font-bold text-[#1A3A2B]">৳ ১,৫০০</span>
+              <button class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ইনডোর ২ -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=600" alt="Snake Plant" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">ভ্যারিয়েগেটেড স্নেক প্লান্ট</h3>
+            <p class="text-gray-500 text-sm mt-2">বেডরুমের বাতাস বিশুদ্ধ করার পাশাপাশি এটি লাক্সারি মডার্ন লুক দেয়।</p>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+              <span class="text-xl font-bold text-[#1A3A2B]">৳ ৬৫০</span>
+              <button class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ইনডোর ৩ -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+          <div class="h-80 bg-[#F4F1EA] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1597055181300-e3633a207518?q=80&w=600" alt="Fiddle Leaf" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="serif-font text-xl font-semibold text-[#1A3A2B]">ফিডল লিফ ফিগ</h3>
+            <p class="text-gray-500 text-sm mt-2">অফিস বা স্টাডি রুমের কর্নারের শোভা বাড়ানোর চমৎকার আকর্ষনীয় গাছ।</p>
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+              <span class="text-xl font-bold text-[#1A3A2B]">৳ ১,৮০০</span>
+              <button class="bg-[#1A3A2B] text-white hover:bg-[#D4AF37] hover:text-[#1A3A2B] px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition duration-300 shadow">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ৬. ফুটার (Premium Footer) -->
+  <footer class="bg-[#1A3A2B] text-gray-400 py-12 px-6 border-t border-[#D4AF37]/30">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <h4 class="serif-font text-xl font-bold text-[#D4AF37] tracking-widest">GLOBAL GREEN PLANTS</h4>
+        <p class="text-xs mt-1">Bringing Elegance & Royalty to Nature.</p>
+      </div>
+      <p class="text-xs text-center md:text-right">&copy; 2026 Global Green Plants. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
