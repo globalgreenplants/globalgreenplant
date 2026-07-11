@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Global Green Plants | Luxury Nursery</title>
+  <title>Global Green Plants | Premium Nursery</title>
   
   <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,18 +19,21 @@
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3A2B] overflow-x-hidden antialiased">
 
-  <!-- 🌟 নতুন যুক্ত হওয়া কাস্টমার ওয়েলকাম পপ-আপ মোডাল -->
+  <!-- 🌟 আপনার নিজের লেখা চমৎকার ওয়েলকাম পপ-আপ মোডাল -->
   <div id="welcome-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-md">
-    <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl text-center border-t-4 border-[#D4AF37] relative transform scale-100 transition-all duration-300">
-      <div class="text-5xl mb-4 animate-bounce">🌿</div>
-      <h2 class="serif-font text-3xl font-bold text-[#1A3A2B] mb-2">স্বাগতম!</h2>
-      <p class="text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4">Global Green Plants</p>
-      <div class="w-12 h-[2px] bg-gray-200 mx-auto mb-4"></div>
-      <p class="text-gray-600 text-sm leading-relaxed mb-6">
-        আমাদের প্রিমিয়াম লাক্সারি নার্সারিতে আপনাকে আন্তরিক শুভেচ্ছা। আপনার বাগানকে সতেজ ও নান্দনিক করে তুলতে আমরা নিয়ে এসেছি দেশী-বিদেশী সেরা প্রজাতির গাছের ক্যাটালগ।
+    <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl text-center border-t-4 border-[#1A3A2B] relative transform scale-100 transition-all duration-300">
+      <div class="text-5xl mb-4 animate-bounce">🌱</div>
+      <h2 class="serif-font text-2xl font-bold text-[#1A3A2B] mb-1">প্রকৃতির ছোঁয়া আপনার ঘরে!</h2>
+      <p class="text-[10px] font-bold tracking-[0.2em] text-[#D4AF37] uppercase mb-4">Global Green Plants</p>
+      <div class="w-12 h-[2px] bg-[#1A3A2B]/10 mx-auto mb-5"></div>
+      
+      <!-- আপনার কাস্টমাইজড সুন্দর মেসেজ -->
+      <p class="text-gray-600 text-sm leading-relaxed mb-6 px-2">
+        গ্লোবাল গ্রিন প্লান্টস-এ আপনাকে স্বাগতম। আপনি কি আপনার ছাদ, বারান্দা কিংবা ইনডোর স্পেসকে একটি সুন্দর বাগানে রূপান্তরিত করতে চান? আপনার এই স্বপ্নকে পূরণ করতেই আমাদের এই আয়োজন। সেরা জাতের সুস্থ ও সতেজ গাছের কালেকশন দেখতে নিচে ক্লিক করুন এবং শুরু করুন আপনার সবুজ যাত্রা!
       </p>
-      <button onclick="closeWelcomeModal()" class="w-full gold-gradient text-[#1A3A2B] py-3.5 rounded-xl font-bold text-sm tracking-wide transition shadow-md">
-        💚 ধন্যবাদ, কেনাকাটা শুরু করুন
+      
+      <button onclick="closeWelcomeModal()" class="w-full bg-[#1A3A2B] hover:bg-[#112a1f] text-white py-3.5 rounded-xl font-bold text-xs tracking-wide transition shadow-md">
+        🌿 কেনাকাটা শুরু করুন
       </button>
     </div>
   </div>
@@ -178,11 +181,11 @@
 
   <!-- হিরো ব্যানার -->
   <section class="bg-[#1A3A2B] text-white py-12 text-center border-b border-[#D4AF37]/10">
-    <h1 class="serif-font text-3xl md:text-4xl font-bold mb-2 tracking-wide text-gray-100">অভিজাত প্রকৃতির অনন্য কালেকশন</h1>
+    <h1 class="serif-font text-3xl md:text-4xl font-bold mb-2 tracking-wide text-gray-100">প্রকৃতির অনন্য কালেকশন</h1>
     <p class="text-gray-300 text-xs font-light max-w-md mx-auto">বাছাইকৃত শতভাগ খাঁটি ও সতেজ প্রিমিয়াম কোয়ালিটির গাছপালা</p>
   </section>
 
-  <!-- 📑 নতুন ক্যাটালগ মেনু ফিল্টার ফিল্ড -->
+  <!-- 📑 ক্যাটালগ মেনু ফিল্টার ফিল্ড -->
   <div class="max-w-7xl mx-auto px-6 pt-10">
     <div class="flex flex-wrap justify-center gap-2 md:gap-4 bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
       <button onclick="filterCatalog('all')" id="cat-btn-all" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-[#1A3A2B] text-white shadow-sm">
@@ -314,7 +317,6 @@
       updateSuccessModalFields();
     };
 
-    // 🌟 ওয়েলকাম মোডাল বন্ধ করার ফাংশন
     function closeWelcomeModal() {
       document.getElementById('welcome-modal').classList.add('hidden');
     }
@@ -357,7 +359,6 @@
       }
     }
 
-    // 📑 ক্যাটালগ ফিল্টারিং লজিক
     function filterCatalog(category) {
       currentSelectedCategory = category;
       
