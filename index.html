@@ -1,401 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global Green Plant</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Green Plant | Premium Nursery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>🌿 Global Green Plant</h1>
-        <div style="margin-top:10px;">
-<button onclick="setLanguage('en')">English</button>
-<button onclick="setLanguage('bn')">বাংলা</button>
+    <header>
+        <div class="logo">
+            <i class="fas fa-leaf"></i> Global Green Plant
         </div>
-
         <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#plants">Plants</a>
-            <a href="#contact">Contact</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
-    </div>
-</header>
-<section class="slider">
-<div class="slides">
-    <img class="slide active" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735">
-    <img class="slide" src="https://images.unsplash.com/photo-1468327768560-75b778cbb551">
-    <img class="slide" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b">
-</div>
-
-<div class="slider-text">
-<h1>🌿 Welcome to Global Green Plant</h1>
-
-<p>Healthy Plants | Nursery | Gardening Tips</p>
-
-<a href="#plants" class="btn">🌱 Shop Now</a>
-
-<a href="#contact" class="btn">📞 Contact Us</a>
-<div class="slider-dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-</div>
-    </div>
-    <div class="hero-features">
-
-    <div class="feature-box">
-        🌿
-        <h3>100+</h3>
-        <p>Types of Plants</p>
-    </div>
-
-    <div class="feature-box">
-        😊
-        <h3>500+</h3>
-        <p>Happy Customers</p>
-    </div>
-
-    <div class="feature-box">
-        ⭐
-        <h3>100%</h3>
-        <p>Quality Guarantee</p>
-    </div>
-
-    <div class="feature-box">
-        🎧
-        <h3>24/7</h3>
-        <p>Customer Support</p>
-    </div>
-
-</div>
-</div>
-
-</section>
-<section class="hero" id="home">
-
-<div class="container hero-content">
-
-<div class="hero-left">
-
-<h2>Bring Nature Into Your Home</h2>
-
-<p>
-Premium indoor and outdoor plants that make every home greener,
-healthier and more beautiful.
-</p>
-
-<div class="hero-buttons">
-<a href="#plants" class="btn">🌱 Explore Plants</a>
-<a href="#contact" class="btn btn-outline">📞 Contact Us</a>
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="hero-card">
-
-<h3>🌿 Why Choose Us?</h3>
-
-<ul>
-<li>✔ Fresh Nursery Plants</li>
-<li>✔ Fast Home Delivery</li>
-<li>✔ Affordable Price</li>
-<li>✔ Plant Care Support</li>
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="about" id="about">
-    <div class="container">
-
-        <h2>About Us</h2>
-
-        <p>
-            Global Green Plant is dedicated to providing beautiful,
-            healthy and affordable plants for homes, offices and gardens.
-            Our mission is to make every place greener.
-        </p>
-
-    </div>
-</section>
-<section class="plants" id="plants">
-    <div class="container">
-
-        <h2>Our Popular Plants</h2>
-
-        <div class="plant-grid">
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?w=600" alt="Indoor Plant">
-                <h3>Indoor Plants</h3>
-                <p>Fresh indoor plants that improve air quality and beautify your home.</p>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=600" alt="Flower Plant">
-                <h3>Flower Plants</h3>
-                <p>Beautiful flowering plants with vibrant seasonal blooms.</p>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600" alt="Fruit Plant">
-                <h3>Fruit Plants</h3>
-                <p>Healthy fruit plants suitable for home gardens and farms.</p>
-            </div>
-
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
         </div>
+    </header>
 
-    </div>
-</section>
-<section class="featured-plants">
-
-    <div class="container">
-
-        <h2>🌟 Featured Plants</h2>
-
-        <div class="plant-grid">
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=600" alt="Snake Plant">
-                <h3>Snake Plant</h3>
-                <p>Low maintenance plant that naturally purifies indoor air.</p>
-                <a href="#contact" class="btn">🛒 Buy Now</a>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=600" alt="Peace Lily">
-                <h3>Peace Lily</h3>
-                <p>Beautiful flowering indoor plant with excellent air-cleaning benefits.</p>
-                <a href="#contact" class="btn">🛒 Buy Now</a>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=600" alt="Money Plant">
-                <h3>Money Plant</h3>
-                <p>A lucky green plant that is perfect for homes and offices.</p>
-                <a href="#contact" class="btn">🛒 Buy Now</a>
-            </div>
-
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Bring Premium Nature Into Your Space</h1>
+            <p>Curated exotic plants, hand-delivered to elevate your home and office aesthetics.</p>
+            <a href="#catalog" class="btn">Explore Collection</a>
         </div>
-
-    </div>
-
-</section>
-    <section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-
-            <div class="stat-box">
-                <h2>500+</h2>
-                <p>Happy Customers</p>
-            </div>
-
-            <div class="stat-box">
-                <h2>100+</h2>
-                <p>Plant Varieties</p>
-            </div>
-
-            <div class="stat-box">
-                <h2>1000+</h2>
-                <p>Orders Delivered</p>
-            </div>
-
-            <div class="stat-box">
-                <h2>24/7</h2>
-                <p>Customer Support</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-    <section class="offer-banner">
-
-    <div class="container">
-
-        <h2>🎉 Special Offer</h2>
-
-        <p>
-            Get <strong>20% OFF</strong> on all indoor plants this month.
-            Free Home Delivery on orders above ₹999.
-        </p>
-
-        <a href="#contact" class="btn">🌿 Claim Offer</a>
-
-    </div>
-
-</section>
-    <section class="plant-search">
-
-    <div class="container">
-
-        <h2>🔍 Search Plants</h2>
-
-        <p>Find your favorite plant instantly.</p>
-
-        <input
-            type="text"
-            id="plantSearch"
-            placeholder="Search by plant name..."
-            onkeyup="searchPlants()">
-
-    </div>
-
     </section>
-<section class="services">
 
-<div class="container">
+    <section id="catalog" class="catalog-section">
+        <h2>Our Premium Collection</h2>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search for your perfect plant...">
+        </div>
 
-<h2>Our Services</h2>
+        <div class="plant-grid" id="plant-grid">
+            </div>
+    </section>
 
-<div class="service-grid">
+    <section id="contact" class="contact-section">
+        <h2>Connect With Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Visit Our Nursery</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Purbasthali, West Bengal, India</p>
+                <p><i class="fas fa-envelope"></i> barmani641@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 6295301573 / +91 9239278504</p>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will get back to you soon.');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-<div class="service">
-<h3>🌿 Nursery</h3>
-<p>Quality indoor and outdoor plants.</p>
-</div>
+    <footer>
+        <p>&copy; 2026 Global Green Plant. All Premium Rights Reserved.</p>
+    </footer>
 
-<div class="service">
-<h3>🏡 Landscaping</h3>
-<p>Garden design and maintenance.</p>
-</div>
-
-<div class="service">
-<h3>🚚 Home Delivery</h3>
-<p>Fast delivery across your location.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="gallery">
-
-<div class="container">
-
-<h2>Gallery</h2>
-
-<div class="gallery-grid">
-
-<img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=600" alt="Plant">
-
-<img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=600" alt="Garden">
-
-<img src="https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=600" alt="Flowers">
-
-</div>
-
-</div>
-
-</section>
-    <section id="reviews" class="reviews">
-  <div class="container">
-    <h2>⭐⭐⭐⭐⭐ Customer Reviews</h2>
-
-    <div class="review-card">
-      <h3>Rahul</h3>
-      <p>★★★★★</p>
-      <p>Very healthy plants and excellent service.</p>
-    </div>
-
-    <div class="review-card">
-      <h3>Priya</h3>
-      <p>★★★★★</p>
-      <p>Fast delivery and beautiful plants.</p>
-    </div>
-  </div>
-</section>
-    <section class="plant-doctor">
-  <div class="container">
-    <h2>🌿 AI Plant Doctor (Coming Soon)</h2>
-    <p>📷 Upload a photo of your plant.</p>
-    <p>🤖 Soon our AI will identify diseases and suggest treatments.</p>
-
-    <button class="btn" disabled>
-      Coming Soon
-    </button>
-  </div>
-</section>
-    <section class="contact" id="contact">
-
-<div class="container">
-
-<h2>Contact Us</h2>
-
-<p><strong>📍 Address:</strong> West Bengal, India</p>
-
-<p><strong>📞 Call:</strong>
-<a href="tel:+916295301573">6295301573</a><br>
-<a href="tel:+919239278504">9239278504</a>
-</p>
-
-<p><strong>💬 WhatsApp:</strong>
-<a href="https://wa.me/919239278504" target="_blank">
-Chat on WhatsApp
-</a>
-</p>
-
-<p><strong>📧 Email:</strong>
-<a href="mailto:Barmani641@gmail.com">
-Barmani641@gmail.com
-</a>
-</p>
-
-<form>
-
-<input type="text" placeholder="Your Name" required>
-
-<input type="email" placeholder="Your Email" required>
-
-<textarea rows="5" placeholder="Your Message"></textarea>
-
-<button type="submit" class="btn">Send Message</button>
-
-</form>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="container">
-
-<p>© 2025 Global Green Plant. All Rights Reserved.</p>
-
-<p>Made with ❤️ for Nature Lovers.</p>
-
-</div>
-
-</footer>
-    <a href="https://wa.me/919239278504" class="whatsapp-float" target="_blank">
-💬
-</a>
-
-<a href="tel:+916295301573" class="call-float">
-📞
-</a>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
