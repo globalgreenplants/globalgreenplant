@@ -594,6 +594,34 @@
       </div>
     </div>
     <!-- [নতুন] ইউনিভার্সাল মোডাল শেষ -->
+<!-- মোডাল ও লজিক শুরু -->
+<div id="universal-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden">
+  <div class="bg-white rounded-3xl max-w-lg w-full p-6 max-h-[80vh] overflow-y-auto">
+    <div class="flex justify-between items-center mb-6 border-b pb-4">
+      <h3 id="modal-title" class="text-xl font-bold">ভ্যারাইটিসমূহ</h3>
+      <button onclick="document.getElementById('universal-modal').classList.add('hidden')" class="text-2xl font-bold">✕</button>
+    </div>
+    <div id="modal-grid" class="grid grid-cols-2 gap-4"></div>
+  </div>
+</div>
+
+<script>
+const treeDatabase = {
+  'fruits': [{ name: 'মিয়াজাকি আম', price: 1500 }, { name: 'হিমসাগর আম', price: 200 }],
+  'flowers': [{ name: 'অস্ট্রেলিয়ান জবা', price: 250 }, { name: 'সাদা গোলাপ', price: 150 }]
+};
+
+function showVarieties(category, title) {
+  const grid = document.getElementById('modal-grid');
+  document.getElementById('modal-title').innerText = title;
+  grid.innerHTML = '';
+  treeDatabase[category].forEach(item => {
+    grid.innerHTML += `<div class="border p-4 rounded-xl text-center"><p class="font-bold text-sm">${item.name}</p><p class="text-green-700 font-bold mb-2">₹${item.price}</p><button class="bg-black text-white w-full py-1 rounded-lg text-xs">কিনুন</button></div>`;
+  });
+  document.getElementById('universal-modal').classList.remove('hidden');
+}
+</script>
+<!-- মোডাল ও লজিক শেষ -->
 
 </body>
 </html>
