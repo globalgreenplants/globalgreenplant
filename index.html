@@ -25,7 +25,7 @@
     🎉 স্পেশাল অফার: আমাদের থেকে ৩০০০ টাকার কেনাকাটা করলেই পশ্চিমবঙ্গ জুড়ে হোম ডেলিভারি একদম ফ্রি! 🚚
   </div>
 
-  <!-- 🌟 আপনার নিজের লেখা চমৎকার ওয়েলকাম পপ-আপ মোডাল -->
+  <!-- 🌟 ওয়েলকাম পপ-আপ মোডাল -->
   <div id="welcome-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-md">
     <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl text-center border-t-4 border-[#1A3A2B] relative transform scale-100 transition-all duration-300">
       <div class="text-5xl mb-4 animate-bounce">🌱</div>
@@ -184,7 +184,7 @@
     <p class="text-gray-300 text-xs font-light max-w-md mx-auto">বাছাইকৃত শতভাগ খাঁটি ও সতেজ প্রিমিয়াম কোয়ালিটির গাছপালা (সমগ্র পশ্চিমবঙ্গে ডেলিভারি)</p>
   </section>
 
-  <!-- 📑 ক্যাটালগ মেনু এবং কুইক ফাইন্ডার ফিল্টার -->
+  <!-- ক্যাটালগ মেনু এবং ফিল্টার -->
   <div class="max-w-7xl mx-auto px-6 pt-10 space-y-4">
     <div class="flex flex-wrap justify-center gap-2 md:gap-4 bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
       <button onclick="filterCatalog('all')" id="cat-btn-all" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-[#1A3A2B] text-white shadow-sm">
@@ -220,7 +220,7 @@
     <div id="no-products-msg" class="text-center py-20 text-gray-400 text-sm hidden">এই ক্যাটালগে বর্তমানে কোনো গাছ আপলোড করা নেই।</div>
   </section>
 
-  <!-- 🎉 কাস্টমার রিভিউ সেকশন -->
+  <!-- কাস্টমার রিভিউ সেকশন -->
   <section class="bg-[#F4F1EA] py-12 px-6 border-t border-b border-gray-250">
     <div class="max-w-5xl mx-auto text-center">
       <h2 class="serif-font text-2xl font-bold text-[#1A3A2B] mb-2">গ্রাহকদের মুখে আমাদের কথা</h2>
@@ -266,15 +266,86 @@
     </div>
   </section>
 
-  <!-- ⚙️ ম্যানেজার ড্যাশবোর্ড -->
-  <section class="bg-white border-2 border-[#D4AF37]/30 p-8 max-w-2xl mx-auto my-14 rounded-3xl shadow-xl space-y-8">
+  <!-- ⚙️ নতুন এবং আপগ্রেডেড স্মার্ট কন্ট্রোল ড্যাশবোর্ড -->
+  <section class="bg-white border-2 border-[#D4AF37]/30 p-6 md:p-8 max-w-2xl mx-auto my-14 rounded-3xl shadow-xl space-y-8">
     
     <div class="text-center border-b pb-4 border-gray-150">
       <span class="text-3xl">⚙️</span>
       <h2 class="serif-font text-xl font-bold text-[#1A3A2B]">ম্যানেজার কন্ট্রোল ড্যাশবোর্ড</h2>
-      <p class="text-gray-400 text-xs mt-1">প্রোডাক্ট আপলোড, পেমেন্ট অ্যাকাউন্ট এবং কিউআর কোড সেটিংস আপডেট করুন</p>
+      <p class="text-gray-400 text-xs mt-1">সহজে ও দ্রুত গাছ আপলোড এবং নার্সারি সেটিংস পরিচালনা করুন</p>
     </div>
 
+    <!-- 🌟 অপশন ১: অটো রেডিমেড কুইক প্লান্ট আপলোডার (আপনার অনুরোধে তৈরি) -->
+    <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 p-5 rounded-2xl border border-emerald-200">
+      <h4 class="font-bold text-sm text-[#1A3A2B] mb-1 flex items-center gap-1.5">
+        ⚡ স্মার্ট অটো কুইক আপলোডার (No Typing!)
+      </h4>
+      <p class="text-[11px] text-gray-500 mb-4">গাছের নাম বা ছবি খোঁজার দরকার নেই; লিস্ট থেকে সিলেক্ট করুন এবং শুধু দাম বসিয়ে দিন!</p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <div>
+          <label class="block font-semibold text-gray-650 mb-1">১. রেডিমেড গাছের তালিকা থেকে বাছুন</label>
+          <select id="quick-prod-select" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
+            <!-- জাভাস্ক্রিপ্ট দিয়ে এখানে ইনডোর এবং সব প্রজাতির গাছের বিশাল তালিকা লোড হবে -->
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-gray-650 mb-1">২. আপনার বিক্রয় মূল্য (₹)</label>
+          <input type="number" id="quick-prod-price" placeholder="উদা: 299" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
+        </div>
+      </div>
+      <button onclick="uploadQuickProduct()" class="w-full bg-[#1A3A2B] text-white py-3 rounded-xl font-bold hover:bg-[#112a1f] transition mt-4 shadow-md text-xs flex items-center justify-center gap-1">
+        🚀 এই গাছটি ওয়েবসাইটে লাইভ করুন
+      </button>
+    </div>
+
+    <!-- অপশন ২: ম্যানুয়াল আপলোড ফর্ম (যদি কোনো স্পেশাল নতুন গাছ আসে) -->
+    <div class="bg-gray-50 p-5 rounded-2xl border border-gray-250">
+      <button onclick="document.getElementById('manual-form-wrapper').classList.toggle('hidden')" class="w-full flex justify-between items-center text-xs font-bold text-gray-600">
+        <span>➕ ম্যানুয়ালি নিজের মতো গাছ আপলোড করুন (ঐচ্ছিক)</span>
+        <span>▼</span>
+      </button>
+      
+      <div id="manual-form-wrapper" class="hidden mt-4 space-y-4 pt-2 border-t border-gray-250">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">গাছের নাম লিখুন</label>
+            <input type="text" id="prod-name" placeholder="উদা: সূর্যডিম আম" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white focus:outline-none focus:border-[#1A3A2B]">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">যত্ন নেওয়ার টিপস</label>
+            <input type="text" id="prod-tip" placeholder="উদা: কম আলো, সপ্তাহে ২ দিন জল" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white focus:outline-none focus:border-[#1A3A2B]">
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">দাম (টাকায় ₹)</label>
+            <input type="number" id="prod-price" placeholder="উদা: 500" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white focus:outline-none focus:border-[#1A3A2B]">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">ক্যাটাগরি</label>
+            <select id="prod-cat" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white focus:outline-none focus:border-[#1A3A2B]">
+              <option value="indoor">🪴 ইনডোর প্লান্ট</option>
+              <option value="fruits">🍎 ফল গাছ</option>
+              <option value="flowers">🌹 ফুল গাছ</option>
+              <option value="outdoor">🌳 আউটডোর প্লান্ট</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-500 mb-1">গাছের ছবি সিলেক্ট করুন</label>
+          <input type="file" id="prod-image-file" accept="image/*" class="w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-white">
+        </div>
+
+        <button onclick="uploadManualProduct(event)" class="w-full bg-gray-700 text-white hover:bg-gray-800 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow">
+          যুক্ত করুন
+        </button>
+      </div>
+    </div>
+
+    <!-- সেটিংস সেকশন -->
     <div class="bg-amber-50/50 p-5 rounded-2xl border border-amber-200">
       <h4 class="font-bold text-sm text-amber-900 mb-3 flex items-center gap-1">💳 আপনার UPI ও কিউআর কোড সেটিংস (India)</h4>
       <div class="space-y-3 text-xs">
@@ -305,48 +376,9 @@
         🗑️ ডিলিট মোড অন করুন
       </button>
     </div>
-    
-    <form id="product-form" class="space-y-4 pt-2">
-      <h4 class="font-bold text-sm text-[#1A3A2B] mb-2">✨ নতুন গাছ যুক্ত করুন</h4>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-xs font-bold uppercase text-gray-500 mb-1">গাছের নাম</label>
-          <input type="text" id="prod-name" placeholder="উদা: সূর্যডিম আম" class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required>
-        </div>
-        <div>
-          <label class="block text-xs font-bold uppercase text-gray-500 mb-1">যত্ন নেওয়ার টিপস (Care Tip)</label>
-          <input type="text" id="prod-tip" placeholder="উদা: কম আলো, সপ্তাহে ২ দিন জল" class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]">
-        </div>
-      </div>
-      
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-          <label class="block text-xs font-bold uppercase text-gray-500 mb-1">দাম (টাকায় ₹)</label>
-          <input type="number" id="prod-price" placeholder="উদা: 500" class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required>
-        </div>
-        <div>
-          <label class="block text-xs font-bold uppercase text-gray-500 mb-1">ক্যাটাগরি</label>
-          <select id="prod-cat" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white focus:outline-none focus:border-[#1A3A2B]">
-            <option value="fruits">🍎 ফল গাছ</option>
-            <option value="flowers">🌹 ফুল গাছ</option>
-            <option value="indoor">🪴 ইনডোর প্লান্ট</option>
-            <option value="outdoor">🌳 আউটডোর প্লান্ট</option>
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <label class="block text-xs font-bold uppercase text-gray-500 mb-1">গাছের আসল ছবি সিলেক্ট করুন</label>
-        <input type="file" id="prod-image-file" accept="image/*" class="w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-[#FDFBF7]" required>
-      </div>
-
-      <button type="submit" class="w-full bg-[#1A3A2B] text-white hover:bg-[#112a1f] py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-md">
-        ➕ ওয়েবসাইটে গাছ আপলোড করুন
-      </button>
-    </form>
   </section>
 
-  <!-- 🌟 নতুন প্রফেশনাল ফুটার সেকশন -->
+  <!-- ফুটার সেকশন -->
   <footer class="bg-[#1A3A2B] text-gray-300 py-10 border-t border-[#D4AF37]/20 text-xs">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
@@ -367,12 +399,10 @@
           পূর্বস্থলী, পূর্ব বর্ধমান, পশ্চিমবঙ্গ, ভারত
         </p>
         
-        <!-- 📞 ২৪/৭ কল সাপোর্ট সেকশন -->
         <p class="text-amber-400 font-semibold mb-3 flex items-center gap-1.5">
           <i class="fas fa-headset text-sm"></i> আমাদের এখানে ২৪/৭ কল করার সুবিধা রয়েছে
         </p>
         
-        <!-- 🟢 হোয়াটসঅ্যাপ চিহ্ন এবং ডাইনামিক কন্টাক্ট লিংক -->
         <div class="mt-4">
           <p class="font-bold text-[#D4AF37] mb-1.5">💬 যেকোনো জিজ্ঞাসায় আমাদের হোয়াটসঅ্যাপ করুন</p>
           <a id="footer-wa-link" href="#" target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl font-bold text-xs shadow-md transition">
@@ -398,6 +428,41 @@
     let myBankDetails = localStorage.getItem('nursery_bank') || "SBI, অ্যাকাউন্ট নং: XXXXXX, IFSC: SBINXXXXXXX";
     let myQrCodeImg = localStorage.getItem('nursery_qr') || "https://placehold.co/150x150/png?text=UPI+QR+Code";
 
+    // 🌟 প্রাক-সংরক্ষিত (Pre-loaded) মাস্টার গাছের তালিকা
+    const masterPlantDatabase = [
+      // 🪴 ইনডোর প্লান্টস
+      { name: "মনস্টেরা ডেলিসিওসা (Monstera)", category: "indoor", tip: "💡 কম আলো, সহজ যত্ন", img: "https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=300" },
+      { name: "স্নেক প্লান্ট (Snake Plant)", category: "indoor", tip: "🌵 সহজ যত্ন, হাওয়া পরিষ্কার করে", img: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=80&w=300" },
+      { name: "মানি প্লান্ট গোল্ডেন (Money Plant)", category: "indoor", tip: "💡 ঘরের ভেতরে বা জলে বাড়ে", img: "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=300" },
+      { name: "অ্যালোভেরা (Aloe Vera)", category: "indoor", tip: "🌵 ঔষধি গাছ, কম জল প্রয়োজন", img: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=300" },
+      { name: "জেড প্লান্ট (Zz Plant)", category: "indoor", tip: "💡 কম আলোতে বছরের পর বছর বাঁচে", img: "https://images.unsplash.com/photo-1632207691143-643c2a9a9361?q=80&w=300" },
+      { name: "স্পাইডার প্লান্ট (Spider Plant)", category: "indoor", tip: "💡 বারান্দা বা ঘরের টেবিলে রাখুন", img: "https://images.unsplash.com/photo-1512428813824-f713c2411af5?q=80&w=300" },
+      { name: "লাকি ব্যাম্বু (Lucky Bamboo)", category: "indoor", tip: "💡 জল বা মাটিতে ইনডোরে বাঁচে", img: "https://images.unsplash.com/photo-1535242208474-9a2793260ca8?q=80&w=300" },
+      { name: "পিস লিলি (Peace Lily)", category: "indoor", tip: "💡 সুন্দর সাদা ফুল ফোটে ইনডোরে", img: "https://images.unsplash.com/photo-1597055181300-e3633a207518?q=80&w=300" },
+      { name: "অ্যারেলিয়া প্লান্ট (Aralia)", category: "indoor", tip: "💡 ঘরের সৌন্দর্য বৃদ্ধিকারী ইনডোর", img: "https://images.unsplash.com/photo-1509423424749-3741cbb14a70?q=80&w=300" },
+
+      // 🍎 ফল গাছ
+      { name: "মিয়াজاکی আম (Miyazaki Mango)", category: "fruits", tip: "☀️ প্রচুর রোদ প্রয়োজন", img: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=300" },
+      { name: "কাটিমন বারোমাসি আম (Katimon)", category: "fruits", tip: "☀️ টবে চাষের উপযোগী অল-টাইম", img: "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=300" },
+      { name: "থাই ভিয়েতনামী মাল্টা", category: "fruits", tip: "☀️ মিষ্টি ও রসালো ফল, টবে হয়", img: "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=300" },
+      { name: "কলমের মিষ্টি লেবু (Lemon)", category: "fruits", tip: "☀️ ১২ মাস প্রচুর লেবু ধরে টবে", img: "https://images.unsplash.com/photo-1590502593747-42a996133562?q=80&w=300" },
+      { name: "থাই পেয়ারা (Guava V7)", category: "fruits", tip: "☀️ ছোট গাছেই বড় বড় পেয়ারা আসবে", img: "https://images.unsplash.com/photo-1534938665420-4193efe555c9?q=80&w=300" },
+      { name: "ড্রাগন ফ্রুট পিঙ্ক (Dragon Fruit)", category: "fruits", tip: "☀️ ক্যাকটাস জাতীয়, জল কম লাগে", img: "https://images.unsplash.com/photo-1527325679968-2341bb3d793a?q=80&w=300" },
+      { name: "মিষ্টি ডালিম / বেদানা (Pomegranate)", category: "fruits", tip: "☀️ ছাদ বাগানের জন্য আদর্শ ফল গাছ", img: "https://images.unsplash.com/photo-1598112972960-9832962bf194?q=80&w=300" },
+
+      // 🌹 ফুল গাছ
+      { name: "ব্ল্যাক ব্যাকারাত গোলাপ (Black Rose)", category: "flowers", tip: "☀️ প্রতিদিন জল ও রোদ", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=300" },
+      { name: "কাশ্মীরি লাল গোলাপ (Red Rose)", category: "flowers", tip: "☀️ ছাদ বাগানের সেরা আকর্ষণ", img: "https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=300" },
+      { name: "থাই বারোমাসি জবা (Hibiscus)", category: "flowers", tip: "☀️ প্রচুর ফুল ফোটে, রোদ পছন্দ", img: "https://images.unsplash.com/photo-1551248429-40975aa4de74?q=80&w=300" },
+      { name: "গন্ধরাজ (Gardenia)", category: "flowers", tip: "☀️ মিষ্টি সুবাসিত সাদা ফুল", img: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=300" },
+      { name: "আরবীয় জুঁই / বেলি ফুল (Jasmine)", category: "flowers", tip: "☀️ গরমকালে প্রচুর সুগন্ধি ফুল হয়", img: "https://images.unsplash.com/photo-1508717272800-9fff97ef7be1?q=80&w=300" },
+      { name: "বোগেনভিলিয়া / কাগজ ফুল", category: "flowers", tip: "☀️ কম জল ও কড়া রোদে ফুলে ভরে যায়", img: "https://images.unsplash.com/photo-1568478449439-d343f1146fc8?q=80&w=300" },
+
+      // 🌳 আউটডোর
+      { name: "ক্রোটন পাতা বাহার (Croton)", category: "outdoor", tip: "☀️ রঙিন পাতার চমৎকার গাছ", img: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=300" },
+      { name: "থুজা / ক্রিসমাস ট্রি (Thuja)", category: "outdoor", tip: "☀️ বাগানের গেটে বা টবে রাখার জন্য", img: "https://images.unsplash.com/photo-1543430602-82f3cd2797ea?q=80&w=300" }
+    ];
+
     const defaultProducts = [
       { id: 'd1', name: 'মিয়াজاکی আম (সূর্যডিম)', price: 2500, category: 'fruits', tip: '☀️ প্রচুর রোদ প্রয়োজন', img: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=300' },
       { id: 'd2', name: 'ব্ল্যাক ব্যাকারাত গোলাপ', price: 500, category: 'flowers', tip: '☀️ প্রতিদিন জল ও রোদ', img: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=300' },
@@ -407,6 +472,7 @@
     let products = JSON.parse(localStorage.getItem('nursery_products')) || defaultProducts;
 
     window.onload = function() {
+      setupQuickDropdown();
       renderProducts();
       loadSettingsIntoDashboard();
       updateSuccessModalFields();
@@ -415,6 +481,76 @@
 
     function closeWelcomeModal() {
       document.getElementById('welcome-modal').classList.add('hidden');
+    }
+
+    // ড্রপডাউনে রেডিমেড সব গাছের নাম লোড করার ফাংশন
+    function setupQuickDropdown() {
+      const select = document.getElementById('quick-prod-select');
+      select.innerHTML = '<option value="">-- এখানে ক্লিক করে গাছ বেছে নিন --</option>';
+      
+      masterPlantDatabase.forEach((plant, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        let prefix = plant.category === 'indoor' ? '🪴' : plant.category === 'fruits' ? '🍎' : plant.category === 'flowers' ? '🌹' : '🌳';
+        option.innerText = `${prefix} ${plant.name}`;
+        select.appendChild(option);
+      });
+    }
+
+    // অটো রেডিমেড কুইক আপলোড করার মেইন লজিক
+    function uploadQuickProduct() {
+      const selectIndex = document.getElementById('quick-prod-select').value;
+      const price = parseInt(document.getElementById('quick-prod-price').value);
+
+      if(!selectIndex) { alert('অনুগ্রহ করে তালিকা থেকে একটি গাছ সিলেক্ট করুন!'); return; }
+      if(!price || price <= 0) { alert('অনুগ্রহ করে গাছের একটি সঠিক দাম লিখুন!'); return; }
+
+      const selectedPlant = masterPlantDatabase[selectIndex];
+      
+      const newProduct = {
+        id: 'p_' + Date.now(),
+        name: selectedPlant.name,
+        price: price,
+        category: selectedPlant.category,
+        tip: selectedPlant.tip,
+        img: selectedPlant.img
+      };
+
+      products.push(newProduct);
+      localStorage.setItem('nursery_products', JSON.stringify(products));
+      renderProducts();
+      
+      document.getElementById('quick-prod-price').value = '';
+      alert(`🎉 সফলভাবে "${selectedPlant.name}" গাছটি ₹${price} দামে ওয়েবসাইটে আপলোড হয়ে গেছে!`);
+    }
+
+    // ম্যানুয়াল আপলোড করার ফাংশন
+    function uploadManualProduct(e) {
+      const name = document.getElementById('prod-name').value;
+      const price = parseInt(document.getElementById('prod-price').value);
+      const category = document.getElementById('prod-cat').value;
+      const tip = document.getElementById('prod-tip').value || "🌿 সতেজ ও সুস্থ গাছ";
+      const fileInput = document.getElementById('prod-image-file');
+      const file = fileInput.files[0];
+      
+      if(!name || !price) { alert('গাছের নাম এবং দাম দেওয়া আবশ্যক!'); return; }
+      if(!file) { alert('দয়া করে গাছের একটি ছবি আপলোড করুন!'); return; }
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const finalImgUrl = event.target.result;
+        const newProduct = { id: 'p_' + Date.now(), name: name, price: price, category: category, tip: tip, img: finalImgUrl };
+        products.push(newProduct);
+        localStorage.setItem('nursery_products', JSON.stringify(products));
+        renderProducts();
+        
+        document.getElementById('prod-name').value = '';
+        document.getElementById('prod-price').value = '';
+        document.getElementById('prod-tip').value = '';
+        fileInput.value = '';
+        alert('🎉 ম্যানুয়ালি নতুন গাছটি সফলভাবে আপলোড হয়েছে!');
+      };
+      reader.readAsDataURL(file);
     }
 
     function loadSettingsIntoDashboard() {
@@ -452,13 +588,13 @@
           localStorage.setItem('nursery_qr', myQrCodeImg);
           updateSuccessModalFields();
           updateFooterWhatsAppLink();
-          alert('🎉 অভিনন্দন! সমস্ত তথ্য ও কিউআর কোড সফলভাবে আপডেট হয়েছে!');
+          alert('🎉 সমস্ত পেমেন্ট সেটিংস সেভ হয়েছে!');
         };
         reader.readAsDataURL(file);
       } else {
         updateSuccessModalFields();
         updateFooterWhatsAppLink();
-        alert('🎉 আপনার তথ্যগুলো সফলভাবে আপডেট হয়েছে!');
+        alert('🎉 পেমেন্ট তথ্য সফলভাবে আপডেট হয়েছে!');
       }
     }
 
@@ -556,30 +692,6 @@
         renderProducts();
       }
     }
-
-    document.getElementById('product-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('prod-name').value;
-      const price = parseInt(document.getElementById('prod-price').value);
-      const category = document.getElementById('prod-cat').value;
-      const tip = document.getElementById('prod-tip').value || "🌿 সতেজ ও সুস্থ গাছ";
-      const fileInput = document.getElementById('prod-image-file');
-      const file = fileInput.files[0];
-      
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          const finalImgUrl = event.target.result;
-          const newProduct = { id: 'p_' + Date.now(), name: name, price: price, category: category, tip: tip, img: finalImgUrl };
-          products.push(newProduct);
-          localStorage.setItem('nursery_products', JSON.stringify(products));
-          renderProducts();
-          document.getElementById('product-form').reset();
-          alert('🎉 সফলভাবে আপনার গাছটি সঠিক ক্যাটালগে আপলোড হয়েছে!');
-        };
-        reader.readAsDataURL(file);
-      }
-    });
 
     function handleDirectPurchase(id, name, price, img) {
       addToCartItems(id, name, price, img);
