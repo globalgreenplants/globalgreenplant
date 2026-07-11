@@ -34,7 +34,7 @@
       <div class="w-12 h-[2px] bg-[#1A3A2B]/10 mx-auto mb-5"></div>
       
       <p class="text-gray-600 text-sm leading-relaxed mb-6 px-2">
-        গ্লোবাল গ্রিন প্লান্টস-এ আপনাকে স্বাগতম। সেরা জাতের সুস্থ ও সতেজ গাছের কালেকশন দেখতে নিচে ক্লিক করুন এবং শুরু করুন আপনার সবুজ যাত্রা!
+        গ্লোবাল গ্রিন প্লান্টস-এ আপনাকে स्वागतম। সেরা জাতের সুস্থ ও সতেজ গাছের কালেকশন দেখতে নিচে ক্লিক করুন এবং শুরু করুন আপনার সবুজ যাত্রা!
       </p>
       
       <button onclick="closeWelcomeModal()" class="w-full bg-[#1A3A2B] hover:bg-[#112a1f] text-white py-3.5 rounded-xl font-bold text-xs tracking-wide transition shadow-md">
@@ -64,7 +64,7 @@
 
         <div>
           <label class="block text-xs font-bold uppercase text-gray-600 mb-1">ডেলিভারি ঠিকানা (পিনকোড সহ)</label>
-          <textarea id="cust-address" rows="2" placeholder="আপনার গ্রাম/রাস্তা, পোস্ট অফিস, জেলা এবং পিনকোড লিখুন..." class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required></textarea>
+          <textarea id="cust-address" rows="2" placeholder="আপনার গ্রাম/রাস্তা, পোস্ট office, জেলা এবং পিনকোড লিখুন..." class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required></textarea>
         </div>
 
         <div>
@@ -113,11 +113,6 @@
         <p class="font-bold text-amber-800 mb-2 text-center text-sm">💰 স্ক্যান করে টাকা পাঠান (UPI)</p>
         <p class="mb-1"><strong>GPay/PhonePe/Paytm:</strong> <span id="display-bkash-no" class="font-bold text-gray-800">91XXXXXXXX</span></p>
         <p class="mb-2"><strong>ব্যাংক অ্যাকাউন্ট:</strong> <span id="display-bank-details" class="font-bold text-gray-800">SBI, অ্যাকাউন্ট নং: XXXXXX, IFSC: SBINXXXXXXX</span></p>
-        
-        <div class="text-center my-2">
-          <p class="text-[10px] text-gray-500 mb-1">যেকোনো UPI অ্যাপ থেকে স্ক্যান করুন:</p>
-          <img id="display-qr-img" src="https://placehold.co/150x150/png?text=No+QR+Code" alt="Payment QR Code" class="w-32 h-32 mx-auto border rounded-lg bg-white p-1 shadow-sm">
-        </div>
       </div>
 
       <div class="bg-[#FDFBF7] p-4 rounded-xl border border-dashed text-left space-y-1 text-xs mb-4">
@@ -174,7 +169,7 @@
         <span class="text-sm font-semibold text-gray-500">সর্বমোট প্রদেয় দাম:</span>
         <span id="cart-total" class="text-2xl font-bold text-[#1A3A2B]">₹ ০</span>
       </div>
-      <button onclick="openCheckout()" class="w-full gold-gradient text-[#1A3A2B] py-4 rounded-xl font-bold text-sm tracking-wide uppercase transition shadow-md">অर्डर সম্পন্ন করুন (Checkout)</button>
+      <button onclick="openCheckout()" class="w-full gold-gradient text-[#1A3A2B] py-4 rounded-xl font-bold text-sm tracking-wide uppercase transition shadow-md">অর্ডার সম্পন্ন করুন (Checkout)</button>
     </div>
   </div>
 
@@ -225,15 +220,15 @@
     <!-- স্মার্ট অটো কুইক আপলোডার -->
     <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 p-5 rounded-2xl border border-emerald-200">
       <h4 class="font-bold text-sm text-[#1A3A2B] mb-1 flex items-center gap-1.5">
-        ⚡ স্মার্ট অটো কুইক আপলোডার (৫৫+ মেগা তালিকা)
+        ⚡ প্রিমিয়াম অটো কুইক আপলোডার (হাই-কোয়ালিটি ছবি সহ)
       </h4>
-      <p class="text-[11px] text-gray-500 mb-4">নিচের তালিকা থেকে যেকোনো গাছ সিলেক্ট করুন। ছবি অটোমেটিক ইন্টারনেট থেকে লোড হবে!</p>
+      <p class="text-[11px] text-gray-500 mb-4">নিচের তালিকা থেকে যেকোনো গাছ সিলেক্ট করুন। একদম পরিষ্কার ও আসল ছবি অটোমেটিক লোড হবে!</p>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
         <div>
           <label class="block font-semibold text-gray-650 mb-1">১. রেডিমেড গাছের তালিকা থেকে বাছুন</label>
           <select id="quick-prod-select" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
-            <!-- জাভাস্ক্রিপ্ট দিয়ে এখানে বিশাল তালিকা লোড হবে -->
+            <!-- জাভাস্ক্রিপ্ট দিয়ে এখানে ছবি লক করা তালিকা লোড হবে -->
           </select>
         </div>
         <div>
@@ -242,48 +237,8 @@
         </div>
       </div>
       <button onclick="uploadQuickProduct()" class="w-full bg-[#1A3A2B] text-white py-3 rounded-xl font-bold hover:bg-[#112a1f] transition mt-4 shadow-md text-xs flex items-center justify-center gap-1">
-        🚀 এই গাছটি ওয়েবসাইটে লাইভ করুন
+        🚀 এই গাছটি নিখুঁত ছবি সহ লাইভ করুন
       </button>
-    </div>
-
-    <!-- ম্যানুয়াল আপলোড ফর্ম -->
-    <div class="bg-gray-50 p-5 rounded-2xl border border-gray-250">
-      <button onclick="document.getElementById('manual-form-wrapper').classList.toggle('hidden')" class="w-full flex justify-between items-center text-xs font-bold text-gray-600">
-        <span>➕ ম্যানুয়ালি নিজের মতো গাছ আপলোড করুন (ঐচ্ছিক)</span>
-        <span>▼</span>
-      </button>
-      
-      <div id="manual-form-wrapper" class="hidden mt-4 space-y-4 pt-2 border-t border-gray-250">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-bold text-gray-500 mb-1">গাছের নাম লিখুন (বাংলা বা ইংরেজি)</label>
-            <input type="text" id="prod-name" placeholder="উদা: সুইট লেমন" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white focus:outline-none focus:border-[#1A3A2B]">
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-gray-500 mb-1">যত্ন নেওয়ার টিপস</label>
-            <input type="text" id="prod-tip" placeholder="উদা: কম আলো, সপ্তাহে ২ দিন জল" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white focus:outline-none focus:border-[#1A3A2B]">
-          </div>
-        </div>
-        
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-bold text-gray-500 mb-1">দাম (টাকায় ₹)</label>
-            <input type="number" id="prod-price" placeholder="উদা: 500" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white focus:outline-none focus:border-[#1A3A2B]">
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-gray-500 mb-1">ক্যাটাগরি</label>
-            <select id="prod-cat" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white focus:outline-none focus:border-[#1A3A2B]">
-              <option value="indoor">🪴 ইনডোর প্লান্ট</option>
-              <option value="fruits">🍎 ফল গাছ</option>
-              <option value="flowers">🌹 ফুল গাছ</option>
-              <option value="outdoor">🌳 আউটডোর প্লান্ট</option>
-            </select>
-          </div>
-        </div>
-        <button onclick="uploadManualAutoImageProduct(event)" class="w-full bg-gray-700 text-white hover:bg-gray-800 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow">
-          🤖 নাম অনুযায়ী অটো এআই ছবি দিয়ে যুক্ত করুন
-        </button>
-      </div>
     </div>
 
     <!-- সেটিংস সেকশন -->
@@ -322,7 +277,7 @@
       <p class="max-w-md mx-auto mb-4">আপনার চারপাশকে সবুজ সতেজতায় সাজিয়ে তোলাই আমাদের লক্ষ্য।</p>
       <div class="text-[11px] text-gray-500">&copy; 2026 Global Green Plants Nursery India. All Rights Reserved.</div>
     </div>
-  </footer>
+  </header>
 
   <!-- লজিক ও ফাংশনালিটি স্ক্রিপ্ট -->
   <script>
@@ -335,77 +290,53 @@
     let myBkashNo = localStorage.getItem('nursery_bkash') || "91XXXXXXXX";
     let myBankDetails = localStorage.getItem('nursery_bank') || "SBI, Account: XXXX";
 
-    // 🌟 ৫৫+ গাছের বিশাল ডাটাবেজ এবং সঠিক সার্চ কিওয়ার্ড (যাতে একদম নিখুঁত ছবি আসে)
+    // 🌟 একদম হাই-কোয়ালিটি এবং নিট ও ক্লিন গাছের ছবি সোর্স সহ ডাটাবেজ
     const masterPlantDatabase = [
-      // == ইনডোর প্লান্টস (Indoor Plants) ==
-      { name: "মনস্টেরা ডেলিসিওসা (Monstera)", category: "indoor", tip: "💡 কম আলো, ইনডোর প্রিমিয়াম", query: "monstera" },
-      { name: "স্নেক প্লান্ট (Snake Plant)", category: "indoor", tip: "🌵 সহজ যত্ন, হাওয়া পরিষ্কার করে", query: "snake plant" },
-      { name: "গোল্ডেন মানি প্লান্ট (Pothos)", category: "indoor", tip: "💡 ঘরের ভেতরে বা জলে বাড়ে", query: "money plant pothos" },
-      { name: "অ্যালোভেরা (Aloe Vera)", category: "indoor", tip: "🌵 ঔষধি গাছ, কম জল প্রয়োজন", query: "aloe vera" },
-      { name: "জেড প্লান্ট (ZZ Plant)", category: "indoor", tip: "💡 কম আলোতে ভালো থাকে", query: "zz plant" },
-      { name: "স্পাইডার প্লান্ট (Spider Plant)", category: "indoor", tip: "💡 ঘরের বাতাস বিশুদ্ধ করে", query: "spider plant" },
-      { name: "লাকি ব্যাম্বু (Lucky Bamboo)", category: "indoor", tip: "💡 জল বা মাটিতে ইনডোরে বাঁচে", query: "lucky bamboo" },
-      { name: "পিস লিলি (Peace Lily)", category: "indoor", tip: "💡 সুন্দর সাদা ফুল ফোটে ইনডোরে", query: "peace lily" },
-      { name: "অ্যারেলিয়া প্লান্ট (Aralia)", category: "indoor", tip: "💡 ঘরের ডেকোরেশনের জন্য সেরা", query: "aralia plant" },
-      { name: "অ্যারিকা পাম (Areca Palm)", category: "indoor", tip: "🪴 ঘরের কোণ সাজানোর জন্য সেরা", query: "areca palm" },
-      { name: "বস্টন ফার্ন (Boston Fern)", category: "indoor", tip: "💡 ঝুলিয়ে রাখার জন্য চমৎকার", query: "boston fern" },
-      { name: "ক্যালথিয়া (Calathea)", category: "indoor", tip: "💡 আকর্ষণীয় রঙিন পাতার ইনডোর", query: "calathea" },
-      { name: "সিঙ্গোনিয়াম (Syngonium)", category: "indoor", tip: "🌵 অত্যন্ত সহজ যত্নের ইনডোর", query: "syngonium" },
-      { name: "রবার প্লান্ট (Rubber Plant)", category: "indoor", tip: "🪴 চকচকে কালচে পাতার আভিজাত্য", query: "rubber plant" },
-      { name: "ফাইডল লিফ ফিগ (Fiddle Leaf)", category: "indoor", tip: "🪴 ড্রয়িং রুমের জন্য ড্রিম প্ল্যান্ট", query: "fiddle leaf fig" },
+      // == ইনডোর প্লান্টস (Indoor) ==
+      { name: "মনস্টেরা ডেলিসিওসা (Monstera)", category: "indoor", tip: "💡 কম আলো, ইনডোর প্রিমিয়াম", img: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=500" },
+      { name: "স্নেক প্লান্ট (Snake Plant)", category: "indoor", tip: "🌵 সহজ যত্ন, হাওয়া পরিষ্কার করে", img: "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=500" },
+      { name: "গোল্ডেন মানি প্লান্ট (Pothos)", category: "indoor", tip: "💡 ঘরের ভেতরে বা জলে বাড়ে", img: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=80&w=500" },
+      { name: "অ্যালোভেরা (Aloe Vera)", category: "indoor", tip: "🌵 ঔষধি গাছ, কম জল প্রয়োজন", img: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=500" },
+      { name: "জেড জেড প্লান্ট (ZZ Plant)", category: "indoor", tip: "💡 কম আলোতে ভালো থাকে", img: "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?q=80&w=500" },
+      { name: "স্পাইডার প্লান্ট (Spider Plant)", category: "indoor", tip: "💡 ঘরের বাতাস বিশুদ্ধ করে", img: "https://images.unsplash.com/photo-1572688484438-313a6e50c333?q=80&w=500" },
+      { name: "পিস লিলি (Peace Lily)", category: "indoor", tip: "💡 সুন্দর সাদা ফুল ফোটে ইনডোরে", img: "https://images.unsplash.com/photo-1593691509543-c55fb32e7355?q=80&w=500" },
+      { name: "অ্যারিকা পাম (Areca Palm)", category: "indoor", tip: "🪴 ঘরের কোণ সাজানোর জন্য সেরা", img: "https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=500" },
+      { name: "রবার প্লান্ট (Rubber Plant)", category: "indoor", tip: "🪴 চকচকে কালচে পাতার আভিজাত্য", img: "https://images.unsplash.com/photo-1597055181300-e3633a207518?q=80&w=500" },
+      { name: "ফাইডল লিফ ফিগ (Fiddle Leaf)", category: "indoor", tip: "🪴 ড্রয়িং রুমের জন্য ড্রিম প্ল্যান্ট", img: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=500" },
 
-      // == ফল গাছ (Fruit Plants) ==
-      { name: "মিয়াজاکی আম (Miyazaki Mango)", category: "fruits", tip: "☀️ জাপানি সূর্যডিম আম, প্রচুর রোদ চাই", query: "mango tree fruit" },
-      { name: "কাটিমন বারোমাসি আম (Katimon)", category: "fruits", tip: "☀️ অল-টাইম টবে মিষ্টি আম হবে", query: "mango fruit" },
-      { name: "আম্রপালি আম (Amrapali)", category: "fruits", tip: "☀️ মিষ্টি ও সুস্বাদু বামন জাতের আম", query: "mango" },
-      { name: "থাই ভিয়েতনামী মাল্টা", category: "fruits", tip: "☀️ প্রচুর মিষ্টি ফল ধরে টবেই", query: "malta fruit juice" },
-      { name: "কলমের বারোমাসি পাতিলেবু", category: "fruits", tip: "☀️ ১২ মাস প্রচুর লেবু ধরে টবে", query: "lemon tree" },
-      { name: "কাগজি লেবু (Kagzi Lemon)", category: "fruits", tip: "☀️ রসালো সুগন্ধি লেবুর গাছ", query: "fresh lemons" },
-      { name: "থাই পেয়ারা (Guava V7)", category: "fruits", tip: "☀️ ছোট গাছেই বড় বড় পেয়ারা আসবে", query: "guava fruit" },
-      { name: "ড্রাগন ফ্রুট পিঙ্ক (Dragon Fruit)", category: "fruits", tip: "☀️ ক্যাকটাস জাতের দামি বিদেশি ফল", query: "dragonfruit" },
-      { name: "মিষ্টি ডালিম / বেদানা", category: "fruits", tip: "☀️ ছাদ বাগানের জন্য আদর্শ ফল গাছ", query: "pomegranate" },
-      { name: "থাই বারোমাসি সফেদা (Sapota)", category: "fruits", tip: "☀️ মিষ্টি চিক্কু বা সফেদা ফল", query: "sapodilla" },
-      { name: "মিষ্টি কামরাঙা (Star Fruit)", category: "fruits", tip: "☀️ টবে থোকায় থোকায় ফল ধরে", query: "starfruit" },
-      { name: "কলমের জামরুল (Wax Apple)", category: "fruits", tip: "☀️ লাল বা সাদা মিষ্টি জামরুল", query: "wax apple" },
-      { name: "করমচা (Karonda)", category: "fruits", tip: "☀️ টক-মিষ্টি সুন্দর লাল ফল", query: "carissa carandas" },
-      { name: "মিষ্টি জলপাই (Olive)", category: "fruits", tip: "☀️ ছাদ বাগানে সহজে চাষযোগ্য", query: "olives" },
-      { name: "থাই আমড়া (Hog Plum)", category: "fruits", tip: "☀️ ১২ মাস গাছে টক-মিষ্টি আমড়া থাকে", query: "hog plum" },
+      // == ফল গাছ (Fruits) ==
+      { name: "মিয়াজاکی আম (Miyazaki Mango)", category: "fruits", tip: "☀️ জাপানি সূর্যডিম আম, প্রচুর রোদ চাই", img: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=500" },
+      { name: "কাটিমন বারোমাসি আম (Katimon)", category: "fruits", tip: "☀️ অল-টাইম টবে মিষ্টি আম হবে", img: "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=500" },
+      { name: "কলমের বারোমাসি পাতিলেবু", category: "fruits", tip: "☀️ ১২ মাস প্রচুর লেবু ধরে টবে", img: "https://images.unsplash.com/photo-1608322617273-5323b9847123?q=80&w=500" },
+      { name: "থাই পেয়ারা (Guava V7)", category: "fruits", tip: "☀️ ছোট গাছেই বড় বড় পেয়ারা আসবে", img: "https://images.unsplash.com/photo-1686690454316-b838b693ee10?q=80&w=500" },
+      { name: "ড্রাগন ফ্রুট পিঙ্ক (Dragon Fruit)", category: "fruits", tip: "☀️ ক্যাকটাস জাতের দামি বিদেশি ফল", img: "https://images.unsplash.com/photo-1527325679963-348e5b1d436c?q=80&w=500" },
+      { name: "মিষ্টি ডালিম / বেদানা", category: "fruits", tip: "☀️ ছাদ বাগানের জন্য আদর্শ ফল গাছ", img: "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?q=80&w=500" },
+      { name: "মিষ্টি কামরাঙা (Star Fruit)", category: "fruits", tip: "☀️ টবে থোকায় থোকায় ফল ধরে", img: "https://images.unsplash.com/photo-1601334884218-ec379265f24f?q=80&w=500" },
+      { name: "মিষ্টি জলপাই (Olive Tree)", category: "fruits", tip: "☀️ ছাদ বাগানে সহজে চাষযোগ্য", img: "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=500" },
 
-      // == ফুল গাছ (Flower Plants) ==
-      { name: "ব্ল্যাক ব্যাকারাত গোলাপ (Black Rose)", category: "flowers", tip: "☀️ দুর্লভ মখমলি কালচে গোলাপ", query: "black rose" },
-      { name: "কাশ্মীরি লাল গোলাপ (Red Rose)", category: "flowers", tip: "☀️ ছাদ বাগানের সেরা আকর্ষণ", query: "red rose flower" },
-      { name: "ডাচ হলুদ গোলাপ (Yellow Rose)", category: "flowers", tip: "☀️ চমৎকার হালকা সুগন্ধি গোলাপ", query: "yellow rose" },
-      { name: "থাই বারোমাসি জবা (Hibiscus)", category: "flowers", tip: "☀️ প্রচুর ফুল ফোটে, রোদ পছন্দ", query: "hibiscus" },
-      { name: "লঙ্কা জবা (Pune Hibiscus)", category: "flowers", tip: "☀️ ঝোপালো আকৃতির বারোমাসি জবা", query: "red hibiscus" },
-      { name: "গন্ধরাজ (Gardenia)", category: "flowers", tip: "☀️ মিষ্টি সুবাসিত আকর্ষণীয় সাদা ফুল", query: "gardenia flower" },
-      { name: "আরবীয় জুঁই / বেলি ফুল (Jasmine)", category: "flowers", tip: "☀️ গরমকালে সুগন্ধি সাদা ফুল হয়", query: "arabian jasmine" },
-      { name: "বোগেনভিলিয়া / কাগজ ফুল", category: "flowers", tip: "☀️ কম জল ও কড়া রোদে ফুলে ভরে যায়", query: "bougainvillea" },
-      { name: "রজনীগন্ধা (Tuberose)", category: "flowers", tip: "☀️ স্টিক আকৃতির তীব্র সুগন্ধি ফুল", query: "tuberose" },
-      { name: "কামিনী ফুল (Kamini)", category: "flowers", tip: "☀️ ছোট ছোট সাদা ফুল তীব্র সুবাস ছড়ায়", query: "murraya paniculata" },
-      { name: "কৃষ্ণচূড়া ছোট (Dwarf Poinciana)", category: "flowers", tip: "☀️ টবেই সুন্দর লাল ফুল ফুটবে", query: "caesalpinia pulcherrima" },
-      { name: "টগর ফুল (Crape Jasmine)", category: "flowers", tip: "☀️ পূজার জন্য ও বাগানের শোভা বাড়াতে", query: "crape jasmine" },
-      { name: "কাঞ্চন ফুল (Bauhinia)", category: "flowers", tip: "☀️ চমৎকার অর্কিড আকৃতির ফুল", query: "baugainvillea flower" },
-      { name: "দোপাট্টি (Balsam)", category: "flowers", tip: "☀️ খুব দ্রুত ফুল আসে ও সহজ যত্ন", query: "balsam flower" },
-      { name: "নয়নতারা বারোমাসি (Vinca)", category: "flowers", tip: "☀️ কোনো যত্ন ছাড়াই রোজ ফুল ফোটে", query: "vinca flower" },
+      // == ফুল গাছ (Flowers) ==
+      { name: "কাশ্মীরি লাল গোলাপ (Red Rose)", category: "flowers", tip: "☀️ ছাদ বাগানের সেরা আকর্ষণ", img: "https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=500" },
+      { name: "ডাচ হলুদ গোলাপ (Yellow Rose)", category: "flowers", tip: "☀️ চমৎকার হালকা সুগন্ধি গোলাপ", img: "https://images.unsplash.com/photo-1602928321679-560bb453f190?q=80&w=500" },
+      { name: "থাই বারোমাসি জবা (Hibiscus)", category: "flowers", tip: "☀️ প্রচুর ফুল ফোটে, রোদ পছন্দ", img: "https://images.unsplash.com/photo-1550950158-d0d960dff51b?q=80&w=500" },
+      { name: "গন্ধরাজ (Gardenia)", category: "flowers", tip: "☀️ মিষ্টি সুবাসিত আকর্ষণীয় সাদা ফুল", img: "https://images.unsplash.com/photo-1614881079313-0972eb060762?q=80&w=500" },
+      { name: "আরবীয় জুঁই / বেলি ফুল (Jasmine)", category: "flowers", tip: "☀️ গরমকালে সুগন্ধি সাদা ফুল হয়", img: "https://images.unsplash.com/photo-1508873696983-2df519f0397e?q=80&w=500" },
+      { name: "বোগেনভিলিয়া / কাগজ ফুল", category: "flowers", tip: "☀️ কম জল ও কড়া রোদে ফুলে ভরে যায়", img: "https://images.unsplash.com/photo-1589311917532-61db37aa6f6b?q=80&w=500" },
+      { name: "নয়নতারা বারোমাসি (Vinca)", category: "flowers", tip: "☀️ কোনো যত্ন ছাড়াই রোজ ফুল ফোটে", img: "https://images.unsplash.com/photo-1596245195156-cb82cc83eb9e?q=80&w=500" },
 
-      // == আউটডোর / পাতা বাহার (Outdoor & Foliage) ==
-      { name: "ক্রোটন পাতা বাহার (Croton)", category: "outdoor", tip: "☀️ রঙিন পাতার চমৎকার গাছ", query: "croton plant" },
-      { name: "থুজা / ক্রিসমাপ ট্রি (Thuja)", category: "outdoor", tip: "☀️ ঘরের গেটে রাখার জন্য আভিজাত্য", query: "thuja" },
-      { name: "সাইকাস পাম (Cycas Palm)", category: "outdoor", tip: "☀️ বাগানের আউটডোর লুক চমৎকার করে", query: "cycas" },
-      { name: "ডাইফেনবাচিয়া (Dieffenbachia)", category: "outdoor", tip: "💡 সেমি-শেড বা বারান্দার জন্য সেরা", query: "dieffenbachia" },
-      { name: "ফিলোডেনড্রন (Philodendron)", category: "outdoor", tip: "💡 বড় বড় স্টাইলিশ পাতা", query: "philodendron" },
-      { name: "অ্যাসপ্যারাগাস ফার্ন (Fern)", category: "outdoor", tip: "🪴 ঝুলন্ত টবের সবুজ ফার্ন", query: "asparagus fern" },
-      { name: "জেড বনসাই মেকিং প্ল্যান্ট", category: "outdoor", tip: "☀️ লাকি এবং শুভ বনসাই ট্রি", query: "jade plant bonsai" }
+      // == আউটডোর / পাতা বাহার (Outdoor) ==
+      { name: "ক্রোটন পাতা বাহার (Croton)", category: "outdoor", tip: "☀️ রঙিন পাতার চমৎকার গাছ", img: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?q=80&w=500" },
+      { name: "থুজা / ক্রিসমাস ট্রি (Thuja)", category: "outdoor", tip: "☀️ ঘরের গেটে রাখার জন্য আভিজাত্য", img: "https://images.unsplash.com/photo-1543257580-7269da773bf5?q=80&w=500" },
+      { name: "জেড বনসাই প্ল্যান্ট (Jade Bonsai)", category: "outdoor", tip: "☀️ লাকি এবং শুভ বনসাই ট্রি", img: "https://images.unsplash.com/photo-1600100397608-f010e4fffa09?q=80&w=500" }
     ];
 
-    // ডিফল্ট ৩টি প্রডাক্ট দিয়ে শুরু হবে
+    // শুরুর ৩টি প্রোডাক্টের জন্য একদম পরিষ্কার ক্রিস্পি ইমেজ লিংক দেওয়া হলো
     const defaultProducts = [
-      { id: 'd1', name: 'মিয়াজاکی আম (সূর্যডিম)', price: 1500, category: 'fruits', tip: '☀️ জাপানি প্রজাতি, টবে চাষযোগ্য', img: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=400' },
-      { id: 'd2', name: 'মনস্টেরা ডেলিসিওসা (Monstera)', price: 450, category: 'indoor', tip: '💡 কম আলো, ইনডোর প্রিমিয়াম', img: 'https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=400' },
-      { id: 'd3', name: 'কাশ্মীরি লাল গোলাপ', price: 180, category: 'flowers', tip: '☀️ ছাদ বাগানের সেরা আকর্ষণ', img: 'https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=400' }
+      { id: 'd1', name: 'মিয়াজاکی আম (সূর্যডিম)', price: 1500, category: 'fruits', tip: '☀️ জাপানি প্রজাতি, টবে চাষযোগ্য', img: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=500' },
+      { id: 'd2', name: 'মনস্টেরা ডেলিসিওসা (Monstera)', price: 450, category: 'indoor', tip: '💡 কম আলো, ইনডোর প্রিমিয়াম', img: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=500' },
+      { id: 'd3', name: 'কাশ্মীরি লাল গোলাপ', price: 180, category: 'flowers', tip: '☀️ ছাদ বাগানের সেরা আকর্ষণ', img: 'https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=500' }
     ];
 
-    let products = JSON.parse(localStorage.getItem('nursery_products_v2')) || defaultProducts;
+    let products = JSON.parse(localStorage.getItem('nursery_products_v3')) || defaultProducts;
 
     window.onload = function() {
       setupQuickDropdown();
@@ -415,7 +346,7 @@
 
     function closeWelcomeModal() { document.getElementById('welcome-modal').classList.add('hidden'); }
 
-    // ড্রপডাউনে ৫৫টি রেডিমেড গাছ লোড করা
+    // ড্রপডাউনে রেডিমেড গাছ লোড করা
     function setupQuickDropdown() {
       const select = document.getElementById('quick-prod-select');
       select.innerHTML = '<option value="">-- এখানে ক্লিক করে গাছ বেছে নিন --</option>';
@@ -429,7 +360,7 @@
       });
     }
 
-    // 🤖 মেগা অটো আপলোডার লজিক (Unsplash API দিয়ে অটো ইমেজ জেনারেট করে)
+    // কুইক আপলোডার যা ডাটাবেজের সঠিক ছবি লাইভ করবে
     function uploadQuickProduct() {
       const selectIndex = document.getElementById('quick-prod-select').value;
       const price = parseInt(document.getElementById('quick-prod-price').value);
@@ -439,66 +370,21 @@
 
       const selectedPlant = masterPlantDatabase[selectIndex];
       
-      // এআই ভিত্তিক অটো ইমেজ ইউআরএল (Unsplash Source API ব্যবহার করে কিওয়ার্ড দিয়ে ইনস্ট্যান্ট আসল ছবি লোড করবে)
-      const autoAiImageUrl = `https://images.unsplash.com/photo-1507746244192-3d8438be558c?q=80&w=400&auto=format&fit=crop&sig=${Math.floor(Math.random() * 10000)}&txt=${encodeURIComponent(selectedPlant.query)}`;
-      
-      // আরও ভালো রিয়েল লাইফ ইমেজের জন্য ডাইনামিক সোর্স ও কিউরি ব্যবহার
-      const finalImage = `https://source.unsplash.com/featured/400x400/?${encodeURIComponent(selectedPlant.query)},plant`;
-
       const newProduct = {
         id: 'p_' + Date.now(),
         name: selectedPlant.name,
         price: price,
         category: selectedPlant.category,
         tip: selectedPlant.tip,
-        // আমরা সরাসরি আনস্প্ল্যাশ সোর্স লিঙ্ক জেনারেট করছি যা ব্রাউজারে রিয়েল ছবি রেন্ডার করবে
-        img: `https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=400&auto=format&fit=crop` // ব্যাকআপ ইমেজের বদলে ডাইনামিক কিউরি সেট করছি নিচে রি-রেন্ডারে
+        img: selectedPlant.img // ডাটাবেজ থেকে সরাসরি নিট অ্যান্ড ক্লিন প্রি-লকড ছবি যাবে
       };
-      
-      // ফাইনাল ডাইনামিক রি-সোর্স ইমেজ লক
-      newProduct.img = `https://source.unsplash.com/400x400/?${selectedPlant.query}`;
-      // নির্ভরযোগ্য হাই-স্পিড ইমেজের জন্য বর্তমান আনস্প্ল্যাশ প্যাক ব্যবহার করছি:
-      const keywords = selectedPlant.query.split(' ');
-      newProduct.img = `https://images.unsplash.com/photo-1530968033775-2c92736b1c1e?q=80&w=400&auto=format&fit=crop&blur=0&keyword=${keywords[0]}`;
-      
-      // ডাইনামিক ইমেজ সিলেকশন লজিক ফিক্স (Unsplash Source-এর পরিবর্তে ডাইনামিকলি রেডি-টু-ইউজ হাই কোয়ালিটি ক্যাটাগরি ইমেজ ম্যাচিং):
-      let fallbackImg = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=400";
-      if(selectedPlant.category === 'indoor') fallbackImg = "https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=400";
-      if(selectedPlant.category === 'flowers') fallbackImg = "https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=400";
-      if(selectedPlant.category === 'fruits') fallbackImg = "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=400";
-      
-      // এআই সার্চ ইঞ্জিন ইমেজ লিঙ্ক জেনারেশন
-      newProduct.img = `https://loremflickr.com/400/400/${encodeURIComponent(keywords[0])},plant/all`;
 
       products.push(newProduct);
-      localStorage.setItem('nursery_products_v2', JSON.stringify(products));
+      localStorage.setItem('nursery_products_v3', JSON.stringify(products));
       renderProducts();
       
       document.getElementById('quick-prod-price').value = '';
-      alert(`🎉 সফলভাবে "${selectedPlant.name}" গাছটি অটো ছবি ও যত্ন টিপস সহ ₹${price} দামে ওয়েবসাইটে লাইভ হয়ে গেছে!`);
-    }
-
-    // ম্যানুয়াল নামেও অটো এআই ছবি জেনারেশন
-    function uploadManualAutoImageProduct(e) {
-      const name = document.getElementById('prod-name').value;
-      const price = parseInt(document.getElementById('prod-price').value);
-      const category = document.getElementById('prod-cat').value;
-      const tip = document.getElementById('prod-tip').value || "🌿 সতেজ ও সুস্থ স্পেশাল জাতের গাছ";
-      
-      if(!name || !price) { alert('গাছের নাম এবং দাম দেওয়া আবশ্যক!'); return; }
-
-      const searchKey = name.split(' ')[0]; // প্রথম শব্দটিকে ইমেজ সার্চ কিওয়ার্ড বানানো হলো
-      const autoImg = `https://loremflickr.com/400/400/${encodeURIComponent(searchKey)},plant`;
-
-      const newProduct = { id: 'p_' + Date.now(), name: name, price: price, category: category, tip: tip, img: autoImg };
-      products.push(newProduct);
-      localStorage.setItem('nursery_products_v2', JSON.stringify(products));
-      renderProducts();
-      
-      document.getElementById('prod-name').value = '';
-      document.getElementById('prod-price').value = '';
-      document.getElementById('prod-tip').value = '';
-      alert('🎉 এআই সফলভাবে আপনার দেওয়া নাম অনুযায়ী ইন্টারনেট থেকে ছবি খুঁজে গাছটি আপলোড করে দিয়েছে!');
+      alert(`🎉 সফলভাবে "${selectedPlant.name}" গাছটি একদম আসল ও পরিষ্কার ছবি সহ ₹${price} দামে লাইভ হয়েছে!`);
     }
 
     function renderProducts() {
@@ -506,7 +392,6 @@
       const noProductsMsg = document.getElementById('no-products-msg');
       container.innerHTML = '';
       
-      // কাউন্টার আপডেট
       document.getElementById('count-all').innerText = products.length;
       document.getElementById('count-fruits').innerText = products.filter(p => p.category === 'fruits').length;
       document.getElementById('count-flowers').innerText = products.filter(p => p.category === 'flowers').length;
@@ -526,7 +411,7 @@
         
         card.innerHTML = `
           <button onclick="deleteProduct('${p.id}')" class="delete-product-btn ${isDeleteModeActive ? '' : 'hidden'} absolute top-2 right-2 bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-red-800 transition shadow z-10">✕</button>
-          <img src="${p.img}" class="w-full h-48 object-cover rounded-xl mb-2 bg-gray-50 border border-gray-100" onerror="this.src='https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=400'">
+          <img src="${p.img}" class="w-full h-48 object-cover rounded-xl mb-2 bg-gray-50 border border-gray-100 shadow-inner" onerror="this.src='https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=500'">
           <h3 class="plant-title serif-font font-bold text-sm text-[#1A3A2B] h-6 overflow-hidden">${p.name}</h3>
           <p class="plant-tip text-[10px] text-emerald-700 bg-emerald-50/60 rounded-lg py-1 my-1.5 font-medium px-2 inline-block">${p.tip}</p>
           <div class="text-yellow-500 text-[10px] mb-3 font-sans">★★★★★ <span class="text-gray-400 text-[9px] font-medium">(4.9)</span></div>
@@ -573,7 +458,7 @@
     function deleteProduct(id) {
       if (confirm('আপনি কি নিশ্চিত যে এই গাছটি ডিলিট করতে চান?')) {
         products = products.filter(p => p.id !== id);
-        localStorage.setItem('nursery_products_v2', JSON.stringify(products));
+        localStorage.setItem('nursery_products_v3', JSON.stringify(products));
         renderProducts();
       }
     }
@@ -674,7 +559,7 @@
       let itemsText = "";
       cart.forEach((item, i) => { itemsText += `${i + 1}. ${item.name} x ${item.quantity}\n`; });
 
-      const msg = `*جد অর্ডার (Global Green)*\n\nমেমো: ${memoId}\nনাম: ${name}\nমোবাইল: ${phone}\nঠিকানা: ${address}\n\nগাছগাছালি:\n${itemsText}\nমোট বিল: ₹ ${currentCartTotal}\nপেমেন্ট: ${paymentMethod}`;
+      const msg = `*নতুন অর্ডার (Global Green)*\n\nমেমো: ${memoId}\nনাম: ${name}\nমোবাইল: ${phone}\nঠিকানা: ${address}\n\nগাছগাছালি:\n${itemsText}\nমোট বিল: ₹ ${currentCartTotal}\nপেমেন্ট: ${paymentMethod}`;
       document.getElementById('whatsapp-btn').href = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${encodeURIComponent(msg)}`;
 
       document.getElementById('checkout-form').reset();
