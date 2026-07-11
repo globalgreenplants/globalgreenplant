@@ -415,6 +415,17 @@
       });
     }
 
+   // ছবি না থাকলে ক্যাটাগরি অনুযায়ী সুন্দর ছবি দেখানোর ফাংশন
+const getPlaceholder = (category) => {
+  const placeholders = {
+    'fruits': 'https://images.unsplash.com/photo-1557800636-894a64c1696f?w=500',
+    'flowers': 'https://images.unsplash.com/photo-1490750964468-def43015495f?w=500',
+    'indoor': 'https://images.unsplash.com/photo-1453906971670-36693a2e3768?w=500',
+    'outdoor': 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=500'
+  };
+  return placeholders[category] || 'https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=500';
+};
+ 
     function filterCatalog(category) {
       currentSelectedCategory = category;
       const categories = ['all', 'fruits', 'flowers', 'indoor', 'outdoor'];
