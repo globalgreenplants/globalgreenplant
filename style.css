@@ -673,3 +673,54 @@ nav{
     display:inline-block;
     margin:20px;
 }
+/* ===== Premium Stats Section ===== */
+
+.stats{
+    padding:80px 20px;
+    background:linear-gradient(135deg,#198754,#14532d);
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat-box{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:35px 20px;
+    text-align:center;
+    color:#fff;
+    transition:.4s;
+}
+
+.stat-box:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,.2);
+}
+
+.stat-box h2{
+    font-size:42px;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.stat-box p{
+    font-size:18px;
+    opacity:.95;
+}
+
+@media(max-width:768px){
+
+.stat-box h2{
+    font-size:34px;
+}
+
+.stat-box p{
+    font-size:16px;
+}
+
+}
