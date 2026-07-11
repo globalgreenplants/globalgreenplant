@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Global Green Plants | Premium Nursery</title>
   
-  <!-- Tailwind CSS & Google Fonts -->
+  <!-- Tailwind CSS & Google Fonts & FontAwesome Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     body { font-family: 'Hind Siliguri', sans-serif; }
@@ -19,7 +20,7 @@
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3A2B] overflow-x-hidden antialiased">
 
-  <!-- 🌟 আকর্ষণীয় স্ক্রোলিং অফার ব্যানার -->
+  <!-- 🌟 অফার ব্যানার -->
   <div class="bg-[#D4AF37] text-[#1A3A2B] text-xs font-bold py-2 text-center tracking-wide shadow-sm">
     🎉 স্পেশাল অফার: আমাদের থেকে ৩০০০ টাকার কেনাকাটা করলেই পশ্চিমবঙ্গ জুড়ে হোম ডেলিভারি একদম ফ্রি! 🚚
   </div>
@@ -32,7 +33,6 @@
       <p class="text-[10px] font-bold tracking-[0.2em] text-[#D4AF37] uppercase mb-4">Global Green Plants</p>
       <div class="w-12 h-[2px] bg-[#1A3A2B]/10 mx-auto mb-5"></div>
       
-      <!-- আপনার কাস্টমাইজড সুন্দর মেসেজ -->
       <p class="text-gray-600 text-sm leading-relaxed mb-6 px-2">
         গ্লোবাল গ্রিন প্লান্টস-এ আপনাকে স্বাগতম। আপনি কি আপনার ছাদ, বারান্দা কিংবা ইনডোর স্পেসকে একটি সুন্দর বাগানে রূপান্তরিত করতে চান? আপনার এই স্বপ্নকে পূরণ করতেই আমাদের এই আয়োজন। সেরা জাতের সুস্থ ও সতেজ গাছের কালেকশন দেখতে নিচে ক্লিক করুন এবং শুরু করুন আপনার সবুজ যাত্রা!
       </p>
@@ -64,10 +64,9 @@
 
         <div>
           <label class="block text-xs font-bold uppercase text-gray-600 mb-1">ডেলিভারি ঠিকানা (পিনকোড সহ)</label>
-          <textarea id="cust-address" rows="2" placeholder="আপনার গ্রাম/রোড, পোস্ট অফিস, জেলা এবং পিনকোড (West Bengal) লিখুন..." class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required></textarea>
+          <textarea id="cust-address" rows="2" placeholder="আপনার gram/road, পোস্ট অফিস, জেলা এবং পিনকোড (West Bengal) লিখুন..." class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#1A3A2B]" required></textarea>
         </div>
 
-        <!-- 💳 পেমেন্ট মেথড সিলেকশন -->
         <div>
           <label class="block text-xs font-bold uppercase text-gray-600 mb-2">পেমেন্ট পদ্ধতি বেছে নিন</label>
           <div class="grid grid-cols-2 gap-3">
@@ -89,7 +88,6 @@
           </div>
         </div>
 
-        <!-- অর্ডার সামারি -->
         <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 text-sm">
           <div class="flex justify-between font-bold text-[#1A3A2B] text-base">
             <span>সর্বমোট পরিশোধযোগ্য মূল্য:</span>
@@ -104,20 +102,18 @@
     </div>
   </div>
 
-  <!-- 🎉 অর্ডার সাকসেস বা সফল মোডাল -->
+  <!-- 🎉 অর্ডার সাকসেস মোডাল -->
   <div id="success-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 md:p-8 shadow-2xl text-center border-t-4 border-green-600 max-h-[90vh] overflow-y-auto">
       <div class="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">✓</div>
       <h3 class="serif-font text-2xl font-bold text-green-700 mb-1">আপনার অর্ডারটি সাবমিট হয়েছে!</h3>
       <p class="text-gray-500 text-xs mb-4">নিচের পেমেন্ট তথ্যটি দেখে নিন এবং অর্ডারটি চূড়ান্ত করতে হোয়াটসঅ্যাপে জানান।</p>
       
-      <!-- 💳 অনলাইন পেমেন্ট ইনস্ট্রাকশন ও QR কোড বক্স -->
       <div id="online-payment-instruction" class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-left text-xs mb-4 hidden">
         <p class="font-bold text-amber-800 mb-2 text-center text-sm">💰 স্ক্যান করে টাকা পাঠান (UPI)</p>
         <p class="mb-1"><strong>GPay/PhonePe/Paytm:</strong> <span id="display-bkash-no" class="font-bold text-gray-800">91XXXXXXXX</span></p>
         <p class="mb-2"><strong>ব্যাংক অ্যাকাউন্ট:</strong> <span id="display-bank-details" class="font-bold text-gray-800">SBI, অ্যাকাউন্ট নং: XXXXXX, IFSC: SBINXXXXXXX</span></p>
         
-        <!-- কিউআর কোডের ছবি -->
         <div class="text-center my-2">
           <p class="text-[10px] text-gray-500 mb-1">যেকোনো UPI অ্যাপ থেকে স্ক্যান করুন:</p>
           <img id="display-qr-img" src="https://placehold.co/150x150/png?text=No+QR+Code" alt="Payment QR Code" class="w-32 h-32 mx-auto border rounded-lg bg-white p-1 shadow-sm">
@@ -131,9 +127,8 @@
         <p class="border-t pt-1 mt-1 text-sm font-bold"><strong>মোট বিল:</strong> <span id="summary-total"></span></p>
       </div>
 
-      <!-- 🟢 হোয়াটসঅ্যাপ কনফার্মেশন বাটন -->
       <a id="whatsapp-btn" href="#" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white py-3.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-md mb-3">
-        💬 হোয়াটসঅ্যাপে পেমেন্ট নিশ্চিত করুন
+        <i class="fab fa-whatsapp text-lg"></i> হোয়াটসঅ্যাপে পেমেন্ট নিশ্চিত করুন
       </a>
 
       <button onclick="closeSuccessModal()" class="w-full bg-gray-100 text-gray-600 py-2.5 rounded-xl text-xs font-medium hover:bg-gray-200 transition">
@@ -142,15 +137,14 @@
     </div>
   </div>
 
-  <!-- হেডার / নেভিগেশন বার -->
+  <!-- হেডার বার -->
   <header class="sticky top-0 z-40 bg-[#1A3A2B] text-white border-b border-[#D4AF37]/20 shadow-md">
     <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="flex flex-col items-center md:items-start">
         <span class="serif-font text-2xl font-bold tracking-widest text-[#D4AF37]">GLOBAL GREEN</span>
-        <span class="text-[9px] tracking-[0.3em] text-gray-300 uppercase font-sans font-semibold -mt-0.5">Premium Nursery Store | India</span>
+        <span class="text-[9px] tracking-[0.3em] text-gray-300 uppercase font-sans font-semibold -mt-0.5">Premium Nursery Store</span>
       </div>
       
-      <!-- 🔍 লাইভ সার্চ বার -->
       <div class="w-full md:w-80 relative">
         <input type="text" id="search-input" onkeyup="searchPlants()" placeholder="আপনার পছন্দের গাছটি খুঁজুন..." class="w-full bg-[#112a1f] text-white text-xs px-4 py-2.5 rounded-xl border border-gray-700 focus:outline-none focus:border-[#D4AF37] placeholder-gray-400">
         <span class="absolute right-3 top-2.5 text-gray-400 text-sm">🔍</span>
@@ -173,7 +167,7 @@
       <button onclick="toggleCart()" class="hover:text-red-400 text-lg">✕</button>
     </div>
     <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4 bg-[#FDFBF7]">
-      <div id="empty-cart-msg" class="text-center py-20 text-gray-400 text-sm font-medium">আপনার শপিং কার্টটি বর্তমানে खाली রয়েছে।</div>
+      <div id="empty-cart-msg" class="text-center py-20 text-gray-400 text-sm font-medium">আপনার শপিং কার্টটি বর্তমানে খালি রয়েছে।</div>
     </div>
     <div class="p-6 border-t bg-white shadow-inner">
       <div class="flex justify-between items-center mb-4">
@@ -190,7 +184,7 @@
     <p class="text-gray-300 text-xs font-light max-w-md mx-auto">বাছাইকৃত শতভাগ খাঁটি ও সতেজ প্রিমিয়াম কোয়ালিটির গাছপালা (সমগ্র পশ্চিমবঙ্গে ডেলিভারি)</p>
   </section>
 
-  <!-- 📑 নতুন ক্যাটালগ মেনু এবং কুইক ফাইন্ডার ফিল্টার -->
+  <!-- 📑 ক্যাটালগ মেনু এবং কুইক ফাইন্ডার ফিল্টার -->
   <div class="max-w-7xl mx-auto px-6 pt-10 space-y-4">
     <div class="flex flex-wrap justify-center gap-2 md:gap-4 bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
       <button onclick="filterCatalog('all')" id="cat-btn-all" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-[#1A3A2B] text-white shadow-sm">
@@ -210,7 +204,6 @@
       </button>
     </div>
 
-    <!-- ⚡ কুইক ফাইন্ডার শর্টকাট বাটন -->
     <div class="flex flex-wrap justify-center gap-2 text-[11px] text-gray-500">
       <span class="font-medium pt-1">🔍 কুইক সার্চ:</span>
       <button onclick="searchByTag('কম আলো')" class="bg-emerald-50 text-[#1A3A2B] px-3 py-1 rounded-full border border-emerald-200 hover:bg-emerald-100 transition">💡 কম আলোতে বাঁচে</button>
@@ -227,7 +220,7 @@
     <div id="no-products-msg" class="text-center py-20 text-gray-400 text-sm hidden">এই ক্যাটালগে বর্তমানে কোনো গাছ আপলোড করা নেই।</div>
   </section>
 
-  <!-- 🎉 নতুন কাস্টমার টেস্টিমোনিয়াল / রিভিউ সেকশন -->
+  <!-- 🎉 কাস্টমার রিভিউ সেকশন -->
   <section class="bg-[#F4F1EA] py-12 px-6 border-t border-b border-gray-250">
     <div class="max-w-5xl mx-auto text-center">
       <h2 class="serif-font text-2xl font-bold text-[#1A3A2B] mb-2">গ্রাহকদের মুখে আমাদের কথা</h2>
@@ -241,7 +234,7 @@
             <div class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">S</div>
             <div>
               <h5 class="text-xs font-bold text-[#1A3A2B]">সন্দীপ ঘোষ</h5>
-              <span class="text-[10px] text-gray-400">কলকাতা, পশ্চিমবঙ্গ</span>
+              <span class="text-[10px] text-gray-400">পশ্চিমবঙ্গ</span>
             </div>
           </div>
         </div>
@@ -253,14 +246,14 @@
             <div class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">A</div>
             <div>
               <h5 class="text-xs font-bold text-[#1A3A2B]">অনন্যা চ্যাটার্জী</h5>
-              <span class="text-[10px] text-gray-400">বর্ধমান, পশ্চিমবঙ্গ</span>
+              <span class="text-[10px] text-gray-400">কালনা, পশ্চিমবঙ্গ</span>
             </div>
           </div>
         </div>
 
         <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-150 text-left">
           <div class="text-amber-400 text-xs mb-2">★★★★★</div>
-          <p class="text-xs text-gray-600 leading-relaxed mb-4">"হোয়াটসঅ্যাপে অর্ডার করার পর মাত্র ২ দিনেই মেদিনীপুরে ডেলিভারি পেয়ে গেছি। গাছের মাটিও খুব ভালো ছিল। বিশ্বস্ত নার্সারি।"</p>
+          <p class="text-xs text-gray-600 leading-relaxed mb-4">"হোয়াটসঅ্যাপে অর্ডার করার পর খুব দ্রুত ডেলিভারি পেয়ে গেছি। গাছের মাটিও খুব ভালো ছিল। বিশ্বস্ত নার্সারি।"</p>
           <div class="flex items-center gap-2">
             <div class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">M</div>
             <div>
@@ -282,7 +275,6 @@
       <p class="text-gray-400 text-xs mt-1">প্রোডাক্ট আপলোড, পেমেন্ট অ্যাকাউন্ট এবং কিউআর কোড সেটিংস আপডেট করুন</p>
     </div>
 
-    <!-- ব্যাংক অ্যাকাউন্ট ও কিউআর কোড আপডেট ফরম -->
     <div class="bg-amber-50/50 p-5 rounded-2xl border border-amber-200">
       <h4 class="font-bold text-sm text-amber-900 mb-3 flex items-center gap-1">💳 আপনার UPI ও কিউআর কোড সেটিংস (India)</h4>
       <div class="space-y-3 text-xs">
@@ -308,14 +300,12 @@
       </div>
     </div>
 
-    <!-- প্রোডাক্ট ডিলিট বাটন -->
     <div class="flex justify-center border-t border-dashed pt-4 border-gray-200">
       <button id="delete-mode-btn" onclick="toggleDeleteMode()" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-sm">
         🗑️ ডিলিট মোড অন করুন
       </button>
     </div>
     
-    <!-- প্রোডাক্ট আপলোড ফরম -->
     <form id="product-form" class="space-y-4 pt-2">
       <h4 class="font-bold text-sm text-[#1A3A2B] mb-2">✨ নতুন গাছ যুক্ত করুন</h4>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -356,7 +346,7 @@
     </form>
   </section>
 
-  <!-- 🌟 নতুন প্রফেশনাল ও বিশ্বাসযোগ্য ফুটার সেকশন -->
+  <!-- 🌟 নতুন প্রফেশনাল ফুটার সেকশন -->
   <footer class="bg-[#1A3A2B] text-gray-300 py-10 border-t border-[#D4AF37]/20 text-xs">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
@@ -367,14 +357,28 @@
         <h4 class="font-bold text-sm text-white mb-2 uppercase tracking-wide">📦 ডেলিভারি ও পলিসি</h4>
         <ul class="space-y-2 text-gray-450">
           <li>• সমগ্র পশ্চিমবঙ্গে হোম ডেলিভারি সুবিধা।</li>
-          <li>• অর্ডার কনফার্ম হওয়ার ২৪-৪৮ ঘণ্টার মধ্যে শিপিং।</li>
-          <li>• পরিবহনে গাছের কোনো ক্ষতি হলে ১০০% রিটার্ন/এক্সচেঞ্জ গ্যারান্টি।</li>
+          <li>• পরিবহনে গাছের কোনো ক্ষতি হলে রিটার্ন/এক্সচেঞ্জ গ্যারান্টি।</li>
         </ul>
       </div>
       <div>
         <h4 class="font-bold text-sm text-white mb-2 uppercase tracking-wide">📍 নার্সারি ঠিকানা ও যোগাযোগ</h4>
-        <p class="leading-relaxed text-gray-400 mb-2">গ্লোবাল গ্রিন প্রিমিয়াম নার্সারি স্টোর<br>কলকাতা, পশ্চিমবঙ্গ, ভারত</p>
-        <p class="font-bold text-[#D4AF37]">💬 যেকোনো জিজ্ঞাসায় আমাদের হোয়াটসঅ্যাপ করুন</p>
+        <p class="leading-relaxed text-gray-400 mb-2">
+          গ্লোবাল গ্রিন প্রিমিয়াম নার্সারি স্টোর<br>
+          পূর্বস্থলী, পূর্ব বর্ধমান, পশ্চিমবঙ্গ, ভারত
+        </p>
+        
+        <!-- 📞 ২৪/৭ কল সাপোর্ট সেকশন -->
+        <p class="text-amber-400 font-semibold mb-3 flex items-center gap-1.5">
+          <i class="fas fa-headset text-sm"></i> আমাদের এখানে ২৪/৭ কল করার সুবিধা রয়েছে
+        </p>
+        
+        <!-- 🟢 হোয়াটসঅ্যাপ চিহ্ন এবং ডাইনামিক কন্টাক্ট লিংক -->
+        <div class="mt-4">
+          <p class="font-bold text-[#D4AF37] mb-1.5">💬 যেকোনো জিজ্ঞাসায় আমাদের হোয়াটসঅ্যাপ করুন</p>
+          <a id="footer-wa-link" href="#" target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl font-bold text-xs shadow-md transition">
+            <i class="fab fa-whatsapp text-base"></i> সরাসরি মেসেজ করুন
+          </a>
+        </div>
       </div>
     </div>
     <div class="text-center mt-10 pt-4 border-t border-gray-800 text-[11px] text-gray-500">
@@ -406,6 +410,7 @@
       renderProducts();
       loadSettingsIntoDashboard();
       updateSuccessModalFields();
+      updateFooterWhatsAppLink();
     };
 
     function closeWelcomeModal() {
@@ -422,6 +427,11 @@
       document.getElementById('display-bkash-no').innerText = myBkashNo;
       document.getElementById('display-bank-details').innerText = myBankDetails;
       document.getElementById('display-qr-img').src = myQrCodeImg;
+    }
+
+    function updateFooterWhatsAppLink() {
+      const footerBtn = document.getElementById('footer-wa-link');
+      footerBtn.href = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${encodeURIComponent('নমস্কার গ্লোবাল গ্রিন নার্সারি, আমি আপনার ওয়েবসাইট থেকে কিছু গাছ সম্পর্কে জানতে চাই।')}`;
     }
 
     function savePaymentSettings() {
@@ -441,18 +451,19 @@
           myQrCodeImg = event.target.result;
           localStorage.setItem('nursery_qr', myQrCodeImg);
           updateSuccessModalFields();
-          alert('🎉 অভিনন্দন! ব্যাংক অ্যাকাউন্ট এবং কিউআর কোড সফলভাবে আপডেট হয়েছে!');
+          updateFooterWhatsAppLink();
+          alert('🎉 অভিনন্দন! সমস্ত তথ্য ও কিউআর কোড সফলভাবে আপডেট হয়েছে!');
         };
         reader.readAsDataURL(file);
       } else {
         updateSuccessModalFields();
+        updateFooterWhatsAppLink();
         alert('🎉 আপনার তথ্যগুলো সফলভাবে আপডেট হয়েছে!');
       }
     }
 
     function filterCatalog(category) {
       currentSelectedCategory = category;
-      
       const categories = ['all', 'fruits', 'flowers', 'indoor', 'outdoor'];
       categories.forEach(cat => {
         const btn = document.getElementById(`cat-btn-${cat}`);
@@ -462,7 +473,6 @@
           btn.className = "px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100";
         }
       });
-
       renderProducts();
     }
 
@@ -504,10 +514,7 @@
           <button onclick="deleteProduct('${p.id}')" class="delete-product-btn ${isDeleteModeActive ? '' : 'hidden'} absolute top-2 right-2 bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-red-800 transition shadow z-10">✕</button>
           <img src="${p.img}" class="w-full h-48 object-cover rounded-xl mb-2 bg-gray-50 border border-gray-50">
           <h3 class="plant-title serif-font font-bold text-sm text-[#1A3A2B] h-6 overflow-hidden">${p.name}</h3>
-          
-          <!-- 💡 নতুন গাছের যত্ন নেওয়ার টিপস সেকশন -->
           <p class="plant-tip text-[10px] text-emerald-700 bg-emerald-50/60 rounded-lg py-1 my-1.5 font-medium px-2 inline-block">${p.tip || '🌿 সতেজ ও সুস্থ গাছ'}</p>
-          
           <div class="text-yellow-500 text-[10px] mb-3 font-sans">★★★★★ <span class="text-gray-400 text-[9px] font-medium">(4.9)</span></div>
           <div class="flex items-center justify-between pt-2 border-t border-gray-100">
             <span class="font-bold text-sm text-[#1A3A2B]">₹ ${p.price}</span>
@@ -521,7 +528,6 @@
     function searchPlants() {
       const query = document.getElementById('search-input').value.toLowerCase();
       const productCards = document.querySelectorAll('.plant-card');
-      
       productCards.forEach(card => {
         const plantName = card.querySelector('.plant-title').innerText.toLowerCase();
         const plantTip = card.querySelector('.plant-tip').innerText.toLowerCase();
@@ -533,7 +539,6 @@
     function toggleDeleteMode() {
       isDeleteModeActive = !isDeleteModeActive;
       const btn = document.getElementById('delete-mode-btn');
-      
       if (isDeleteModeActive) {
         btn.innerText = "🛑 ডিলিট মোড বন্ধ করুন";
         btn.className = "bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-sm";
@@ -595,7 +600,6 @@
 
     function placeOrder(e) {
       e.preventDefault();
-      
       const name = document.getElementById('cust-name').value;
       const phone = document.getElementById('cust-phone').value;
       const address = document.getElementById('cust-address').value;
@@ -629,14 +633,11 @@
                                `_(গ্রাহক অনলাইন পেমেন্ট করে থাকলে ইউটিআর (UTR) বা স্ক্রিনশট ভেরিফাই করে নিন)_`;
 
       const encodedMessage = encodeURIComponent(whatsappMessage);
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${encodedMessage}`;
-      
-      document.getElementById('whatsapp-btn').href = whatsappUrl;
+      document.getElementById('whatsapp-btn').href = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${encodedMessage}`;
 
       document.getElementById('checkout-form').reset();
       closeCheckout();
       document.getElementById('success-modal').classList.remove('hidden');
-
       cart = [];
       updateCartUI();
     }
