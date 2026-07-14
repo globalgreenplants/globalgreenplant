@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Green Plant | Premium Smart Nursery</title>
+    <title>Global Green Plant | Ultimate Smart Nursery</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap');
         body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; }
-        .filter-btn.active { background-image: linear-gradient(to right, #047857, #059669); color: white; border-color: transparent; }
     </style>
 </head>
 <body class="bg-amber-50/40 text-slate-900">
@@ -17,18 +16,17 @@
     <nav class="flex justify-between items-center px-6 py-5 bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 text-white shadow-lg sticky top-0 z-50">
         <div class="flex flex-col">
             <span class="text-3xl md:text-4xl font-black tracking-wider uppercase drop-shadow-md">GLOBAL GREEN PLANT</span>
-            <span class="text-xs text-yellow-200 tracking-widest uppercase font-bold mt-1">Luxury Nursery & Accessories</span>
+            <span class="text-xs text-yellow-200 tracking-widest uppercase font-bold mt-1">Luxury Nursery & Eco Accessories</span>
         </div>
         <div class="space-x-8 hidden md:flex text-base font-bold">
             <a href="#welcome-banner" class="hover:text-yellow-300 transition duration-300">হোম</a>
-            <a href="#category-section" class="hover:text-yellow-300 transition duration-300">ক্যাটাগরি</a>
+            <a href="#store-section" class="hover:text-yellow-300 transition duration-300">কালেকশন</a>
             <a href="#contact" class="hover:text-yellow-300 transition duration-300">যোগাযোগ</a>
         </div>
     </nav>
 
     <!-- 1. Full Screen Interactive Welcome Banner -->
-    <section id="welcome-banner" class="min-h-[85vh] flex flex-col justify-center items-center text-center bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800 text-white px-6 py-20 relative overflow-hidden shadow-inner">
-        <!-- Background decorative blurs -->
+    <section id="welcome-banner" class="min-h-[80vh] flex flex-col justify-center items-center text-center bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800 text-white px-6 py-20 relative overflow-hidden shadow-inner">
         <div class="absolute top-10 left-10 w-72 h-72 bg-yellow-400/20 rounded-full blur-3xl"></div>
         <div class="absolute bottom-10 right-10 w-72 h-72 bg-lime-400/20 rounded-full blur-3xl"></div>
         
@@ -39,132 +37,110 @@
             
             <h1 class="text-4xl md:text-7xl font-black leading-tight drop-shadow-lg">
                 স্যার বা ম্যাডাম, আপনি কেমন আছেন? <br>
-                <span class="text-yellow-300">গ্লোবাল গ্রীন প্লান্ট-এ</span> আপনাকে স্বাগত।
+                <span class="text-yellow-300">গ্লোবাল গ্রীন প্লান্ট</span>-এ আপনাকে স্বাগত।
             </h1>
             
             <p class="text-xl md:text-3xl text-emerald-100 font-medium max-w-3xl mx-auto leading-relaxed">
                 আপনার সুন্দর ও সতেজ <span class="text-yellow-200 font-extrabold underline decoration-wavy decoration-amber-400">সবুজ যাত্রা (Green Journey)</span> শুরু করার জন্য নিচের বাটনে ক্লিক করুন। প্রকৃতির সেরা কালেকশন আপনার অপেক্ষায়।
             </p>
 
-            <!-- Dual Action Buttons -->
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-6">
-                <a href="#category-section" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-slate-950 font-black text-xl rounded-2xl shadow-xl transition transform hover:-translate-y-1 text-center">
+                <a href="#store-section" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-slate-950 font-black text-xl rounded-2xl shadow-xl transition transform hover:-translate-y-1 text-center">
                     🛍️ কেনাকাটা শুরু করুন
                 </a>
-                <a href="#products-display" onclick="filterCategory('all')" class="w-full sm:w-auto px-8 py-4 bg-white/20 hover:bg-white/30 text-white font-black text-xl rounded-2xl border-2 border-white/50 backdrop-blur-sm shadow-xl transition transform hover:-translate-y-1 text-center">
-                    🌿 সব প্রোডাক্ট একসাথে দেখুন
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- 2. Smart Category Selector (What the customer wants) -->
-    <section id="category-section" class="py-16 px-6 bg-gradient-to-b from-amber-50/60 to-white text-center scroll-mt-20">
-        <div class="max-w-4xl mx-auto mb-10">
-            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-4">আপনি ঠিক কি ধরণের গাছ বা সামগ্রী খুঁজছেন?</h2>
-            <p class="text-emerald-800 text-lg font-bold bg-emerald-100/70 inline-block px-6 py-2 rounded-full">
-                নিচের যেকোনো একটি অপশনে ক্লিক করুন, আপনার পছন্দের জিনিসগুলো মুহূর্তে সামনে চলে আসবে!
-            </p>
+    <!-- 2. Store Section (Search + Categories + Products) -->
+    <section id="store-section" class="py-16 px-4 max-w-7xl mx-auto scroll-mt-20">
+        
+        <!-- Smart Search & Filter Header -->
+        <div class="bg-white rounded-3xl p-6 md:p-8 shadow-xl border-2 border-emerald-100 mb-12 text-center space-y-6">
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900">আমাদের এক্সক্লুসিভ স্টোর</h2>
+            <p class="text-emerald-800 text-base font-bold bg-emerald-100/70 inline-block px-4 py-1 rounded-full">আপনার মূল্যবান সময় বাঁচাতে আমাদের ফিল্টার অথবা সার্চ অপশনটি ব্যবহার করুন</p>
+            
+            <!-- 🔍 ADVANCED LIVE SEARCH BAR -->
+            <div class="max-w-xl mx-auto relative pt-4">
+                <input type="text" id="plant-search" onkeyup="searchPlants()" placeholder="🔎 আপনার পছন্দের গাছের নাম বা ধরণ লিখে সার্চ করুন... (যেমন: আম, গোলাপ, লিলি)" class="w-full border-3 border-emerald-500 focus:border-green-600 rounded-2xl px-5 py-4 text-lg font-bold shadow-md outline-none transition-all placeholder:text-slate-400">
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 pt-4">
+                <button onclick="filterCategory('all')" class="cat-btn px-5 py-2.5 bg-slate-100 hover:bg-emerald-600 hover:text-white rounded-xl font-black text-sm transition shadow-sm">🌿 সব কালেকশন</button>
+                <button onclick="filterCategory('fruit')" class="cat-btn px-5 py-2.5 bg-slate-100 hover:bg-orange-500 hover:text-white rounded-xl font-black text-sm transition shadow-sm">🍎 ফল গাছ</button>
+                <button onclick="filterCategory('flower')" class="cat-btn px-5 py-2.5 bg-slate-100 hover:bg-pink-500 hover:text-white rounded-xl font-black text-sm transition shadow-sm">🌹 ফুল গাছ</button>
+                <button onclick="filterCategory('indoor')" class="cat-btn px-5 py-2.5 bg-slate-100 hover:bg-teal-600 hover:text-white rounded-xl font-black text-sm transition shadow-sm">🍃 ইনডোর প্ল্যান্ট</button>
+                <button onclick="filterCategory('accessories')" class="cat-btn px-5 py-2.5 bg-slate-100 hover:bg-amber-600 hover:text-white rounded-xl font-black text-sm transition shadow-sm">🛠️ গাছের সামগ্রী</button>
+            </div>
         </div>
 
-        <!-- Visual Category Grid (Interactive Filters) -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <button onclick="filterCategory('fruit')" class="filter-btn border-2 border-orange-200 bg-white hover:border-orange-500 p-6 rounded-2xl shadow-md transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center group">
-                <span class="text-4xl mb-2 group-hover:scale-110 transition">🍎</span>
-                <span class="text-lg md:text-xl font-black text-slate-800">ফল গাছ</span>
-            </button>
+        <!-- 3. Dynamic Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
             
-            <button onclick="filterCategory('flower')" class="filter-btn border-2 border-pink-200 bg-white hover:border-pink-500 p-6 rounded-2xl shadow-md transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center group">
-                <span class="text-4xl mb-2 group-hover:scale-110 transition">🌹</span>
-                <span class="text-lg md:text-xl font-black text-slate-800">ফুল গাছ</span>
-            </button>
-            
-            <button onclick="filterCategory('indoor')" class="filter-btn border-2 border-emerald-200 bg-white hover:border-emerald-500 p-6 rounded-2xl shadow-md transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center group">
-                <span class="text-4xl mb-2 group-hover:scale-110 transition">🌿</span>
-                <span class="text-lg md:text-xl font-black text-slate-800">ইনডোর প্ল্যান্ট</span>
-            </button>
-            
-            <button onclick="filterCategory('accessories')" class="filter-btn border-2 border-amber-200 bg-white hover:border-amber-500 p-6 rounded-2xl shadow-md transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center group">
-                <span class="text-4xl mb-2 group-hover:scale-110 transition">🛠️</span>
-                <span class="text-lg md:text-xl font-black text-slate-800">গাছের সামগ্রী</span>
-            </button>
-        </div>
-    </section>
-
-    <!-- 3. Dynamic Product Display Section -->
-    <section id="products-display" class="py-12 px-4 max-w-6xl mx-auto scroll-mt-24">
-        <!-- Dynamic Section Header -->
-        <div class="text-center mb-10">
-            <h3 id="current-category-title" class="text-3xl md:text-4xl font-black text-slate-900 border-b-4 border-emerald-500 inline-block pb-2">আমাদের সমস্ত কালেকশন</h3>
-        </div>
-
-        <!-- Product Grid with Category Tags -->
-        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            
-            <!-- Fruit Tree 1 -->
-            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="fruit">
+            <!-- Item 1: Fruit -->
+            <div class="product-item bg-white rounded-3xl p-5 shadow-lg border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-2xl" data-category="fruit" data-tags="thai alltime mango আম গাছ ফল">
                 <div>
-                    <div class="h-56 bg-gradient-to-tr from-orange-50 to-amber-100 rounded-2xl mb-4 flex items-center justify-center text-orange-800 text-base font-bold">[ এখানে মিষ্টি আমের গাছের ছবি ]</div>
-                    <span class="text-xs font-black text-orange-800 bg-orange-100 px-3 py-1 rounded-full uppercase">ফল গাছ (Fruit)</span>
-                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">থাই অলটাইম আম গাছ (Hybrid)</h4>
-                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ৬৫০</p>
+                    <div class="h-48 bg-slate-100 rounded-2xl mb-4 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=500" alt="আম গাছ" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] font-black text-orange-800 bg-orange-100 px-2.5 py-1 rounded-full uppercase">ফল গাছ</span>
+                    <h4 class="text-xl font-black text-slate-800 mt-2 mb-1">থাই অলটাইম আম গাছ (Hybrid)</h4>
+                    <p class="text-orange-600 font-black text-xl mb-3">৳ ৬৫০</p>
                 </div>
-                <button onclick="selectProduct('থাই অলটাইম আম গাছ (Hybrid)', 650)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+                <button onclick="selectProduct('থাই অলটাইম আম গাছ (Hybrid)', 650)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3 rounded-xl font-black text-sm shadow-md hover:from-emerald-700">অর্ডার করুন</button>
             </div>
 
-            <!-- Flower Tree 1 -->
-            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="flower">
+            <!-- Item 2: Flower -->
+            <div class="product-item bg-white rounded-3xl p-5 shadow-lg border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-2xl" data-category="flower" data-tags="black rose কালো গোলাপ ফুল">
                 <div>
-                    <div class="h-56 bg-gradient-to-tr from-pink-50 to-red-100 rounded-2xl mb-4 flex items-center justify-center text-pink-800 text-base font-bold">[ এখানে সুগন্ধি গোলাপের ছবি ]</div>
-                    <span class="text-xs font-black text-pink-800 bg-pink-100 px-3 py-1 rounded-full uppercase">ফুল গাছ (Flower)</span>
-                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">প্রিমিয়াম ব্ল্যাক রোজ (কালো গোলাপ)</h4>
-                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ৩৫০</p>
+                    <div class="h-48 bg-slate-100 rounded-2xl mb-4 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500" alt="গোলাপ" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] font-black text-pink-800 bg-pink-100 px-2.5 py-1 rounded-full uppercase">ফুল গাছ</span>
+                    <h4 class="text-xl font-black text-slate-800 mt-2 mb-1">প্রিমিয়াম ব্ল্যাক রোজ (কালো গোলাপ)</h4>
+                    <p class="text-orange-600 font-black text-xl mb-3">৳ ৩৫০</p>
                 </div>
-                <button onclick="selectProduct('প্রিমিয়াম ব্ল্যাক রোজ (কালো গোলাপ)', 350)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+                <button onclick="selectProduct('প্রিমিয়াম ব্ল্যাক রোজ (কালো গোলাপ)', 350)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3 rounded-xl font-black text-sm shadow-md hover:from-emerald-700">অর্ডার করুন</button>
             </div>
 
-            <!-- Indoor Plant 1 -->
-            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="indoor">
+            <!-- Item 3: Indoor -->
+            <div class="product-item bg-white rounded-3xl p-5 shadow-lg border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-2xl" data-category="indoor" data-tags="peace lily পিস লিলি ইনডোর পাতা">
                 <div>
-                    <div class="h-56 bg-gradient-to-tr from-green-50 to-emerald-100 rounded-2xl mb-4 flex items-center justify-center text-emerald-800 text-base font-bold">[ এখানে পিস লিলির ছবি ]</div>
-                    <span class="text-xs font-black text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full uppercase">ইনডোর প্ল্যান্ট (Indoor)</span>
-                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">ভ্যারিয়েগেটেড পিস লিলি (Premium)</h4>
-                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ১২৫০</p>
+                    <div class="h-48 bg-slate-100 rounded-2xl mb-4 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=500" alt="পিস লিলি" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] font-black text-teal-800 bg-teal-100 px-2.5 py-1 rounded-full uppercase">ইনডোর প্ল্যান্ট</span>
+                    <h4 class="text-xl font-black text-slate-800 mt-2 mb-1">ভ্যারিয়েগেটেড পিস লিলি (Premium)</h4>
+                    <p class="text-orange-600 font-black text-xl mb-3">৳ ১২৫০</p>
                 </div>
-                <button onclick="selectProduct('ভ্যারিয়েগেটেড পিস লিলি (Premium)', 1250)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+                <button onclick="selectProduct('ভ্যারিয়েগেটেড পিস লিলি (Premium)', 1250)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3 rounded-xl font-black text-sm shadow-md hover:from-emerald-700">অর্ডার করুন</button>
             </div>
 
-            <!-- Accessories 1 -->
-            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="accessories">
+            <!-- Item 4: Accessories -->
+            <div class="product-item bg-white rounded-3xl p-5 shadow-lg border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-2xl" data-category="accessories" data-tags="fertilizer nutrient কিট সার সামগ্রী">
                 <div>
-                    <div class="h-56 bg-gradient-to-tr from-amber-50 to-yellow-100 rounded-2xl mb-4 flex items-center justify-center text-amber-800 text-base font-bold">[ এখানে সারের ছবি ]</div>
-                    <span class="text-xs font-black text-amber-800 bg-amber-100 px-3 py-1 rounded-full uppercase">সামগ্রী (Accessories)</span>
-                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">স্পেশাল প্রিমিয়াম নিউট্রিয়েন্ট কিট</h4>
-                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ৪৫০</p>
+                    <div class="h-48 bg-slate-100 rounded-2xl mb-4 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?q=80&w=500" alt="সার সামগ্রী" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] font-black text-amber-800 bg-amber-100 px-2.5 py-1 rounded-full uppercase">গাছের সামগ্রী</span>
+                    <h4 class="text-xl font-black text-slate-800 mt-2 mb-1">স্পেশাল প্রিমিয়াম নিউট্রিয়েন্ট কিট</h4>
+                    <p class="text-orange-600 font-black text-xl mb-3">৳ ৪৫০</p>
                 </div>
-                <button onclick="selectProduct('স্পেশাল প্রিমিয়াম নিউট্রিয়েন্ট কিট', 450)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+                <button onclick="selectProduct('স্পেশাল প্রিমিয়াম নিউট্রিয়েন্ট কিট', 450)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3 rounded-xl font-black text-sm shadow-md hover:from-emerald-700">অর্ডার করুন</button>
             </div>
 
-            <!-- Fruit Tree 2 -->
-            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="fruit">
+            <!-- Item 5: Fruit 2 -->
+            <div class="product-item bg-white rounded-3xl p-5 shadow-lg border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-2xl" data-category="fruit" data-tags="lemon লেবু গাছ ফল">
                 <div>
-                    <div class="h-56 bg-gradient-to-tr from-orange-50 to-yellow-100 rounded-2xl mb-4 flex items-center justify-center text-orange-800 text-base font-bold">[ এখানে লেবু গাছের ছবি ]</div>
-                    <span class="text-xs font-black text-orange-800 bg-orange-100 px-3 py-1 rounded-full uppercase">ফল গাছ (Fruit)</span>
-                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">সিডলেস থাই পাতিলেবু গাছ</h4>
-                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ২৪০</p>
+                    <div class="h-48 bg-slate-100 rounded-2xl mb-4 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1590502593747-42a996133562?q=80&w=500" alt="লেবু গাছ" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] font-black text-orange-800 bg-orange-100 px-2.5 py-1 rounded-full uppercase">ফল গাছ</span>
+                    <h4 class="text-xl font-black text-slate-800 mt-2 mb-1">সিডলেস থাই পাতিলেবু গাছ</h4>
+                    <p class="text-orange-600 font-black text-xl mb-3">৳ ২৪০</p>
                 </div>
-                <button onclick="selectProduct('সিডলেস থাই পাতিলেবু গাছ', 240)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
-            </div>
-
-            <!-- Accessories 2 -->
-            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="accessories">
-                <div>
-                    <div class="h-56 bg-gradient-to-tr from-stone-100 to-orange-100 rounded-2xl mb-4 flex items-center justify-center text-amber-900 text-base font-bold">[ এখানে সিরামিক টবের ছবি ]</div>
-                    <span class="text-xs font-black text-amber-800 bg-amber-100 px-3 py-1 rounded-full uppercase">সামগ্রী (Accessories)</span>
-                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">হ্যান্ডক্রাফটেড সিরামিক মেটালিক টব</h4>
-                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ৮৫০</p>
-                </div>
-                <button onclick="selectProduct('হ্যান্ডক্রাফটেড সিরামিক মেটালিক টব', 850)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+                <button onclick="selectProduct('সিডলেস থাই পাতিলেবু গাছ', 240)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3 rounded-xl font-black text-sm shadow-md hover:from-emerald-700">অর্ডার করুন</button>
             </div>
 
         </div>
@@ -224,10 +200,10 @@
     <!-- Footer Area -->
     <footer id="contact" class="bg-gradient-to-b from-slate-900 to-black text-slate-200 py-12 px-6 border-t-4 border-emerald-600">
         <div class="max-w-4xl mx-auto text-center space-y-4">
-            <h3 class="text-3xl font-black text-white">GLOBAL GREEN PLANT</h3>
+            <h3 class="text-3xl font-black text-white tracking-widest">GLOBAL GREEN PLANT</h3>
             <p class="text-base font-bold text-slate-300">
                 পূর্বস্থলী, বর্ধমান, পশ্চিমবঙ্গ (Purbasthali, West Bengal)<br>
-                যোগাযোগ: +91 6295301573 / +91 9239278504
+                যোগাযোগ: <span class="text-yellow-400 font-black">+91 6295301573</span> / <span class="text-yellow-400 font-black">+91 9239278504</span>
             </p>
             <div class="pt-6 border-t border-slate-800 text-xs text-slate-500">
                 &copy; 2026 গ্লোবাল গ্রীন প্লান্ট। সর্বস্বত্ব সংরক্ষিত।
@@ -235,35 +211,39 @@
         </div>
     </footer>
 
-    <!-- Category Filter and Order Logic Script -->
+    <!-- Advanced Search, Filtering and Ordering Script -->
     <script>
-        // SMART FILTER LOGIC
-        function filterCategory(category) {
+        // 🔍 INSTANT LIVE SEARCH FUNCTION
+        function searchPlants() {
+            const input = document.getElementById('plant-search').value.toLowerCase();
             const items = document.querySelectorAll('.product-item');
-            const titleElement = document.getElementById('current-category-title');
-            
-            // Title updates according to selection
-            const titles = {
-                'all': 'আমাদের সমস্ত কালেকশন',
-                'fruit': '🍎 আমাদের সেরা ফল গাছ সমূহ',
-                'flower': '🌹 আমাদের আকর্ষণীয় ফুল গাছ সমূহ',
-                'indoor': '🌿 অভিজাত ইনডোর প্ল্যান্ট কালেকশন',
-                'accessories': '🛠️ প্রয়োজনীয় গাছের সামগ্রী'
-            };
-            
-            titleElement.innerText = titles[category] || titles['all'];
 
-            // Loop and filter items smoothly
             items.forEach(item => {
-                if (category === 'all' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'flex'; // show
+                const tags = item.getAttribute('data-tags').toLowerCase();
+                const name = item.querySelector('h4').innerText.toLowerCase();
+                
+                if (name.includes(input) || tags.includes(input)) {
+                    item.style.display = 'flex';
                 } else {
-                    item.style.display = 'none'; // hide
+                    item.style.display = 'none';
                 }
             });
+        }
 
-            // Smooth scroll to the products section immediately after selection
-            document.getElementById('products-display').scrollIntoView({ behavior: 'smooth' });
+        // 🌿 CATEGORY FILTER FUNCTION
+        function filterCategory(category) {
+            const items = document.querySelectorAll('.product-item');
+            document.getElementById('plant-search').value = ''; 
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('product-grid').scrollIntoView({ behavior: 'smooth' });
         }
 
         function selectProduct(name, price) {
