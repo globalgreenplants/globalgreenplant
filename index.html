@@ -1,122 +1,306 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Global Green Plants | Premium Nursery</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body { font-family: 'Hind Siliguri', sans-serif; }
-    .serif-font { font-family: 'Playfair Display', serif; }
-    .cart-transition { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-    .gold-gradient { background: linear-gradient(135deg, #E5BA45 0%, #D4AF37 100%); }
-    .gold-gradient:hover { background: linear-gradient(135deg, #D4AF37 0%, #B3922E 100%); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Green Plant | Premium Smart Nursery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap');
+        body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; }
+        .filter-btn.active { background-image: linear-gradient(to right, #047857, #059669); color: white; border-color: transparent; }
+    </style>
 </head>
-<body class="bg-[#FDFBF7] text-[#1A3A2B] overflow-x-hidden antialiased">
+<body class="bg-amber-50/40 text-slate-900">
 
-  <!-- অফার ব্যানার -->
-  <div class="bg-[#D4AF37] text-[#1A3A2B] text-xs font-bold py-2 text-center tracking-wide shadow-sm">
-    🎉 স্পেশাল অফার: আমাদের থেকে ৩০০০ টাকার কেনাকাটা করলেই পশ্চিমবঙ্গ জুড়ে হোম ডেলিভারি একদম ফ্রি! 🚚
-  </div>
-
-  <!-- পেমেন্ট এবং ডেলিভারি ফর্ম মোডাল -->
-  <div id="checkout-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden">
-    <div class="bg-white rounded-3xl max-w-xl w-full p-6 md:p-8 shadow-2xl border-t-4 border-[#1A3A2B] relative max-h-[90vh] overflow-y-auto">
-      <button onclick="closeCheckout()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-xl font-bold">✕</button>
-      <h3 class="serif-font text-2xl font-bold text-[#1A3A2B] mb-1">অর্ডার এবং পেমেন্ট ফর্ম</h3>
-      <form id="checkout-form" onsubmit="placeOrder(event)" class="space-y-4">
-        <div>
-          <label class="block text-xs font-bold uppercase text-gray-600 mb-1">আপনার সম্পূর্ণ নাম</label>
-          <input type="text" id="cust-name" placeholder="উদা: রাহুল ব্যানার্জী" class="w-full p-3 border border-gray-200 rounded-xl text-sm" required>
+    <!-- Premium Bold Navbar -->
+    <nav class="flex justify-between items-center px-6 py-5 bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="flex flex-col">
+            <span class="text-3xl md:text-4xl font-black tracking-wider uppercase drop-shadow-md">GLOBAL GREEN PLANT</span>
+            <span class="text-xs text-yellow-200 tracking-widest uppercase font-bold mt-1">Luxury Nursery & Accessories</span>
         </div>
-        <div>
-          <label class="block text-xs font-bold uppercase text-gray-600 mb-1">মোবাইল নম্বর</label>
-          <input type="tel" id="cust-phone" placeholder="উদা: +91 XXXXX XXXXX" class="w-full p-3 border border-gray-200 rounded-xl text-sm" required>
+        <div class="space-x-8 hidden md:flex text-base font-bold">
+            <a href="#welcome-banner" class="hover:text-yellow-300 transition duration-300">হোম</a>
+            <a href="#category-section" class="hover:text-yellow-300 transition duration-300">ক্যাটাগরি</a>
+            <a href="#contact" class="hover:text-yellow-300 transition duration-300">যোগাযোগ</a>
         </div>
-        <div>
-          <label class="block text-xs font-bold uppercase text-gray-600 mb-1">ডেলিভারি ঠিকানা</label>
-          <textarea id="cust-address" rows="2" placeholder="আপনার ঠিকানা..." class="w-full p-3 border border-gray-200 rounded-xl text-sm" required></textarea>
+    </nav>
+
+    <!-- 1. Full Screen Interactive Welcome Banner -->
+    <section id="welcome-banner" class="min-h-[85vh] flex flex-col justify-center items-center text-center bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800 text-white px-6 py-20 relative overflow-hidden shadow-inner">
+        <!-- Background decorative blurs -->
+        <div class="absolute top-10 left-10 w-72 h-72 bg-yellow-400/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-72 h-72 bg-lime-400/20 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto space-y-8 z-10">
+            <div class="bg-amber-400 text-emerald-950 px-6 py-2 rounded-full text-sm font-black uppercase tracking-widest inline-block shadow-md">
+                🌱 Welcome to Global Green Plant 🌱
+            </div>
+            
+            <h1 class="text-4xl md:text-7xl font-black leading-tight drop-shadow-lg">
+                স্যার বা ম্যাডাম, আপনি কেমন আছেন? <br>
+                <span class="text-yellow-300">গ্লোবাল গ্রীন প্লান্ট-এ</span> আপনাকে স্বাগত।
+            </h1>
+            
+            <p class="text-xl md:text-3xl text-emerald-100 font-medium max-w-3xl mx-auto leading-relaxed">
+                আপনার সুন্দর ও সতেজ <span class="text-yellow-200 font-extrabold underline decoration-wavy decoration-amber-400">সবুজ যাত্রা (Green Journey)</span> শুরু করার জন্য নিচের বাটনে ক্লিক করুন। প্রকৃতির সেরা কালেকশন আপনার অপেক্ষায়।
+            </p>
+
+            <!-- Dual Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-6">
+                <a href="#category-section" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-slate-950 font-black text-xl rounded-2xl shadow-xl transition transform hover:-translate-y-1 text-center">
+                    🛍️ কেনাকাটা শুরু করুন
+                </a>
+                <a href="#products-display" onclick="filterCategory('all')" class="w-full sm:w-auto px-8 py-4 bg-white/20 hover:bg-white/30 text-white font-black text-xl rounded-2xl border-2 border-white/50 backdrop-blur-sm shadow-xl transition transform hover:-translate-y-1 text-center">
+                    🌿 সব প্রোডাক্ট একসাথে দেখুন
+                </a>
+            </div>
         </div>
-        <!-- [নতুন] দূরত্ব ইনপুট -->
-        <div>
-          <label class="block text-xs font-bold uppercase text-gray-600 mb-1">দোকান থেকে আপনার এলাকা কত কিমি দূরে?</label>
-          <input type="number" id="cust-distance" placeholder="উদা: 5" class="w-full p-3 border border-gray-200 rounded-xl text-sm" required>
+    </section>
+
+    <!-- 2. Smart Category Selector (What the customer wants) -->
+    <section id="category-section" class="py-16 px-6 bg-gradient-to-b from-amber-50/60 to-white text-center scroll-mt-20">
+        <div class="max-w-4xl mx-auto mb-10">
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-4">আপনি ঠিক কি ধরণের গাছ বা সামগ্রী খুঁজছেন?</h2>
+            <p class="text-emerald-800 text-lg font-bold bg-emerald-100/70 inline-block px-6 py-2 rounded-full">
+                নিচের যেকোনো একটি অপশনে ক্লিক করুন, আপনার পছন্দের জিনিসগুলো মুহূর্তে সামনে চলে আসবে!
+            </p>
         </div>
-        <div>
-          <label class="block text-xs font-bold uppercase text-gray-600 mb-2">পেমেন্ট পদ্ধতি</label>
-          <div class="grid grid-cols-2 gap-3">
-            <label class="border rounded-xl p-3 flex items-center gap-3 cursor-pointer">
-              <input type="radio" name="payment-method" value="COD" checked> <span>ক্যাশ অন ডেলিভারি</span>
-            </label>
-            <label class="border rounded-xl p-3 flex items-center gap-3 cursor-pointer">
-              <input type="radio" name="payment-method" value="Online"> <span>অনলাইন পেমেন্ট</span>
-            </label>
-          </div>
+
+        <!-- Visual Category Grid (Interactive Filters) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <button onclick="filterCategory('fruit')" class="filter-btn border-2 border-orange-200 bg-white hover:border-orange-500 p-6 rounded-2xl shadow-md transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center group">
+                <span class="text-4xl mb-2 group-hover:scale-110 transition">🍎</span>
+                <span class="text-lg md:text-xl font-black text-slate-800">ফল গাছ</span>
+            </button>
+            
+            <button onclick="filterCategory('flower')" class="filter-btn border-2 border-pink-200 bg-white hover:border-pink-500 p-6 rounded-2xl shadow-md transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center group">
+                <span class="text-4xl mb-2 group-hover:scale-110 transition">🌹</span>
+                <span class="text-lg md:text-xl font-black text-slate-800">ফুল গাছ</span>
+            </button>
+            
+            <button onclick="filterCategory('indoor')" class="filter-btn border-2 border-emerald-200 bg-white hover:border-emerald-500 p-6 rounded-2xl shadow-md transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center group">
+                <span class="text-4xl mb-2 group-hover:scale-110 transition">🌿</span>
+                <span class="text-lg md:text-xl font-black text-slate-800">ইনডোর প্ল্যান্ট</span>
+            </button>
+            
+            <button onclick="filterCategory('accessories')" class="filter-btn border-2 border-amber-200 bg-white hover:border-amber-500 p-6 rounded-2xl shadow-md transition transform hover:-translate-y-1 text-center flex flex-col items-center justify-center group">
+                <span class="text-4xl mb-2 group-hover:scale-110 transition">🛠️</span>
+                <span class="text-lg md:text-xl font-black text-slate-800">গাছের সামগ্রী</span>
+            </button>
         </div>
-        <button type="submit" class="w-full gold-gradient text-[#1A3A2B] py-3.5 rounded-xl font-bold text-sm uppercase">✅ অর্ডার কনফার্ম করুন</button>
-      </form>
-    </div>
-  </div>
+    </section>
 
-  <!-- (আপনার বাকি কন্টেন্ট যেমন কার্ট, হেডার, ক্যাটালগ একই থাকবে) -->
-  
-  <script>
-    // [নতুন] ছবি ফিক্স করার ফাংশন
-    const getPlaceholder = (category) => {
-      const placeholders = {
-        'fruits': 'https://images.unsplash.com/photo-1557800636-894a64c1696f?w=500',
-        'flowers': 'https://images.unsplash.com/photo-1490750964468-def43015495f?w=500',
-        'indoor': 'https://images.unsplash.com/photo-1453906971670-36693a2e3768?w=500',
-        'outdoor': 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=500'
-      };
-      return placeholders[category] || 'https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=500';
-    };
+    <!-- 3. Dynamic Product Display Section -->
+    <section id="products-display" class="py-12 px-4 max-w-6xl mx-auto scroll-mt-24">
+        <!-- Dynamic Section Header -->
+        <div class="text-center mb-10">
+            <h3 id="current-category-title" class="text-3xl md:text-4xl font-black text-slate-900 border-b-4 border-emerald-500 inline-block pb-2">আমাদের সমস্ত কালেকশন</h3>
+        </div>
 
-    // [পরিবর্তন] renderProducts ফাংশন
-    function renderProducts() {
-      const container = document.getElementById('catalog-container');
-      container.innerHTML = '';
-      
-      const filteredProducts = currentSelectedCategory === 'all' ? products : products.filter(p => p.category === currentSelectedCategory);
+        <!-- Product Grid with Category Tags -->
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            
+            <!-- Fruit Tree 1 -->
+            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="fruit">
+                <div>
+                    <div class="h-56 bg-gradient-to-tr from-orange-50 to-amber-100 rounded-2xl mb-4 flex items-center justify-center text-orange-800 text-base font-bold">[ এখানে মিষ্টি আমের গাছের ছবি ]</div>
+                    <span class="text-xs font-black text-orange-800 bg-orange-100 px-3 py-1 rounded-full uppercase">ফল গাছ (Fruit)</span>
+                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">থাই অলটাইম আম গাছ (Hybrid)</h4>
+                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ৬৫০</p>
+                </div>
+                <button onclick="selectProduct('থাই অলটাইম আম গাছ (Hybrid)', 650)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+            </div>
 
-      filteredProducts.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'plant-card bg-white rounded-2xl overflow-hidden border border-gray-100 p-4 text-center';
-        // এখানে onerror যুক্ত করা হয়েছে
-        card.innerHTML = `
-          <img src="${p.img}" onerror="this.src='${getPlaceholder(p.category)}';" class="w-full h-48 object-cover rounded-xl mb-2">
-          <h3 class="font-bold text-sm">${p.name}</h3>
-          <p class="font-bold text-sm">₹ ${p.price}</p>
-          <button onclick="handleDirectPurchase('${p.id}', '${p.name}', ${p.price}, '${p.img}')" class="gold-gradient w-full py-2 rounded-xl mt-2 text-xs font-bold">Buy Now</button>
-        `;
-        container.appendChild(card);
-      });
-    }
+            <!-- Flower Tree 1 -->
+            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="flower">
+                <div>
+                    <div class="h-56 bg-gradient-to-tr from-pink-50 to-red-100 rounded-2xl mb-4 flex items-center justify-center text-pink-800 text-base font-bold">[ এখানে সুগন্ধি গোলাপের ছবি ]</div>
+                    <span class="text-xs font-black text-pink-800 bg-pink-100 px-3 py-1 rounded-full uppercase">ফুল গাছ (Flower)</span>
+                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">প্রিমিয়াম ব্ল্যাক রোজ (কালো গোলাপ)</h4>
+                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ৩৫০</p>
+                </div>
+                <button onclick="selectProduct('প্রিমিয়াম ব্ল্যাক রোজ (কালো গোলাপ)', 350)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+            </div>
 
-    // [পরিবর্তন] placeOrder ফাংশন
-    function placeOrder(e) {
-      e.preventDefault();
-      
-      const distance = parseInt(document.getElementById('cust-distance').value) || 0;
-      let deliveryCharge = Math.max(20, distance * 5); // প্রতি কিমি ৫ টাকা, নূন্যতম ২০ টাকা
-      
-      if (currentCartTotal >= 3000) deliveryCharge = 0; // ৩০০০ এর বেশি হলে ফ্রি
-      
-      let finalTotal = currentCartTotal + deliveryCharge;
-      let deliveryMsg = (deliveryCharge === 0) ? "ফ্রি ডেলিভারি" : `চার্জ: ₹${deliveryCharge} (${distance} কিমি)`;
+            <!-- Indoor Plant 1 -->
+            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="indoor">
+                <div>
+                    <div class="h-56 bg-gradient-to-tr from-green-50 to-emerald-100 rounded-2xl mb-4 flex items-center justify-center text-emerald-800 text-base font-bold">[ এখানে পিস লিলির ছবি ]</div>
+                    <span class="text-xs font-black text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full uppercase">ইনডোর প্ল্যান্ট (Indoor)</span>
+                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">ভ্যারিয়েগেটেড পিস লিলি (Premium)</h4>
+                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ১২৫০</p>
+                </div>
+                <button onclick="selectProduct('ভ্যারিয়েগেটেড পিস লিলি (Premium)', 1250)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+            </div>
 
-      // আপনার আগের বাকি লজিকগুলো এখানে বসিয়ে দিন
-      const name = document.getElementById('cust-name').value;
-      const phone = document.getElementById('cust-phone').value;
-      const address = document.getElementById('cust-address').value;
-      
-      // হোয়াটসঅ্যাপ মেসেজ
-      const msg = `*নতুন অর্ডার*\nনাম: ${name}\nমোট বিল: ₹ ${finalTotal} (${deliveryMsg})`;
-      // ... হোয়াটসঅ্যাপ বাটন ও মোডাল ক্লোজ করার কোড ...
-    }
-  </script>
+            <!-- Accessories 1 -->
+            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="accessories">
+                <div>
+                    <div class="h-56 bg-gradient-to-tr from-amber-50 to-yellow-100 rounded-2xl mb-4 flex items-center justify-center text-amber-800 text-base font-bold">[ এখানে সারের ছবি ]</div>
+                    <span class="text-xs font-black text-amber-800 bg-amber-100 px-3 py-1 rounded-full uppercase">সামগ্রী (Accessories)</span>
+                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">স্পেশাল প্রিমিয়াম নিউট্রিয়েন্ট কিট</h4>
+                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ৪৫০</p>
+                </div>
+                <button onclick="selectProduct('স্পেশাল প্রিমিয়াম নিউট্রিয়েন্ট কিট', 450)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+            </div>
+
+            <!-- Fruit Tree 2 -->
+            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="fruit">
+                <div>
+                    <div class="h-56 bg-gradient-to-tr from-orange-50 to-yellow-100 rounded-2xl mb-4 flex items-center justify-center text-orange-800 text-base font-bold">[ এখানে লেবু গাছের ছবি ]</div>
+                    <span class="text-xs font-black text-orange-800 bg-orange-100 px-3 py-1 rounded-full uppercase">ফল গাছ (Fruit)</span>
+                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">সিডলেস থাই পাতিলেবু গাছ</h4>
+                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ২৪০</p>
+                </div>
+                <button onclick="selectProduct('সিডলেস থাই পাতিলেবু গাছ', 240)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+            </div>
+
+            <!-- Accessories 2 -->
+            <div class="product-item bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 flex flex-col justify-between" data-category="accessories">
+                <div>
+                    <div class="h-56 bg-gradient-to-tr from-stone-100 to-orange-100 rounded-2xl mb-4 flex items-center justify-center text-amber-900 text-base font-bold">[ এখানে সিরামিক টবের ছবি ]</div>
+                    <span class="text-xs font-black text-amber-800 bg-amber-100 px-3 py-1 rounded-full uppercase">সামগ্রী (Accessories)</span>
+                    <h4 class="text-2xl font-black text-slate-800 mt-3 mb-1">হ্যান্ডক্রাফটেড সিরামিক মেটালিক টব</h4>
+                    <p class="text-orange-600 font-black text-2xl mb-4">৳ ৮৫০</p>
+                </div>
+                <button onclick="selectProduct('হ্যান্ডক্রাফটেড সিরামিক মেটালিক টব', 850)" class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3.5 rounded-xl font-black text-base shadow-md hover:from-emerald-700">অর্ডার করুন</button>
+            </div>
+
+        </div>
+
+        <!-- Dynamic Order Form Box -->
+        <div id="checkout-box" class="max-w-xl mx-auto bg-white rounded-3xl p-6 md:p-8 shadow-2xl border-2 border-emerald-50 scroll-mt-24 hidden">
+            <h3 class="text-2xl font-black text-slate-900 mb-6 border-b-2 border-emerald-100 pb-3">🛒 আপনার অর্ডার ডিটেইলস</h3>
+            
+            <form id="orderForm" onsubmit="processOrder(event)" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-black text-slate-700 uppercase mb-1">নির্বাচিত প্রোডাক্ট</label>
+                    <input type="text" id="selected_product" readonly class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 font-black text-emerald-900 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-black text-slate-700 uppercase mb-1">মূল্য</label>
+                    <input type="text" id="product_price" readonly class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 font-black text-orange-600 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-black text-slate-700 uppercase mb-1">আপনার নাম</label>
+                    <input type="text" id="customer_name" required placeholder="আপনার পুরো নাম লিখুন" class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-base focus:border-emerald-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-black text-slate-700 uppercase mb-1">মোবাইল নম্বর (WhatsApp)</label>
+                    <input type="tel" id="customer_phone" required placeholder="হোয়াটসঅ্যাপ নম্বর দিন" class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-base focus:border-emerald-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-black text-slate-700 uppercase mb-1">ডেলিভারি ঠিকানা</label>
+                    <textarea id="customer_address" required rows="3" placeholder="গ্রাম/রাস্তা, পোস্ট অফিস, জেলা, পিন কোড" class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-base focus:border-emerald-500 outline-none"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-black text-slate-700 uppercase mb-2">পেমেন্ট পদ্ধতি</label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="border-2 border-slate-200 rounded-xl p-4 flex items-center space-x-3 cursor-pointer hover:bg-emerald-50/50">
+                            <input type="radio" name="payment_method" value="COD" checked onclick="togglePaymentGateway(false)" class="w-4 h-4 text-emerald-600">
+                            <span class="text-base font-bold text-slate-800">ক্যাশ অন ডেলিভারি</span>
+                        </label>
+                        <label class="border-2 border-slate-200 rounded-xl p-4 flex items-center space-x-3 cursor-pointer hover:bg-emerald-50/50">
+                            <input type="radio" name="payment_method" value="Online" onclick="togglePaymentGateway(true)" class="w-4 h-4 text-emerald-600">
+                            <span class="text-base font-bold text-slate-800">অনлайн পেমেন্ট</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="online-payment-box" class="hidden p-5 bg-amber-50 border-2 border-amber-300 rounded-2xl text-center shadow-inner">
+                    <p class="text-sm text-amber-900 font-black mb-2">🔒 অনলাইন পেমেন্ট গেটওয়ের জায়গা</p>
+                    <p class="text-xs text-stone-600 font-semibold">[ গেটওয়ে কোড এখানে বসবে ]</p>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-emerald-700 to-green-700 text-white py-4 rounded-xl font-black text-lg shadow-lg mt-4">
+                    কনফার্ম করুন ও হোয়াটসঅ্যাপে পাঠান
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer id="contact" class="bg-gradient-to-b from-slate-900 to-black text-slate-200 py-12 px-6 border-t-4 border-emerald-600">
+        <div class="max-w-4xl mx-auto text-center space-y-4">
+            <h3 class="text-3xl font-black text-white">GLOBAL GREEN PLANT</h3>
+            <p class="text-base font-bold text-slate-300">
+                পূর্বস্থলী, বর্ধমান, পশ্চিমবঙ্গ (Purbasthali, West Bengal)<br>
+                যোগাযোগ: +91 6295301573 / +91 9239278504
+            </p>
+            <div class="pt-6 border-t border-slate-800 text-xs text-slate-500">
+                &copy; 2026 গ্লোবাল গ্রীন প্লান্ট। সর্বস্বত্ব সংরক্ষিত।
+            </div>
+        </div>
+    </footer>
+
+    <!-- Category Filter and Order Logic Script -->
+    <script>
+        // SMART FILTER LOGIC
+        function filterCategory(category) {
+            const items = document.querySelectorAll('.product-item');
+            const titleElement = document.getElementById('current-category-title');
+            
+            // Title updates according to selection
+            const titles = {
+                'all': 'আমাদের সমস্ত কালেকশন',
+                'fruit': '🍎 আমাদের সেরা ফল গাছ সমূহ',
+                'flower': '🌹 আমাদের আকর্ষণীয় ফুল গাছ সমূহ',
+                'indoor': '🌿 অভিজাত ইনডোর প্ল্যান্ট কালেকশন',
+                'accessories': '🛠️ প্রয়োজনীয় গাছের সামগ্রী'
+            };
+            
+            titleElement.innerText = titles[category] || titles['all'];
+
+            // Loop and filter items smoothly
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'flex'; // show
+                } else {
+                    item.style.display = 'none'; // hide
+                }
+            });
+
+            // Smooth scroll to the products section immediately after selection
+            document.getElementById('products-display').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function selectProduct(name, price) {
+            document.getElementById('checkout-box').classList.remove('hidden');
+            document.getElementById('selected_product').value = name;
+            document.getElementById('product_price').value = "৳ " + price;
+            document.getElementById('checkout-box').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function togglePaymentGateway(show) {
+            const paymentBox = document.getElementById('online-payment-box');
+            if(show) paymentBox.classList.remove('hidden');
+            else paymentBox.classList.add('hidden');
+        }
+
+        function processOrder(e) {
+            e.preventDefault();
+            const product = document.getElementById('selected_product').value;
+            const price = document.getElementById('product_price').value;
+            const name = document.getElementById('customer_name').value;
+            const phone = document.getElementById('customer_phone').value;
+            const address = document.getElementById('customer_address').value;
+            const method = document.querySelector('input[name="payment_method"]:checked').value;
+            
+            let paymentStatus = (method === 'COD') ? "ক্যাশ অন ডেলিভারি" : "অনলাইন পেমেন্ট";
+
+            const whatsappMessage = `*🌱 নতুন অর্ডার - গ্লোবাল গ্রীন প্লান্ট 🌱*%0A%0A`
+                + `*প্রোডাক্ট:* ${product}%0A`
+                + `*মূল্য:* ${price}%0A%0A`
+                + `*👤 নাম:* ${name}%0A`
+                + `*📞 মোবাইল:* ${phone}%0A`
+                + `*📍 ঠিকানা:* ${address}%0A`
+                + `*💳 পেমেন্ট:* ${paymentStatus}%0A`;
+
+            const ownerPhoneNumber = "916295301573"; 
+            window.open(`https://wa.me/${ownerPhoneNumber}?text=${whatsappMessage}`, '_blank');
+        }
+    </script>
 </body>
 </html>
