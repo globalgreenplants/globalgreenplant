@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Global Green Plants | Premium Nursery</title>
   
+  <!-- Tailwind CSS & Google Fonts & FontAwesome Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,10 +20,12 @@
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3A2B] overflow-x-hidden antialiased">
 
+  <!-- অফার ব্যানার -->
   <div class="bg-[#D4AF37] text-[#1A3A2B] text-xs font-bold py-2 text-center tracking-wide shadow-sm">
     🎉 স্পেশাল অফার: আমাদের থেকে ৩০০০ টাকার কেনাকাটা করলেই পশ্চিমবঙ্গ জুড়ে হোম ডেলিভারি একদম ফ্রি! 🚚
   </div>
 
+  <!-- ওয়েলকাম পপ-আপ মোডাল -->
   <div id="welcome-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-md">
     <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl text-center border-t-4 border-[#1A3A2B] relative transform scale-100 transition-all duration-300">
       <div class="text-5xl mb-4 animate-bounce">🌱</div>
@@ -40,11 +43,12 @@
     </div>
   </div>
 
+  <!-- পেমেন্ট এবং ডেলিভারি ফর্ম মোডাল -->
   <div id="checkout-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden">
     <div class="bg-white rounded-3xl max-w-xl w-full p-6 md:p-8 shadow-2xl border-t-4 border-[#1A3A2B] relative max-h-[90vh] overflow-y-auto">
       <button onclick="closeCheckout()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-xl font-bold">✕</button>
       
-      <h3 class="serif-font text-2xl font-bold text-[#1A3A2B] mb-1">অর্ডার এবং পেমেন্ট ফর্ম</h3>
+      <h3 class="serif-font text-2xl font-bold text-[#1A3A2B] mb-1">অर्डर এবং পেমেন্ট ফর্ম</h3>
       <p class="text-xs text-gray-400 mb-6">অনুগ্রহ করে ডেলিভারি এবং সঠিক পেমেন্ট মেথডটি সিলেক্ট করুন।</p>
       
       <form id="checkout-form" onsubmit="placeOrder(event)" class="space-y-4">
@@ -98,6 +102,7 @@
     </div>
   </div>
 
+  <!-- অর্ডার সাকসেস মোডাল -->
   <div id="success-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 md:p-8 shadow-2xl text-center border-t-4 border-green-600 max-h-[90vh] overflow-y-auto">
       <div class="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">✓</div>
@@ -127,6 +132,7 @@
     </div>
   </div>
 
+  <!-- ইউনিভার্সাল ভ্যারাইটি মোডাল -->
   <div id="universal-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
     <div class="bg-white rounded-3xl max-w-lg w-full p-6 max-h-[80vh] overflow-y-auto border-t-4 border-[#1A3A2B]">
       <div class="flex justify-between items-center mb-6 border-b pb-4">
@@ -137,6 +143,7 @@
     </div>
   </div>
 
+  <!-- হেডার বার -->
   <header class="sticky top-0 z-40 bg-[#1A3A2B] text-white border-b border-[#D4AF37]/20 shadow-md">
     <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="flex flex-col items-center md:items-start">
@@ -158,6 +165,7 @@
     </div>
   </header>
 
+  <!-- শপিং কার্ট ড্রয়ার -->
   <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-50 invisible opacity-0 transition-opacity" onclick="toggleCart()"></div>
   <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white z-50 shadow-2xl transform translate-x-full cart-transition flex flex-col">
     <div class="p-6 border-b bg-[#1A3A2B] text-white flex justify-between items-center">
@@ -176,22 +184,28 @@
     </div>
   </div>
 
+  <!-- হিরো ব্যানার -->
   <section class="bg-[#1A3A2B] text-white py-12 text-center border-b border-[#D4AF37]/10">
     <h1 class="serif-font text-3xl md:text-4xl font-bold mb-2 tracking-wide text-gray-100">প্রকৃতির অনন্য কালেকশন</h1>
     <p class="text-gray-300 text-xs font-light max-w-md mx-auto">বাছাইকৃত শতভাগ খাঁটি ও সতেজ প্রিমিয়াম কোয়ালিটির গাছপালা</p>
   </section>
 
+  <!-- ক্যাটালগ মেনু এবং ফিল্টার -->
   <div class="max-w-7xl mx-auto px-6 pt-10 space-y-4">
     <div id="catalog-filter-bar" class="flex flex-wrap justify-center gap-2 md:gap-4 bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
-      </div>
+      <!-- ক্যাটাগরিগুলো জাভাস্ক্রিপ্ট থেকে জেনারেট হবে -->
+    </div>
   </div>
 
+  <!-- প্রধান ক্যাটালগ প্রোডাক্ট ডিসপ্লে গ্রিড -->
   <section class="py-10 px-6 max-w-7xl mx-auto">
     <div id="catalog-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      </div>
+      <!-- গাছগুলো ডাইনামিকালি এখানে ক্যাটাগরি অনুযায়ী পরপর বসবে -->
+    </div>
     <div id="no-products-msg" class="text-center py-20 text-gray-400 text-sm hidden">এই ক্যাটালগে বর্তমানে কোনো গাছ আপলোড করা নেই।</div>
   </section>
 
+  <!-- ⚙️ ম্যানেজার কন্ট্রোল ড্যাশবোর্ড -->
   <section class="bg-white border-2 border-[#D4AF37]/30 p-6 md:p-8 max-w-2xl mx-auto my-14 rounded-3xl shadow-xl space-y-8">
     
     <div class="text-center border-b pb-4 border-gray-150">
@@ -200,6 +214,7 @@
       <p class="text-gray-400 text-xs mt-1">সহজে ও দ্রুত গাছ আপলোড এবং সেটিংস পরিচালনা করুন</p>
     </div>
 
+    <!-- নতুন কাস্টম ক্যাটাগরি সেকশন এড করার প্যানেল -->
     <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 p-5 rounded-2xl border border-blue-200">
       <h4 class="font-bold text-sm text-[#1A3A2B] mb-1 flex items-center gap-1.5">
         ➕ নতুন ক্যাটাগরি / সেকশন যুক্ত করুন
@@ -221,28 +236,40 @@
       </button>
     </div>
 
+    <!-- স্মার্ট অটো কুইক আপলোডার -->
     <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 p-5 rounded-2xl border border-emerald-200">
       <h4 class="font-bold text-sm text-[#1A3A2B] mb-1 flex items-center gap-1.5">
         ⚡ প্রিমিয়াম অটো কুইক আপলোডার (১০০% গ্যারান্টিযুক্ত ওপেন ইমেজ লিংক)
       </h4>
-      <p class="text-[11px] text-gray-500 mb-4">নিচের তালিকা থেকে যেকোনো গাছ সিলেক্ট করুন। এবার ছবি ১০০% দৃশ্যমান হবে।</p>
+      <p class="text-[11px] text-gray-500 mb-4">নিচের তালিকা থেকে গাছ এবং সঠিক সেকশন সিলেক্ট করে প্রাইজ বসিয়ে লাইভ করুন।</p>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
         <div>
           <label class="block font-semibold text-gray-650 mb-1">১. রেডিমেড গাছের তালিকা থেকে বাছুন</label>
           <select id="quick-prod-select" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
-            </select>
+            <!-- জাভাস্ক্রিপ্ট দিয়ে এখানে ছবি লক করা তালিকা লোড হবে -->
+          </select>
         </div>
         <div>
           <label class="block font-semibold text-gray-650 mb-1">২. আপনার বিক্রয় মূল্য (₹)</label>
           <input type="number" id="quick-prod-price" placeholder="উদা: 250" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
         </div>
       </div>
+
+      <!-- নতুন ডেভেলপমেন্ট: গাছটি আপনার তৈরি করা কোন সেকশনে যাবে তা সিলেক্ট করার অপশন -->
+      <div class="mt-3 text-xs">
+        <label class="block font-semibold text-gray-650 mb-1">৩. কোন সেকশনে আপলোড করতে চান? (আপনার কাস্টম সেকশনও এখানে আসবে)</label>
+        <select id="quick-prod-category-select" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
+          <!-- জাভাস্ক্রিপ্ট থেকে ডাইনামিকভাবে সমস্ত ক্যাটাগরি লোড হবে -->
+        </select>
+      </div>
+
       <button onclick="uploadQuickProduct()" class="w-full bg-[#1A3A2B] text-white py-3 rounded-xl font-bold hover:bg-[#112a1f] transition mt-4 shadow-md text-xs flex items-center justify-center gap-1">
         🚀 এই গাছটি নিখুঁত ছবি সহ লাইভ করুন
       </button>
     </div>
 
+    <!-- সেটিংস সেকশন -->
     <div class="bg-amber-50/50 p-5 rounded-2xl border border-amber-200">
       <h4 class="font-bold text-sm text-amber-900 mb-3 flex items-center gap-1">💳 আপনার UPI ও কিউআর কোড সেটিংস (India)</h4>
       <div class="space-y-3 text-xs">
@@ -271,6 +298,7 @@
     </div>
   </section>
 
+  <!-- ফুটার সেকশন -->
   <footer class="bg-[#1A3A2B] text-gray-300 py-10 border-t border-[#D4AF37]/20 text-xs">
     <div class="max-w-7xl mx-auto px-6 text-center text-gray-400">
       <div class="serif-font text-lg font-bold text-[#D4AF37] mb-2">GLOBAL GREEN</div>
@@ -279,6 +307,7 @@
     </div>
   </footer>
 
+  <!-- লজিক ও ফাংশনালিটি স্ক্রিপ্ট -->
   <script>
     let cart = [];
     let isDeleteModeActive = false;
@@ -289,7 +318,7 @@
     let myBkashNo = localStorage.getItem('nursery_bkash') || "91XXXXXXXX";
     let myBankDetails = localStorage.getItem('nursery_bank') || "SBI, Account: XXXX";
 
-    // পরিবর্তন ২ (খ): ডাইনামিক ক্যাটাগরি লিস্ট (লোকাল স্টোরেজ সাপোর্ট সহ)
+    // ডাইনামিক ক্যাটাগরি লিস্ট (লোকাল স্টোরেজ সাপোর্ট সহ)
     let dynamicCategories = JSON.parse(localStorage.getItem('nursery_categories')) || [
       { id: 'all', name: 'সব গাছ', icon: '🌿' },
       { id: 'fruits', name: 'ফল গাছ', icon: '🍎' },
@@ -336,15 +365,16 @@
         products = defaultProducts;
         localStorage.setItem('nursery_products_cdn_v5', JSON.stringify(products));
       }
-      renderFilters(); // ফিল্টার বার রেন্ডার
+      renderFilters();
       setupQuickDropdown();
+      setupCategoryDropdown(); // আপলোডার ড্রপডাউন জেনারেটর কল
       renderProducts();
       loadSettingsIntoDashboard();
     };
 
     function closeWelcomeModal() { document.getElementById('welcome-modal').classList.add('hidden'); }
 
-    // পরিবর্তন ২ (গ): ক্যাটাগরি ফিল্টার বার রেন্ডার করার ফাংশন
+    // ক্যাটাগরি ফিল্টার বার রেন্ডার করার ফাংশন
     function renderFilters() {
       const filterBar = document.getElementById('catalog-filter-bar');
       filterBar.innerHTML = '';
@@ -366,7 +396,22 @@
       });
     }
 
-    // পরিবর্তন ২ (ঘ): নতুন ক্যাটাগরি সেকশন যুক্ত করার মেইন ফাংশন
+    // আপলোডারের জন্য ক্যাটাগরি ড্রপডাউন লিস্ট জেনারেট করার নতুন ফাংশন
+    function setupCategoryDropdown() {
+      const select = document.getElementById('quick-prod-category-select');
+      select.innerHTML = '';
+      // 'all' বাদে বাকি সব ক্যাটাগরি সিলেক্ট অপশনে ঢুকবে
+      dynamicCategories.forEach(cat => {
+        if(cat.id !== 'all') {
+          const option = document.createElement('option');
+          option.value = cat.id;
+          option.innerText = `${cat.icon} ${cat.name}`;
+          select.appendChild(option);
+        }
+      });
+    }
+
+    // নতুন ক্যাটাগরি সেকশন যুক্ত করার মেইন ফাংশন
     function addNewCategory() {
       const name = document.getElementById('new-cat-name').value.trim();
       const id = document.getElementById('new-cat-id').value.trim().toLowerCase();
@@ -378,6 +423,7 @@
       localStorage.setItem('nursery_categories', JSON.stringify(dynamicCategories));
       
       renderFilters();
+      setupCategoryDropdown(); // নতুন ক্যাটাগরি ড্রপডাউনেও রিফ্রেশ করে দিন
       
       document.getElementById('new-cat-name').value = '';
       document.getElementById('new-cat-id').value = '';
@@ -400,9 +446,11 @@
     function uploadQuickProduct() {
       const selectIndex = document.getElementById('quick-prod-select').value;
       const price = parseInt(document.getElementById('quick-prod-price').value);
+      const selectedCategory = document.getElementById('quick-prod-category-select').value; // নতুন সিলেক্টেড ক্যাটাগরি ক্যাচ
 
       if(!selectIndex) { alert('অনুগ্রহ করে তালিকা থেকে একটি গাছ সিলেক্ট করুন!'); return; }
       if(!price || price <= 0) { alert('অনুগ্রহ করে গাছের একটি সঠিক দাম লিখুন!'); return; }
+      if(!selectedCategory) { alert('অনুগ্রহ করে গাছটি রাখার জন্য একটি সেকশন সিলেক্ট করুন!'); return; }
 
       const selectedPlant = masterPlantDatabase[selectIndex];
       
@@ -410,7 +458,7 @@
         id: 'p_' + Date.now(),
         name: selectedPlant.name,
         price: price,
-        category: selectedPlant.category,
+        category: selectedCategory, // ইউজারের ইচ্ছা অনুযায়ী যেকোনো সেকশনে ক্যাটালগ যাবে
         tip: selectedPlant.tip,
         img: selectedPlant.img
       };
@@ -422,7 +470,7 @@
       renderProducts();
       
       document.getElementById('quick-prod-price').value = '';
-      alert(`🎉 সফলভাবে "${selectedPlant.name}" গাছটি নিখুঁত ছবি সহ ₹${price} দামে লাইভ হয়েছে!`);
+      alert(`🎉 সফলভাবে "${selectedPlant.name}" গাছটি আপনার সিলেক্ট করা সেকশনে ₹${price} দামে লাইভ হয়েছে!`);
     }
 
     function renderProducts() {
@@ -469,7 +517,6 @@
       renderProducts();
     }
 
-    // সার্চ লজিক
     function searchPlants() {
       const query = document.getElementById('search-input').value.toLowerCase();
       document.querySelectorAll('.plant-card').forEach(card => {
