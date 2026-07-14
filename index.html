@@ -179,36 +179,22 @@
     <p class="text-gray-300 text-xs font-light max-w-md mx-auto">বাছাইকৃত শতভাগ খাঁটি ও সতেজ প্রিমিয়াম কোয়ালিটির গাছপালা</p>
   </section>
 
-  <!-- ক্যাটালগ মেনু এবং ফিল্টার -->
+  <!-- ক্যাটালগ মেনু এবং ফিল্টার (ডাইনামিক করা হয়েছে) -->
   <div class="max-w-7xl mx-auto px-6 pt-10 space-y-4">
-    <div class="flex flex-wrap justify-center gap-2 md:gap-4 bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
-      <button onclick="filterCatalog('all')" id="cat-btn-all" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-[#1A3A2B] text-white shadow-sm">
-        🌿 সব গাছ (<span id="count-all">0</span>)
-      </button>
-      <button onclick="filterCatalog('fruits')" id="cat-btn-fruits" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100">
-        🍎 ফল গাছ (<span id="count-fruits">0</span>)
-      </button>
-      <button onclick="filterCatalog('flowers')" id="cat-btn-flowers" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100">
-        🌹 ফুল গাছ (<span id="count-flowers">0</span>)
-      </button>
-      <button onclick="filterCatalog('indoor')" id="cat-btn-indoor" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100">
-        🪴 ইনডোর (<span id="count-indoor">0</span>)
-      </button>
-      <button onclick="filterCatalog('outdoor')" id="cat-btn-outdoor" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100">
-        🌳 আউটডোর (<span id="count-outdoor">0</span>)
-      </button>
+    <div id="dynamic-category-container" class="flex flex-wrap justify-center gap-2 md:gap-4 bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
+      <!-- ক্যাটাগরি বাটনগুলো জাভাস্ক্রিপ্ট দিয়ে এখানে অটো জেনারেট হবে -->
     </div>
   </div>
 
   <!-- প্রধান ক্যাটালগ প্রোডাক্ট ডিসপ্লে গ্রিড -->
   <section class="py-10 px-6 max-w-7xl mx-auto">
     <div id="catalog-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- গাছগুলো ডাইনামিকালি এখানে ক্যাটাগরি অনুযায়ী পরপর বসবে -->
+      <!-- গাছগুলো ডাইনামিকালি এখানে বসবে -->
     </div>
     <div id="no-products-msg" class="text-center py-20 text-gray-400 text-sm hidden">এই ক্যাটালগে বর্তমানে কোনো গাছ আপলোড করা নেই।</div>
   </section>
 
-  <!-- ⚙️ スマートコントロールダッシュボード -->
+  <!-- ⚙️ স্মার্টコントロールダッシュボード -->
   <section class="bg-white border-2 border-[#D4AF37]/30 p-6 md:p-8 max-w-2xl mx-auto my-14 rounded-3xl shadow-xl space-y-8">
     
     <div class="text-center border-b pb-4 border-gray-150">
@@ -220,15 +206,15 @@
     <!-- স্মার্ট অটো কুইক আপলোডার -->
     <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 p-5 rounded-2xl border border-emerald-200">
       <h4 class="font-bold text-sm text-[#1A3A2B] mb-1 flex items-center gap-1.5">
-        ⚡ প্রিমিয়াম অটো কুইক আপলোডার (১০০% গ্যারান্টিযুক্ত ওপেন ইমেজ লিংক)
+        ⚡ প্রিমিয়াম অটো কুইক আপলোডার
       </h4>
-      <p class="text-[11px] text-gray-500 mb-4">নিচের তালিকা থেকে যেকোনো গাছ সিলেক্ট করুন। এবার ছবি ১০০% দৃশ্যমান হবে।</p>
+      <p class="text-[11px] text-gray-500 mb-4">নিচের তালিকা থেকে গাছ সিলেক্ট করুন অথবা নতুন ক্যাটাগরি লিখে আপলোড করুন।</p>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
         <div>
           <label class="block font-semibold text-gray-650 mb-1">১. রেডিমেড গাছের তালিকা থেকে বাছুন</label>
-          <select id="quick-prod-select" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
-            <!-- জাভাস্ক্রিপ্ট দিয়ে এখানে ছবি লক করা তালিকা লোড হবে -->
+          <select id="quick-prod-select" onchange="checkCustomCategoryVisibility()" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
+            <!-- ড্রপডাউন ডাটা -->
           </select>
         </div>
         <div>
@@ -236,8 +222,21 @@
           <input type="number" id="quick-prod-price" placeholder="উদা: 250" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
         </div>
       </div>
+
+      <!-- [নতুন ফিচার] কাস্টম নতুন ক্যাটাগরি যোগ করার ইনপুট ফিল্ড -->
+      <div id="custom-category-block" class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs hidden">
+        <div>
+          <label class="block font-semibold text-gray-650 mb-1">🆕 নতুন গাছের নাম লেখেন</label>
+          <input type="text" id="custom-prod-name" placeholder="উদা: অশ্বগন্ধা গাছ" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
+        </div>
+        <div>
+          <label class="block font-semibold text-gray-650 mb-1">📁 নতুন ক্যাটাগরির নাম (ইংরেজিতে)</label>
+          <input type="text" id="custom-prod-cat" placeholder="উদা: medicinal, spices, bonshai" class="w-full p-3 border rounded-xl bg-white focus:outline-none focus:border-[#1A3A2B]">
+        </div>
+      </div>
+
       <button onclick="uploadQuickProduct()" class="w-full bg-[#1A3A2B] text-white py-3 rounded-xl font-bold hover:bg-[#112a1f] transition mt-4 shadow-md text-xs flex items-center justify-center gap-1">
-        🚀 এই গাছটি নিখুঁত ছবি সহ লাইভ করুন
+        🚀 এই গাছটি নিখুঁತ ছবি সহ লাইভ করুন
       </button>
     </div>
 
@@ -277,7 +276,19 @@
       <p class="max-w-md mx-auto mb-4">আপনার চারপাশকে সবুজ সতেজতায় সাজিয়ে তোলাই আমাদের লক্ষ্য।</p>
       <div class="text-[11px] text-gray-500">&copy; 2026 Global Green Plants Nursery India. All Rights Reserved.</div>
     </div>
-  </header>
+  </footer>
+
+  <!-- [নতুন] ইউনিভার্সাল মোডাল শুরু -->
+  <div id="universal-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 max-h-[80vh] overflow-y-auto">
+      <div class="flex justify-between items-center mb-6 border-b pb-4">
+        <h3 id="modal-title" class="text-xl font-bold">ভ্যারাইটিসমূহ</h3>
+        <button onclick="document.getElementById('universal-modal').classList.add('hidden')" class="text-2xl font-bold">✕</button>
+      </div>
+      <div id="modal-grid" class="grid grid-cols-2 gap-4"></div>
+    </div>
+  </div>
+  <!-- [নতুন] ইউনিভার্সাল মোডাল শেষ -->
 
   <!-- লজিক ও ফাংশনালিটি স্ক্রিপ্ট -->
   <script>
@@ -290,33 +301,20 @@
     let myBkashNo = localStorage.getItem('nursery_bkash') || "91XXXXXXXX";
     let myBankDetails = localStorage.getItem('nursery_bank') || "SBI, Account: XXXX";
 
-    // 🌟 Google-এর সিকিউরড ওপেন গ্লোবাল সিডিএন ইমেজ সোর্স (যা কখনোই হাইড বা ব্লক হয় না এবং নির্দিষ্ট গাছের ছবিই দেখাবে)
+    const treeDatabase = {
+      'fruits': [{ name: 'মিয়াজاکی আম', price: 1500 }, { name: 'হিমসাগর আম', price: 200 }],
+      'flowers': [{ name: 'অস্ট্রেলিয়ান জবা', price: 250 }, { name: 'সাদা গোলাপ', price: 150 }]
+    };
+
     const masterPlantDatabase = [
-      // == ইনডোর প্লান্টস (Indoor) ==
       { name: "মনস্টেরা ডেলিসিওসা (Monstera)", category: "indoor", tip: "💡 কম আলো, ইনডোর প্রিমিয়াম", img: "https://lh3.googleusercontent.com/d/1Xl2w3m5bK87JcMpl-25x5tC2W3oF9K_q=s500" },
       { name: "স্নেক প্লান্ট (Snake Plant)", category: "indoor", tip: "🌵 সহজ যত্ন, হাওয়া পরিষ্কার করে", img: "https://lh3.googleusercontent.com/d/1n8J9Wq-iLq31Kz4iY3b5cW2hX8oP5N_z=s500" },
-      { name: "গোল্ডেন মানি প্লান্ট (Money Plant)", category: "indoor", tip: "💡 ঘরের ভেতরে বা জলে বাড়ে", img: "https://lh3.googleusercontent.com/d/1W5u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_y=s500" },
-      { name: "অ্যালোভেরা (Aloe Vera)", category: "indoor", tip: "🌵 ঔষধি গাছ, কম জল প্রয়োজন", img: "https://lh3.googleusercontent.com/d/1G7u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_x=s500" },
-      { name: "জেড জেড প্লান্ট (ZZ Plant)", category: "indoor", tip: "💡 কম আলোতে ভালো থাকে", img: "https://lh3.googleusercontent.com/d/1K8u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_w=s500" },
-      { name: "পিস Lilli (Peace Lily)", category: "indoor", tip: "💡 সুন্দর সাদা ফুল ফোটে ইনডোরে", img: "https://lh3.googleusercontent.com/d/1L9u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_v=s500" },
-
-      // == ফল গাছ (Fruits) ==
       { name: "মিয়াজاکی আম / সূর্যডিম", category: "fruits", tip: "☀️ বিখ্যাত জাপানি আম, প্রচুর রোদ চাই", img: "https://lh3.googleusercontent.com/d/1M-u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_u=s500" },
-      { name: "কলমের বারোমাসি পাতিলেবু", category: "fruits", tip: "☀️ ১২ মাস প্রচুর লেবু ধরে টবে", img: "https://lh3.googleusercontent.com/d/1N-u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_t=s500" },
-      { name: "থাই পেয়ারা (Guava)", category: "fruits", tip: "☀️ ছোট গাছেই বড় বড় পেয়ারা আসবে", img: "https://lh3.googleusercontent.com/d/1P-u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_s=s500" },
-      { name: "ড্রাগন ফ্রুট (Dragon Fruit)", category: "fruits", tip: "☀️ ক্যাকটাস জাতের দামি বিদেশি ফল", img: "https://lh3.googleusercontent.com/d/1Q-u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_r=s500" },
-
-      // == ফুল গাছ (Flowers) ==
-      { name: "লাল গোলাপ (Red Rose)", category: "flowers", tip: "☀️ ছাদ বাগানের সেরা আকর্ষণ", img: "https://lh3.googleusercontent.com/d/1R-u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_q=s500" },
-      { name: "হলুদ গোলাপ (Yellow Rose)", category: "flowers", tip: "☀️ চমৎকার হালকা সুগন্ধি গোলাপ", img: "https://lh3.googleusercontent.com/d/1S-u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_p=s500" },
-      { name: "জবা ফুল (Hibiscus)", category: "flowers", tip: "☀️ প্রচুর ফুল ফোটে, রোদ পছন্দ", img: "https://lh3.googleusercontent.com/d/1T-u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_o=s500" },
-      { name: "বেলি ফুল / জুঁই (Jasmine)", category: "flowers", tip: "☀️ গরমকালে সুগন্ধি সাদা ফুল হয়", img: "https://lh3.googleusercontent.com/d/1U-u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_n=s500" }
+      { name: "লাল গোলাপ (Red Rose)", category: "flowers", tip: "☀️ ছাদ বাগানের সেরা আকর্ষণ", img: "https://lh3.googleusercontent.com/d/1R-u7Wk9kLp82Kz4mY3b5cW2hX8oP5N_q=s500" }
     ];
 
-    // রিলায়েবল ফলব্যাক ইমেজ যা কোনো অবস্থাতেই সাদা হবে না
     const fallbackImage = "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?q=80&w=500&auto=format&fit=crop";
 
-    // ডিফল্ট ৩টি প্রোডাক্ট
     const defaultProducts = [
       { id: 'd1', name: 'মিয়াজاکی আম / সূর্যডিম', price: 1500, category: 'fruits', tip: '☀️ বিখ্যাত জাপানি আম, প্রচুর রোদ চাই', img: 'https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=500&auto=format&fit=crop' },
       { id: 'd2', name: 'মনস্টেরা ডেলিসিওসা (Monstera)', price: 450, category: 'indoor', tip: '💡 কম আলো, ইনডোর প্রিমিয়াম', img: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=500&auto=format&fit=crop' },
@@ -325,12 +323,16 @@
 
     let products = JSON.parse(localStorage.getItem('nursery_products_cdn_v5')) || defaultProducts;
 
+    // ক্যাটাগরি ম্যাপিং অবজেক্ট (যাতে ইংরেজী ক্যাটাগরি বাংলায় সুন্দর দেখায়)
+    const categoryNamesBn = {
+      'all': 'সব গাছ',
+      'fruits': 'ফল গাছ',
+      'flowers': 'ফুল গাছ',
+      'indoor': 'ইনডোর',
+      'outdoor': 'আউটডোর'
+    };
+
     window.onload = function() {
-      // লোকাল স্টোরেজে যদি আগের কোনো ভাঙা ডাটা থাকে তা পরিষ্কার করার জন্য
-      if(products.length > 0 && products[0].img.includes('wikimedia')) {
-        products = defaultProducts;
-        localStorage.setItem('nursery_products_cdn_v5', JSON.stringify(products));
-      }
       setupQuickDropdown();
       renderProducts();
       loadSettingsIntoDashboard();
@@ -349,45 +351,118 @@
         option.innerText = `${prefix} ${plant.name}`;
         select.appendChild(option);
       });
+      
+      // কাস্টম ক্যাটাগরি যোগ করার অপশন ড্রপডাউনে যুক্ত করা হলো
+      const customOption = document.createElement('option');
+      customOption.value = "custom";
+      customOption.innerText = "➕ সম্পূর্ণ নতুন গাছ ও নতুন ক্যাটাগরি যোগ করুন";
+      select.appendChild(customOption);
+    }
+
+    function checkCustomCategoryVisibility() {
+      const selectValue = document.getElementById('quick-prod-select').value;
+      const block = document.getElementById('custom-category-block');
+      if(selectValue === "custom") {
+        block.classList.remove('hidden');
+      } else {
+        block.classList.add('hidden');
+      }
     }
 
     function uploadQuickProduct() {
-      const selectIndex = document.getElementById('quick-prod-select').value;
+      const selectValue = document.getElementById('quick-prod-select').value;
       const price = parseInt(document.getElementById('quick-prod-price').value);
 
-      if(!selectIndex) { alert('অনুগ্রহ করে তালিকা থেকে একটি গাছ সিলেক্ট করুন!'); return; }
+      if(!selectValue) { alert('অনুগ্রহ করে তালিকা থেকে একটি গাছ সিলেক্ট করুন!'); return; }
       if(!price || price <= 0) { alert('অনুগ্রহ করে গাছের একটি সঠিক দাম লিখুন!'); return; }
 
-      const selectedPlant = masterPlantDatabase[selectIndex];
-      
-      const newProduct = {
-        id: 'p_' + Date.now(),
-        name: selectedPlant.name,
-        price: price,
-        category: selectedPlant.category,
-        tip: selectedPlant.tip,
-        img: selectedPlant.img
-      };
+      let newProduct = {};
+
+      if(selectValue === "custom") {
+        const customName = document.getElementById('custom-prod-name').value.trim();
+        const customCat = document.getElementById('custom-prod-cat').value.trim().toLowerCase();
+
+        if(!customName || !customCat) { alert('অনুগ্রহ করে নতুন গাছের নাম এবং ক্যাটাগরি দুটোই লিখুন!'); return; }
+
+        newProduct = {
+          id: 'p_' + Date.now(),
+          name: customName,
+          price: price,
+          category: customCat,
+          tip: "🌱 নতুন কালেকশন, প্রিমিয়াম কোয়ালিটি",
+          img: fallbackImage
+        };
+        
+        // যদি বাংলায় নাম না থাকে, ক্যাটাগরি অবজেক্টে যোগ করা
+        if(!categoryNamesBn[customCat]) {
+          categoryNamesBn[customCat] = customCat.toUpperCase();
+        }
+
+        // কাস্টম ফিল্ড রিসেট
+        document.getElementById('custom-prod-name').value = '';
+        document.getElementById('custom-prod-cat').value = '';
+        document.getElementById('custom-category-block').classList.add('hidden');
+      } else {
+        const selectedPlant = masterPlantDatabase[selectValue];
+        newProduct = {
+          id: 'p_' + Date.now(),
+          name: selectedPlant.name,
+          price: price,
+          category: selectedPlant.category,
+          tip: selectedPlant.tip,
+          img: selectedPlant.img
+        };
+      }
 
       products.push(newProduct);
       localStorage.setItem('nursery_products_cdn_v5', JSON.stringify(products));
-      renderProducts();
       
+      document.getElementById('quick-prod-select').value = '';
       document.getElementById('quick-prod-price').value = '';
-      alert(`🎉 সফলভাবে "${selectedPlant.name}" গাছটি নিখুঁত ছবি সহ ₹${price} দামে লাইভ হয়েছে!`);
+      
+      renderProducts();
+      alert(`🎉 সফলভাবে "${newProduct.name}" গাছটি লাইভ হয়েছে!`);
+    }
+
+    function renderCategoryButtons() {
+      const container = document.getElementById('dynamic-category-container');
+      container.innerHTML = '';
+
+      // প্রোডাক্ট লিস্ট থেকে ইউনিক ক্যাটাগরিগুলো বের করা
+      const uniqueCategories = ['all', ...new Set(products.map(p => p.category))];
+
+      uniqueCategories.forEach(cat => {
+        const count = cat === 'all' ? products.length : products.filter(p => p.category === cat).length;
+        const displayName = categoryNamesBn[cat] || cat;
+        
+        let emoji = '🌳';
+        if(cat === 'all') emoji = '🌿';
+        else if(cat === 'fruits') emoji = '🍎';
+        else if(cat === 'flowers') emoji = '🌹';
+        else if(cat === 'indoor') emoji = '🪴';
+
+        const btn = document.createElement('button');
+        btn.id = `cat-btn-${cat}`;
+        btn.onclick = () => filterCatalog(cat);
+        
+        if(cat === currentSelectedCategory) {
+          btn.className = "px-5 py-2 rounded-xl text-xs font-bold transition bg-[#1A3A2B] text-white shadow-sm";
+        } else {
+          btn.className = "px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100";
+        }
+
+        btn.innerHTML = `${emoji} ${displayName} (<span id="count-${cat}">${count}</span>)`;
+        container.appendChild(btn);
+      });
     }
 
     function renderProducts() {
+      renderCategoryButtons();
+      
       const container = document.getElementById('catalog-container');
       const noProductsMsg = document.getElementById('no-products-msg');
       container.innerHTML = '';
       
-      document.getElementById('count-all').innerText = products.length;
-      document.getElementById('count-fruits').innerText = products.filter(p => p.category === 'fruits').length;
-      document.getElementById('count-flowers').innerText = products.filter(p => p.category === 'flowers').length;
-      document.getElementById('count-indoor').innerText = products.filter(p => p.category === 'indoor').length;
-      document.getElementById('count-outdoor').innerText = products.filter(p => p.category === 'outdoor').length;
-
       const filteredProducts = currentSelectedCategory === 'all' 
         ? products 
         : products.filter(p => p.category === currentSelectedCategory);
@@ -399,7 +474,6 @@
         const card = document.createElement('div');
         card.className = 'plant-card bg-white rounded-2xl overflow-hidden border border-gray-100 p-4 text-center shadow-sm hover:shadow-md transition relative';
         
-        // এখানে fallback সেট করা হলো যাতে কোনো ছবির লিংক কাজ না করলে একটি সুন্দর গাছপালা সম্পর্কিত ছবি অটোমেটিক বসে যায়
         card.innerHTML = `
           <button onclick="deleteProduct('${p.id}')" class="delete-product-btn ${isDeleteModeActive ? '' : 'hidden'} absolute top-2 right-2 bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-red-800 transition shadow z-10">✕</button>
           <img src="${p.img}" onerror="this.onerror=null;this.src='${fallbackImage}';" class="w-full h-48 object-cover rounded-xl mb-2 bg-gray-50 border border-gray-100 shadow-inner">
@@ -415,26 +489,8 @@
       });
     }
 
-   // ছবি না থাকলে ক্যাটাগরি অনুযায়ী সুন্দর ছবি দেখানোর ফাংশন
-const getPlaceholder = (category) => {
-  const placeholders = {
-    'fruits': 'https://images.unsplash.com/photo-1557800636-894a64c1696f?w=500',
-    'flowers': 'https://images.unsplash.com/photo-1490750964468-def43015495f?w=500',
-    'indoor': 'https://images.unsplash.com/photo-1453906971670-36693a2e3768?w=500',
-    'outdoor': 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=500'
-  };
-  return placeholders[category] || 'https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=500';
-};
- 
     function filterCatalog(category) {
       currentSelectedCategory = category;
-      const categories = ['all', 'fruits', 'flowers', 'indoor', 'outdoor'];
-      categories.forEach(cat => {
-        const btn = document.getElementById(`cat-btn-${cat}`);
-        btn.className = (cat === category) 
-          ? "px-5 py-2 rounded-xl text-xs font-bold transition bg-[#1A3A2B] text-white shadow-sm"
-          : "px-5 py-2 rounded-xl text-xs font-bold transition bg-gray-50 text-gray-600 hover:bg-gray-100";
-      });
       renderProducts();
     }
 
@@ -590,49 +646,5 @@ const getPlaceholder = (category) => {
       alert('🎉 সেটিংস সফলভাবে আপডেট হয়েছে!');
     }
   </script>
-</body>
-</html>
-    <!-- আগের সব কন্টেন্ট এখানে থাকবে... -->
-
-    <!-- [নতুন] ইউনিভার্সাল মোডাল শুরু -->
-    <div id="universal-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden">
-      <div class="bg-white rounded-3xl max-w-lg w-full p-6 max-h-[80vh] overflow-y-auto">
-        <div class="flex justify-between items-center mb-6 border-b pb-4">
-          <h3 id="modal-title" class="text-xl font-bold">ভ্যারাইটিসমূহ</h3>
-          <button onclick="closeModal()" class="text-2xl font-bold">✕</button>
-        </div>
-        <div id="modal-grid" class="grid grid-cols-2 gap-4"></div>
-      </div>
-    </div>
-    <!-- [নতুন] ইউনিভার্সাল মোডাল শেষ -->
-<!-- মোডাল ও লজিক শুরু -->
-<div id="universal-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden">
-  <div class="bg-white rounded-3xl max-w-lg w-full p-6 max-h-[80vh] overflow-y-auto">
-    <div class="flex justify-between items-center mb-6 border-b pb-4">
-      <h3 id="modal-title" class="text-xl font-bold">ভ্যারাইটিসমূহ</h3>
-      <button onclick="document.getElementById('universal-modal').classList.add('hidden')" class="text-2xl font-bold">✕</button>
-    </div>
-    <div id="modal-grid" class="grid grid-cols-2 gap-4"></div>
-  </div>
-</div>
-
-<script>
-const treeDatabase = {
-  'fruits': [{ name: 'মিয়াজাকি আম', price: 1500 }, { name: 'হিমসাগর আম', price: 200 }],
-  'flowers': [{ name: 'অস্ট্রেলিয়ান জবা', price: 250 }, { name: 'সাদা গোলাপ', price: 150 }]
-};
-
-function showVarieties(category, title) {
-  const grid = document.getElementById('modal-grid');
-  document.getElementById('modal-title').innerText = title;
-  grid.innerHTML = '';
-  treeDatabase[category].forEach(item => {
-    grid.innerHTML += `<div class="border p-4 rounded-xl text-center"><p class="font-bold text-sm">${item.name}</p><p class="text-green-700 font-bold mb-2">₹${item.price}</p><button class="bg-black text-white w-full py-1 rounded-lg text-xs">কিনুন</button></div>`;
-  });
-  document.getElementById('universal-modal').classList.remove('hidden');
-}
-</script>
-<!-- মোডাল ও লজিক শেষ -->
-
 </body>
 </html>
